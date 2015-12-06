@@ -1,1 +1,7 @@
 vserver-0.ffnef.de ansible_host=5.45.103.213
+
+[encrypted-root]
+vserver-0.ffnef.de
+
+[firmware-host]
+vserver-0.ffnef.de

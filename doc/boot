@@ -1,0 +1,4 @@
+ssh-dss b8:37:46:fc:a6:14:07:93:59:67:92:b9:69:f3:f0:76
+ssh-rsa 30:73:29:fc:9b:09:83:8d:6b:52:0b:52:bb:06:31:15
+
+/lib/cryptsetup/askpass "passphrase: " > /lib/cryptsetup/passfifo 

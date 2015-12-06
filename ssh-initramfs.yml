@@ -1,0 +1,21 @@
+---
+- hosts: encrypted-root
+  remote_user: root
+  tasks:
+  - name: include network driver into initramfs
+    copy: src=files/initramfs-tools/modules dest=/etc/initramfs-tools/modules owner=root group=root mode=664
+    notify:
+    - regenerate initrd
+  - name: install dropbear
+    apt: name=dropbear state=present
+  - name: allow ssh access to initramfs
+    command: cp -a /root/.ssh/authorized_keys /etc/initramfs-tools/root/.ssh/authorized_keys
+    notify:
+    - regenerate initrd
+  - name: print dropbear dss keys
+    command: dropbearkey -f /etc/dropbear/dropbear_dss_host_key  -y
+  - name: print dropbear rsa keys
+    command: dropbearkey -f /etc/dropbear/dropbear_rsa_host_key  -y
+  handlers:
+    - name: regenerate initrd
+      command: dpkg-reconfigure initramfs-tools
