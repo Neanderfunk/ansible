@@ -1,0 +1,35 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+  - name: allow ssh root access for team
+    copy: src=files/.ssh dest=/root/ owner=root group=root mode=700
+
+- hosts: firmware-hosts
+  remote_user: root
+  tasks:
+  - name: update apt cache
+    apt: update_cache=yes cache_valid_time=3600
+  - name: install packages to build gluon
+    apt: name={{ item }} state=present
+    with_items:
+    - vim
+    - less
+    - screen
+    - wget
+    - sudo
+    - coreutils
+    - build-essential
+    - subversion
+    - git
+    - libncurses5-dev
+    - zlib1g-dev
+    - unzip
+    - gawk
+
+- hosts: firmware-hosts
+  remote_user: root
+  vars:
+    virtualhost: firmware.ffnef.de
+  roles:
+  - webservers

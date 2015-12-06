@@ -1,0 +1,8 @@
+- name: update apt cache
+  apt: update_cache=yes cache_valid_time=3600
+- name: install apache
+  apt: name=apache2 state=installed
+- name: configure apache virtual hosts
+  template: src=virtualhost.conf dest=/etc/apache2/sites-available/{{ virtualhost }}.conf
+  notify:
+  - reload apache
