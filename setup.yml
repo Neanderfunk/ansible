@@ -33,3 +33,4 @@
     virtualhost: firmware.ffnef.de
   roles:
   - webservers
+  - buildbot
