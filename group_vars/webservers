@@ -1,0 +1,5 @@
+---
+virtualHosts:
+  - name: download.ffnef.de
+    directories: []
+    files: []

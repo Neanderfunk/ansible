@@ -5,3 +5,6 @@ vserver-0.ffnef.de
 
 [firmware-hosts]
 vserver-0.ffnef.de
+
+[webservers]
+vserver-0.ffnef.de

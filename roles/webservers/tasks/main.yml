@@ -3,6 +3,25 @@
 - name: install apache
   apt: name=apache2 state=installed
 - name: configure apache virtual hosts
-  template: src=virtualhost.conf dest=/etc/apache2/sites-available/{{ virtualhost }}.conf
+  template: src=virtualhost.conf dest=/etc/apache2/sites-available/{{ item.name }}.conf
+  with_items: virtualHosts
   notify:
   - reload apache
+- name: enable apache virtual hosts
+  command: a2ensite {{ item.name }}
+  with_items: virtualHosts
+  notify:
+  - reload apache
+- name: create root directory for web content
+  file: dest=/var/www/{{ item.name }} state=directory
+  with_items: virtualHosts
+- name: create directories for web content
+  file: dest=/var/www/{{ item.0.name }}/{{ item.1 }} state=directory
+  with_subelements:
+    - virtualHosts
+    - directories
+- name: copy web content
+  copy: src=files/{{ item.1 }}/ dest=/var/www/{{ item.0.name }}/{{ item.1 }}
+  with_subelements:
+    - virtualHosts
+    - files

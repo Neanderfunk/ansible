@@ -26,11 +26,12 @@
     - zlib1g-dev
     - unzip
     - gawk
+    - libssl-dev # not mentioned in doc
 
-- hosts: firmware-hosts
+- hosts: webservers
   remote_user: root
   vars:
-    virtualhost: firmware.ffnef.de
+    virtualhost: download.ffnef.de
   roles:
   - webservers
   - buildbot
