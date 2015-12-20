@@ -5,6 +5,11 @@
   - name: allow ssh root access for team
     copy: src=files/.ssh dest=/root/ owner=root group=root mode=700
 
+- hosts: supernodes
+  remote_user: root
+  roles:
+  - supernodes
+
 - hosts: firmware-hosts
   remote_user: root
   tasks:

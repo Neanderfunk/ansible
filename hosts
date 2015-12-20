@@ -1,4 +1,5 @@
 vserver-0.ffnef.de ansible_host=5.45.103.213
+neander-2.ffnef.de
 
 [encrypted-root]
 vserver-0.ffnef.de
@@ -8,3 +9,6 @@ vserver-0.ffnef.de
 
 [webservers]
 vserver-0.ffnef.de
+
+[supernodes]
+neander-2.ffnef.de
