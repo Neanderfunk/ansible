@@ -1,0 +1,9 @@
+- name: add fastd repo
+  apt_repository: repo="deb http://repo.universe-factory.net/debian/ sid main"
+  # there are only packages in 'sid' there
+  when: ansible_distribution == 'Debian'
+  notify:
+    - add fastd repo key
+    - update apt cache
+- name: install fastd
+  apt: name=fastd
