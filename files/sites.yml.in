@@ -4,7 +4,7 @@
   "ffnef-met": {
     "hostname_prefix" : "ME-",
     "site_name" : "Freifunk Mettmann",
-    "prefix4"   : "10.1.192.0/20",
+    "prefix4"  : "10.1.192.0/20",
     "prefix6" : "fdd9:a0b1:5bd0::/51",
     "channel24" : 13,
     "channel5" : 44,
@@ -12,8 +12,8 @@
   "ffnef-hlg": {
     "hostname_prefix" : "ME-",
     "site_name" : "Freifunk Heiligenhaus",
-    "prefix4"  : "10.1.192.0/20",
-    "prefix6"  : "fdd9:a0b1:5bd0::/48",
+    "prefix4"  : "10.11.112.0/20",
+    "prefix6"  : "fdfc:ba7c:0ca1::/48",
     "channel24" : 13,
     "channel5" : 44,
   },
