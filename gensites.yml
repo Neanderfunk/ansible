@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   vars_files:
-    - sites.yml
+    - files/sites.yml
   tasks:
   - name: generate site.conf files
     template: src=templates/site.conf.j2 dest=/tmp/{{ item.key }}

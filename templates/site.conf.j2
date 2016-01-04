@@ -7,7 +7,7 @@
 -- community specific changes to it!
 {
   -- Used for generated hostnames, e.g. freifunk-abcdef123456. (optional)
-  hostname_prefix = 'ME-',
+  hostname_prefix = '{{ item.value.hostname_prefix }}',
 
   -- Name of the community.
   site_name = '{{ item.value.site_name }}',
@@ -38,7 +38,7 @@
   -- Wireless configuration for 2.4 GHz interfaces.
   wifi24 = {
     -- Wireless channel.
-    channel = 1,
+    channel = {{ item.value.channel24 }},
 
     -- ESSID used for client network.
     ap = {
@@ -50,6 +50,7 @@
       -- Adjust these values!
       id = '{{ item.key }}-mesh',
       mcast_rate = 12000,
+      bssid = '{{ item.value.bssid }}',
       -- disabled = true, (optional)
     },
   },
@@ -58,12 +59,13 @@
   -- This should be equal to the 2.4 GHz variant, except
   -- for channel.
   wifi5 = {
-    channel = 44,
+    channel = {{ item.value.channel5 }},
     ap = {
       ssid = 'Freifunk',
     },
     mesh = {
-      id = 'ffxx-mesh',
+      id = '{{ item.key }}-mesh',
+      bssid = '{{ item.value.bssid }}',
       mcast_rate = 12000,
     },
   },
@@ -76,7 +78,7 @@
     ip6 = '{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::1'
 
     -- anycast MAC of all nodes
-    mac = 'xe:xx:xx:xx:xx:xx',
+    mac = '{{ item.value.next_mac }}',
   },
 
   -- Options specific to routing protocols (optional)
@@ -155,7 +157,7 @@
         name = 'stable',
 
         -- List of mirrors to fetch images from. IPv6 required!
-        mirrors = {'http://1.updates.services.ffhl/stable/sysupgrade'},
+        mirrors = { http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade },
 
         -- Number of good signatures required.
         -- Have multiple maintainers sign your build and only
