@@ -2,4 +2,4 @@
 virtualHosts:
   - name: download.ffnef.de
     directories: []
-    files: []
+    files: [sites]
