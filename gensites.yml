@@ -3,7 +3,9 @@
   vars_files:
     - files/sites.yml
   tasks:
+  - name: create root directory for sites
+    file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/ state=directory
   - name: generate site.conf files
-    template: src=templates/site.conf.j2 dest=/tmp/{{ item.key }}
+    template: src=templates/site.conf.j2 dest=./files/sites/{{ item.key }}-site.conf
     with_dict: sites
 

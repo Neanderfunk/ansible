@@ -16,8 +16,8 @@
   site_code = '{{ item.key }}',
 
   -- Prefixes used within the mesh. Both are required.
-  prefix4 = '{ item.value.prefix4 }',
-  prefix6 = '{ item.value.prefix6 }',
+  prefix4 = '{{ item.value.prefix4 }}',
+  prefix6 = '{{ item.value.prefix6 }}',
 
   -- Timezone of your community.
   -- See http://wiki.openwrt.org/doc/uci/system#time_zones
@@ -49,7 +49,7 @@
     mesh = {
       -- Adjust these values!
       id = '{{ item.key }}-mesh',
-      mcast_rate = 12000,
+      mcast_rate = 6000,
       bssid = '{{ item.value.bssid }}',
       -- disabled = true, (optional)
     },
@@ -66,7 +66,7 @@
     mesh = {
       id = '{{ item.key }}-mesh',
       bssid = '{{ item.value.bssid }}',
-      mcast_rate = 12000,
+      mcast_rate = 6000,
     },
   },
 
@@ -100,25 +100,25 @@
     -- enabled = true,
     -- configurable = true,
 
-    mtu = 1280,
+    mtu = 1364,
     groups = {
       backbone = {
-        -- Limit number of connected peers to reduce bandwidth.
         limit = 1,
 
         -- List of peers.
         peers = {
-          peer1 = {
-            key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-
-            -- This is a list, so you might add multiple entries.
-            remotes = {'ipv4 "xxx.somehost.invalid" port xxxxxx'},
-          },
-          peer2 = {
-            key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-            -- You can also omit the ipv4 to allow both connection via ipv4 and ipv6
-            remotes = {'"xxx.somehost2.invalid" port xxxxx'},
-          },
+--          peer1 = {
+--            key = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+--            -- This is a list, so you might add multiple entries.
+--            -- You can also omit the ipv4 to allow both connection via ipv4 and ipv6
+--            remotes = {'ipv4 "xxx.somehost.invalid" port xxxxxx'},
+--          },
+	  {% for peer in item.value.fastd %}
+{{ peer | replace(".", "-") }} = {
+	    key = '{{ item.value.fastd[peer].key }}',
+	    remotes = {'"{{ peer }}"' port {{ item.value.fastd[peer].port }}'},
+	  },
+	  {% endfor %}
         },
 
         -- Optional: nested peer groups
@@ -167,9 +167,9 @@
 
         -- List of public keys of maintainers.
         pubkeys = {
-                'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', -- Alice
-                'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', -- Bob
-                'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', -- Mary
+                'dd6a9d1aefc175f885705691498e904cbda12cc4602316f04816d78026c7c0f0', -- Benedikt Wi
+		'fb919d4adc69bd404f5093ce6b43badf351f9e642ad458406be986baf6096247', -- PetaByteBoy
+		'2a61930930a240c027f6ca4197203d400b6e4a32f9e92041e5f086907796c9bc', -- adorfer
         },
       },
     },
