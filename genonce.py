@@ -15,6 +15,7 @@ sites=yaml.load(sitesInHandle)
 for site_code in sites['sites'].keys():
     sites['sites'][site_code]['bssid'] = getMacFromString('bssid' + site_code)
     sites['sites'][site_code]['next_mac'] = getMacFromString('next_mac' + site_code)
+    sites['sites'][site_code]['site_name'] = 'Freifunk ' + sites['sites'][site_code]['site']
 
 #print (yaml.dump(sites, default_flow_style=False))
 sitesOutHandle=open('files/sites.yml', 'w')

@@ -5,7 +5,26 @@
   tasks:
   - name: create root directory for sites
     file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/ state=directory
-  - name: generate site.conf files
-    template: src=templates/site.conf.j2 dest=./files/sites/{{ item.key }}-site.conf
+  - name: generate gluon-site.conf directories
+    file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/{{ item.key }}/ state=directory
     with_dict: sites
+  - name: generate gluon-site.conf files
+    template: src=templates/site.conf.j2 dest=./files/sites/{{ item.key }}/site.conf
+    with_dict: sites
+  - name: generate gluon-site.mk files
+    template: src=templates/site.mk.j2 dest=./files/sites/{{ item.key }}/site.mk
+    with_dict: sites
+  - name: generate gluon-i18n directories
+    file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/{{ item.key }}/i18n/ state=directory
+    with_dict: sites
+  - name: generate German gluon-i18n files
+    template: src=templates/de.po.j2 dest=./files/sites/{{ item.key }}/i18n/de.po
+    with_dict: sites
+  - name: generate English gluon-i18n files
+    template: src=templates/en.po.j2 dest=./files/sites/{{ item.key }}/i18n/en.po
+    with_dict: sites
+  - name: generate French gluon-i18n files
+    template: src=templates/fr.po.j2 dest=./files/sites/{{ item.key }}/i18n/fr.po
+    with_dict: sites
+
 

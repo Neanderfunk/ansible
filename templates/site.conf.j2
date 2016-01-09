@@ -157,7 +157,10 @@
         name = 'stable',
 
         -- List of mirrors to fetch images from. IPv6 required!
-        mirrors = { http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade },
+        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade',
+	    'http://firmware.{{ item.key }}.ffnef/firmware/{{ item.key }}/stable/sysupgrade',
+	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/{{ item.key }}/stable/sysupgrade'
+	},
 
         -- Number of good signatures required.
         -- Have multiple maintainers sign your build and only
@@ -173,6 +176,12 @@
         },
       },
     },
+  },
+
+
+  roguenets_filter = {
+          allowed_prefix4 = '{{ item.value.prefix4 }}',
+          allowed_prefix6 = '{{ item.value.prefix6 }}',
   },
 
   -- Node roles
