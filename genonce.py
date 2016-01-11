@@ -6,7 +6,7 @@ import hashlib
 def getMacFromString(string):
     stringHash = hashlib.sha1(string.encode()).hexdigest()
     return \
-	stringHash[:2] + ':' + stringHash[2:4] + ':' + stringHash[4:6] \
+	stringHash[0] + '0:' + stringHash[2:4] + ':' + stringHash[4:6] \
 	+ ':' + stringHash[8:10] + ':' + stringHash[12:14] + ':' + stringHash[16:18]
 
 sitesInHandle=open('files/sites.yml.in', 'r')

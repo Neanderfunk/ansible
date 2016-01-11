@@ -1,3 +1,8 @@
+- name: add debian backports repo # letsencrypt
+  apt_repository: repo="deb http://ftp.hosteurope.de/mirror/ftp.debian.org/debian/ jessie-backports main"
+  when: ansible_distribution == 'Debian'
+  notify:
+    - update apt cache
 - name: update apt cache
   apt: update_cache=yes cache_valid_time=3600
 - name: install apache
@@ -21,7 +26,18 @@
     - virtualHosts
     - directories
 - name: copy web content
-  copy: src=files/{{ item.1 }}/ dest=/var/www/{{ item.0.name }}/{{ item.1 }}
+  synchronize: src=files/{{ item.1 }}/ dest=/var/www/{{ item.0.name }}/{{ item.1 }}
   with_subelements:
     - virtualHosts
     - files
+- name: add thinserv2 repo
+  apt_repository: repo="deb http://thinserv2.at-inet.de/~benedikt/deb/ jessie main"
+  when: ansible_distribution == 'Debian'
+- name: add thinserv2 repo key
+  apt_key: id=38F77DA6226BC47BCE23B1EEAB020A3A42293620 url=https://sks-keyservers.net/pks/lookup?op=get&search=0xAB020A3A42293620 state=present
+- name: install python-cryptography
+  apt: update_cache=yes name=python-cryptography default_release=jessie-backports state=latest
+  when: ansible_distribution == 'Debian'
+- name: install letsencrypt
+  apt: update_cache=yes name=python-letsencrypt-apache
+  when: ansible_distribution == 'Debian'

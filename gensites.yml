@@ -14,6 +14,9 @@
   - name: generate gluon-site.mk files
     template: src=templates/site.mk.j2 dest=./files/sites/{{ item.key }}/site.mk
     with_dict: sites
+  - name: generate modules files
+    template: src=templates/modules.j2 dest=./files/sites/{{ item.key }}/modules.incomplete
+    with_dict: sites
   - name: generate gluon-i18n directories
     file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/{{ item.key }}/i18n/ state=directory
     with_dict: sites

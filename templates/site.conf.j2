@@ -74,8 +74,8 @@
   -- connected to using a known IP address.
   next_node = {
     -- anycast IPs of all nodes
-    ip4 = '{{ item.value.prefix4 | regex_replace('\.0/[0-9]+$',) }}.254'
-    ip6 = '{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::1'
+    ip4 = '{{ item.value.prefix4 | regex_replace('\.0/[0-9]+$',) }}.254',
+    ip6 = '{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::1',
 
     -- anycast MAC of all nodes
     mac = '{{ item.value.next_mac }}',
@@ -114,9 +114,9 @@
 --            remotes = {'ipv4 "xxx.somehost.invalid" port xxxxxx'},
 --          },
 	  {% for peer in item.value.fastd %}
-{{ peer | replace(".", "-") }} = {
+{{ peer | replace(".", "_") | replace("-", "_") }} = {
 	    key = '{{ item.value.fastd[peer].key }}',
-	    remotes = {'"{{ peer }}"' port {{ item.value.fastd[peer].port }}'},
+	    remotes = {'"{{ peer }}" port {{ item.value.fastd[peer].port }}'},
 	  },
 	  {% endfor %}
         },
