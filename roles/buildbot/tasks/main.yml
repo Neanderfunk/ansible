@@ -5,7 +5,10 @@
 - name: create master directory for gluon
   command: /bin/su -s /bin/sh buildbot -c 'cd;buildbot create-master masters/gluon'
 - name: configure master directory for gluon
-  template: src=master.cfg dest=/var/lib/buildbot/masters/gluon/master.cfg
+  template: src=master.cfg.j2 dest=/var/lib/buildbot/masters/gluon/master.cfg
+  notify: restart buildmaster
+- name: set github password
+  template: src=changehook.passwd.j2 dest=/var/lib/buildbot/masters/gluon/changehook.passwd
   notify: restart buildmaster
 - name: enable buildmaster
   copy: src=etc-default-buildmaster dest=/etc/default/buildmaster
@@ -19,3 +22,5 @@
 - name: admin info
   copy: src=gluon-builder-info-admin dest=/var/lib/buildbot/slaves/gluon-builder/info/admin
   notify: restart buildslave
+- name: allow ssh-tunnel
+  authorized_key: user=ssh-tunnel key="{{ buildbotTunnelAuthorized }}"

@@ -3,3 +3,9 @@ virtualHosts:
   - name: download.ffnef.de
     directories: []
     files: [sites]
+    apacheconf: ""
+  - name: buildbot.ffnef.de
+    directories: []
+    files: []
+    apacheconf: |+
+      ProxyPass / http://localhost:8010/
