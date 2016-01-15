@@ -24,7 +24,6 @@ GLUON_SITE_PACKAGES := \
 	iptables \
 	iwinfo \
 	ffho-ebtables-net-rules \
-	ffho-txpower-fix \
 	ffho-wifi-blackout-workaround \
 	ffho-autoupdater-wifi-fallback \
 	gluon-ebtables-filter-roguenets  	

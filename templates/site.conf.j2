@@ -42,13 +42,13 @@
 
     -- ESSID used for client network.
     ap = {
-      ssid = 'Freifunk',
+      ssid = 'Freifunk-test',
       -- disabled = true, (optional)
     },
 
-    mesh = {
+    ibss = {
       -- Adjust these values!
-      id = '{{ item.key }}-mesh',
+      ssid = '{{ item.key }}-mesh',
       mcast_rate = 6000,
       bssid = '{{ item.value.bssid }}',
       -- disabled = true, (optional)
@@ -61,10 +61,10 @@
   wifi5 = {
     channel = {{ item.value.channel5 }},
     ap = {
-      ssid = 'Freifunk',
+      ssid = 'Freifunk-test',
     },
-    mesh = {
-      id = '{{ item.key }}-mesh',
+    ibss = {
+      ssid = '{{ item.key }}-mesh',
       bssid = '{{ item.value.bssid }}',
       mcast_rate = 6000,
     },
@@ -74,8 +74,8 @@
   -- connected to using a known IP address.
   next_node = {
     -- anycast IPs of all nodes
-    ip4 = '{{ item.value.prefix4 | regex_replace('\.0/[0-9]+$',) }}.254',
-    ip6 = '{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::1',
+    ip4 = '{{ item.value.prefix4 | regex_replace('\.0/[0-9]+$',) }}.255',
+    ip6 = '{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::ffff',
 
     -- anycast MAC of all nodes
     mac = '{{ item.value.next_mac }}',
