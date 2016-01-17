@@ -1,0 +1,83 @@
+-- reply above this line --
+*Dear Benedikt Wildenhain,*
+---------------------------
+Hallo Benedikt,
+
+Tunnel und Sessions sind konfiguriert.
+
+Eure IPv4s:
+185.66.193.110/31 (Düsseldorf)
+185.66.195.78/31 (Berlin)
+
+Wir annoncen diese Netze an dem jeweiligen Standort "more specific".
+Es ist also wahrscheinlich das ihr den Rücktraffic von den Backbone Systemen an dem
+angegebenen Standort erhaltet.
+
+Schaut am besten wie die Laufzeiten zu den Backbone Systemen sind und setzt die IPv4s dann
+sinnvoll ein ;-)
+
+Eure IPv6s:
+2a03:2260:300e::/48
+
+Unsere Endpunkte:
+bb-a.ak.ber 185.66.195.0
+bb-b.ak.ber 185.66.195.1
+bb-a.ix.dus 185.66.193.0
+bb-b.ix.dus 185.66.193.1
+
+Tunnel Details, angegeben ist jeweils unsere IP im Tunnel, eure ist immer +1. Im ersten
+Tunnel also die 100.64.3.87 und die 2a03:2260:0:1b5::2.
+
+bb-a.ak.ber - neander-1 (151.80.11.200)
+100.64.3.86/31
+2a03:2260:0:1b5::1/64
+bb-a.ix.dus - neander-1 (151.80.11.200)
+100.64.3.88/31
+2a03:2260:0:1b6::1/64
+bb-b.ak.ber - neander-1 (151.80.11.200)
+100.64.3.90/31
+2a03:2260:0:1b7::1/64
+bb-b.ix.dus - neander-1 (151.80.11.200)
+100.64.3.92/31
+2a03:2260:0:1b8::1/64
+bb-a.ak.ber - neander-2 (51.255.150.69)
+100.64.3.94/31
+2a03:2260:0:1b9::1/64
+bb-a.ix.dus - neander-2 (51.255.150.69)
+100.64.3.96/31
+2a03:2260:0:1ba::1/64
+bb-b.ak.ber - neander-2 (51.255.150.69)
+100.64.3.98/31
+2a03:2260:0:1bb::1/64
+bb-b.ix.dus - neander-2 (51.255.150.69)
+100.64.3.100/31
+2a03:2260:0:1bc::1/64
+bb-a.ak.ber - neander-3 (151.80.11.203)
+100.64.3.102/31
+2a03:2260:0:1bd::1/64
+bb-a.ix.dus - neander-3 (151.80.11.203)
+100.64.3.104/31
+2a03:2260:0:1be::1/64
+bb-b.ak.ber - neander-3 (151.80.11.203)
+100.64.3.106/31
+2a03:2260:0:1bf::1/64
+bb-b.ix.dus - neander-3 (151.80.11.203)
+100.64.3.108/31
+2a03:2260:0:1c0::1/64
+
+
+
+Viele Grüße,
+Lars 
+
+
+Your Freifunk Rheinland e.V. Team,
+------------------------------------------------------------------------------------------
+
+We hope this response has sufficiently answered your questions. If not, please do not send
+another email. Instead, reply to this email or [login to your account][1] for a complete
+archive of all your support requests and responses.
+
+---------------------------------------------
+[1] https://ticket.freifunk-rheinland.net/view.php?auth=o1xvqdaaadkbqaaaIEuHx%2BByXQNI1A%3D%3D
+Ref-Mid: $hSEAAA==$bb5959b6c7@6b4cd8d667

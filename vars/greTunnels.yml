@@ -1,0 +1,112 @@
+greTunnels:
+  neander-1:
+    bb-a.ak.ber:
+      endpoint: 185.66.195.0
+      ip4:
+        local: 100.64.3.87
+        remote: 100.64.3.86
+      ip6:
+        local: 2a03:2260:0:1b5::2
+        remote: 2a03:2260:0:1b5::1
+      localIp4: 151.80.11.200
+    bb-a.ix.dus:
+      endpoint: 185.66.193.0
+      ip4:
+        local: 100.64.3.89
+        remote: 100.64.3.88
+      ip6:
+        local: 2a03:2260:0:1b6::2
+        remote: 2a03:2260:0:1b6::1
+      localIp4: 151.80.11.200
+    bb-b.ak.ber:
+      endpoint: 185.66.195.1
+      ip4:
+        local: 100.64.3.91
+        remote: 100.64.3.90
+      ip6:
+        local: 2a03:2260:0:1b7::2
+        remote: 2a03:2260:0:1b7::1
+      localIp4: 151.80.11.200
+    bb-b.ix.dus:
+      endpoint: 185.66.193.1
+      ip4:
+        local: 100.64.3.93
+        remote: 100.64.3.92
+      ip6:
+        local: 2a03:2260:0:1b8::2
+        remote: 2a03:2260:0:1b8::1
+      localIp4: 151.80.11.200
+  neander-2:
+    bb-a.ak.ber:
+      endpoint: 185.66.195.0
+      ip4:
+        local: 100.64.3.95
+        remote: 100.64.3.94
+      ip6:
+        local: 2a03:2260:0:1b9::2
+        remote: 2a03:2260:0:1b9::1
+      localIp4: 51.255.150.69
+    bb-a.ix.dus:
+      endpoint: 185.66.193.0
+      ip4:
+        local: 100.64.3.97
+        remote: 100.64.3.96
+      ip6:
+        local: 2a03:2260:0:1ba::2
+        remote: 2a03:2260:0:1ba::1
+      localIp4: 51.255.150.69
+    bb-b.ak.ber:
+      endpoint: 185.66.195.1
+      ip4:
+        local: 100.64.3.99
+        remote: 100.64.3.98
+      ip6:
+        local: 2a03:2260:0:1bb::2
+        remote: 2a03:2260:0:1bb::1
+      localIp4: 51.255.150.69
+    bb-b.ix.dus:
+      endpoint: 185.66.193.1
+      ip4:
+        local: 100.64.3.101
+        remote: 100.64.3.100
+      ip6:
+        local: 2a03:2260:0:1bc::2
+        remote: 2a03:2260:0:1bc::1
+      localIp4: 51.255.150.69
+  neander-3:
+    bb-a.ak.ber:
+      endpoint: 185.66.195.0
+      ip4:
+        local: 100.64.3.103
+        remote: 100.64.3.102
+      ip6:
+        local: 2a03:2260:0:1bd::2
+        remote: 2a03:2260:0:1bd::1
+      localIp4: 151.80.11.203
+    bb-a.ix.dus:
+      endpoint: 185.66.193.0
+      ip4:
+        local: 100.64.3.105
+        remote: 100.64.3.104
+      ip6:
+        local: 2a03:2260:0:1be::2
+        remote: 2a03:2260:0:1be::1
+      localIp4: 151.80.11.203
+    bb-b.ak.ber:
+      endpoint: 185.66.195.1
+      ip4:
+        local: 100.64.3.107
+        remote: 100.64.3.106
+      ip6:
+        local: 2a03:2260:0:1bf::2
+        remote: 2a03:2260:0:1bf::1
+      localIp4: 151.80.11.203
+    bb-b.ix.dus:
+      endpoint: 185.66.193.1
+      ip4:
+        local: 100.64.3.109
+        remote: 100.64.3.108
+      ip6:
+        local: 2a03:2260:0:1c0::2
+        remote: 2a03:2260:0:1c0::1
+      localIp4: 151.80.11.203

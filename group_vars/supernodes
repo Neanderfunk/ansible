@@ -1,0 +1,9 @@
+grePublicIP:
+  neander-1:
+    ip4: "185.66.195.78"
+    preference:
+      bb-a.ak.ber: "110"
+      bb-b.ak.ber: "110"
+  neander-2:
+    ip4: "185.66.195.79"
+icVpnAs: 64863

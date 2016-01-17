@@ -1,0 +1,4 @@
+- name: update apt cache
+  apt: update_cache=yes
+- name: add thinserv2 repo key
+  apt_key: id=38F77DA6226BC47BCE23B1EEAB020A3A42293620 url=https://sks-keyservers.net/pks/lookup?op=get&search=0xAB020A3A42293620 state=present

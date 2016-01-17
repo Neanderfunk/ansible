@@ -1,0 +1,231 @@
+sites:
+  ffnef-erk:
+    bssid: 30:c6:b3:63:f5:dc
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-erk.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63979
+      fastd2.ffnef-erk.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63979
+      fastd3.ffnef-erk.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63979
+      fastd4.ffnef-erk.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63979
+    hostname_prefix: ME-
+    next_mac: d0:e7:c1:43:4b:eb
+    prefix4: 10.1.224.0/21
+    prefix6: fdd9:a0b1:5bd0:6000::/51
+    site: Erkrath
+    site_name: Freifunk Erkrath
+  ffnef-han:
+    bssid: 00:0b:f1:d6:75:04
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-han.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63981
+      fastd2.ffnef-han.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63981
+      fastd3.ffnef-han.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63981
+      fastd4.ffnef-han.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63981
+    hostname_prefix: ME-
+    next_mac: 80:81:25:1f:ea:56
+    prefix4: 10.1.232.0/21
+    prefix6: fdd9:a0b1:5bd0:8000::/51
+    site: Haan
+    site_name: Freifunk Haan
+  ffnef-hld:
+    bssid: 30:89:20:9b:94:de
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-hld.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63978
+      fastd2.ffnef-hld.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63978
+      fastd3.ffnef-hld.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63978
+      fastd4.ffnef-hld.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63978
+    hostname_prefix: ME-
+    next_mac: d0:cb:02:8f:04:de
+    prefix4: 10.11.128.0/20
+    prefix6: fd06:b047:f7de::/48
+    site: Hilden
+    site_name: Freifunk Hilden
+  ffnef-hlg:
+    bssid: c0:c3:5a:e6:04:45
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-hlg.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63975
+      fastd2.ffnef-hlg.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63975
+      fastd3.ffnef-hlg.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63975
+      fastd4.ffnef-hlg.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63975
+    hostname_prefix: ME-
+    next_mac: b0:e8:9b:b7:e1:9b
+    prefix4: 10.11.112.0/20
+    prefix6: fdfc:ba7c:0ca1::/48
+    site: Heiligenhaus
+    site_name: Freifunk Heiligenhaus
+  ffnef-lgf:
+    bssid: c0:06:1a:7a:82:a3
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-lgf.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63982
+      fastd2.ffnef-lgf.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63982
+      fastd3.ffnef-lgf.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63982
+      fastd4.ffnef-lgf.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63982
+    hostname_prefix: ME-
+    next_mac: f0:d0:90:d6:dd:df
+    prefix4: 10.1.240.0/21
+    prefix6: fdd9:a0b1:5bd0:a000::/51
+    site: Langenfeld
+    site_name: Freifunk Langenfeld
+  ffnef-met:
+    bssid: 80:b5:cb:a3:2c:bc
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-met.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63974
+      fastd2.ffnef-met.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63974
+      fastd3.ffnef-met.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63974
+      fastd4.ffnef-met.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63974
+    hostname_prefix: ME-
+    next_mac: 10:80:f4:66:82:9f
+    prefix4: 10.1.192.0/20
+    prefix6: fdd9:a0b1:5bd0::/51
+    site: Mettmann
+    site_name: Freifunk Mettmann
+  ffnef-mon:
+    bssid: 90:ae:b9:89:9e:d7
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-mon.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63977
+      fastd2.ffnef-mon.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63977
+      fastd3.ffnef-mon.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63977
+      fastd4.ffnef-mon.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63977
+    hostname_prefix: ME-
+    next_mac: 20:24:e0:1d:ee:da
+    prefix4: 10.1.208.0/21
+    prefix6: fdd9:a0b1:5bd0:2000::/51
+    site: Monheim
+    site_name: Freifunk Monheim
+  ffnef-rat:
+    bssid: f0:9a:96:65:fc:6b
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-rat.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63980
+      fastd2.ffnef-rat.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63980
+      fastd3.ffnef-rat.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63980
+      fastd4.ffnef-rat.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63980
+    hostname_prefix: ME-
+    next_mac: 20:5e:1a:a7:36:4e
+    prefix4: 10.11.64.0/20
+    prefix6: fde0:105b:1d87::/48
+    site: Ratingen
+    site_name: Freifunk Ratingen
+  ffnef-vel:
+    bssid: 70:fa:07:2b:2e:7e
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-vel.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63976
+      fastd2.ffnef-vel.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63976
+      fastd3.ffnef-vel.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63976
+      fastd4.ffnef-vel.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63976
+    hostname_prefix: ME-
+    next_mac: a0:a9:6f:ce:6d:7e
+    prefix4: 10.11.80.0/20
+    prefix6: fdc8:08a2:b198::/48
+    site: Velbert
+    site_name: Freifunk Velbert
+  ffnef-wlf:
+    bssid: 70:99:e7:43:d4:24
+    channel24: 13
+    channel5: 44
+    fastd:
+      fastd1.ffnef-wfr.ffnef.de:
+        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+        port: 63983
+      fastd2.ffnef-wfr.ffnef.de:
+        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+        port: 63983
+      fastd3.ffnef-wfr.ffnef.de:
+        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+        port: 63983
+      fastd4.ffnef-wfr.ffnef.de:
+        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+        port: 63983
+    hostname_prefix: ME-
+    next_mac: 90:99:33:39:94:85
+    prefix4: 10.1.248.0/21
+    prefix6: fdd9:a0b1:5bd0:c000::/51
+    site: Wuelfrath
+    site_name: Freifunk Wuelfrath

@@ -1,7 +1,7 @@
 ---
 - hosts: localhost
   vars_files:
-    - files/sites.yml
+    - vars/sites.yml
   tasks:
   - name: create root directory for sites
     file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/ state=directory

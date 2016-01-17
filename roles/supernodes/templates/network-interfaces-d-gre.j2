@@ -1,0 +1,14 @@
+{% for router in greTunnels[ansible_nodename] %}
+# {{ router }}
+auto  tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^bb|-ak)-', '-') }}
+iface tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^bb|-ak)-', '-') }} inet tunnel
+        mode            gre
+        netmask         255.255.255.254
+        address         {{ greTunnels[ansible_nodename][router].ip4.local }}
+        dstaddr         {{ greTunnels[ansible_nodename][router].ip4.remote }}
+        endpoint        {{ greTunnels[ansible_nodename][router].endpoint}}
+        local           {{ greTunnels[ansible_nodename][router].localIp4}}
+        ttl             255
+        mtu             1400
+
+{% endfor %}

@@ -1,12 +1,14 @@
 ---
-- hosts: all
+- hosts: webservers
   remote_user: root
   tasks:
   - name: allow ssh root access for team
     copy: src=files/.ssh dest=/root/ owner=root group=root mode=700
 
 - hosts: supernodes
-  remote_user: root
+  sudo: True
+  vars_files:
+    - vars/greTunnels.yml
   roles:
   - supernodes
 

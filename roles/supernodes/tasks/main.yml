@@ -1,2 +1,7 @@
-- name: ping host
-  ping: ''
+- name: generate /etc/network/interfaces.d/gre
+  template: src=network-interfaces-d-gre.j2 dest=/etc/network/interfaces.d/gre
+- name: install bird
+  apt: name=bird update_cache=yes cache_valid_time=3600
+- name: write bird configuration
+  template: src=bird.conf.j2 dest=/etc/bird/bird.conf
+  notify: reload bird
