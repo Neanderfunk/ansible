@@ -66,6 +66,7 @@ c['schedulers'].append(ForceScheduler(
 from buildbot.process.factory import BuildFactory
 from buildbot.steps.source.git import Git
 from buildbot.steps.shell import ShellCommand
+from buildbot.steps.transfer import DirectoryUpload
 
 factory = BuildFactory()
 # check out the source
@@ -81,6 +82,10 @@ fi
 """))
 factory.addStep(ShellCommand(command=["/bin/sh", "./build.sh"], timeout=24*3600))
 
+factory.addStep(DirectoryUpload(
+	slavesrc="gluon/out",
+	masterdest="/var/www/download.ffnef.de/buildbot"))
+
 from buildbot.config import BuilderConfig
 
 c['builders'] = []
@@ -88,6 +93,8 @@ c['builders'].append(
     BuilderConfig(name="runtests",
       slavenames=["localhost-slave", "horst-slave"],
       factory=factory))
+
+
 
 ####### STATUS TARGETS
 
