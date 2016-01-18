@@ -7,3 +7,12 @@
   notify: reload bird
 - name: write sysctl
   copy: src=90-forwarding.conf dest=/etc/sysctl.d/
+- name: install bridge-utils (needed by ifup for bridges)
+  apt: name=bridge-utils update_cache=yes cache_valid_time=3600
+- name: configure bridge and dummy interfaces for freifunk
+  template: src="network-interfaces-d-ff.j2" dest=/etc/network/interfaces.d/ff
+- name: install ferm
+  apt: name=ferm update_cache=yes cache_valid_time=3600
+- name: configure ferm
+  template: src="ferm.conf.j2" dest=/etc/ferm/ferm.conf
+  notify: reload ferm

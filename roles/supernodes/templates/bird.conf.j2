@@ -55,7 +55,7 @@ protocol bgp ffrl_{{ router | regex_replace('[^_a-zA-Z0-9]','_') }} from uplink 
 	source address {{ greTunnels[ansible_nodename][router].ip4.local }};
 	neighbor {{ greTunnels[ansible_nodename][router].ip4.remote }} as 201701;
 {% if router in grePublicIP[ansible_hostname].preference %}
-	preference {{ grePublicIP[ansible_hostname].preference[router] }}
+	preference {{ grePublicIP[ansible_hostname].preference[router] }};
 {% endif %}
 };
 
