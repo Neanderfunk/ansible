@@ -97,7 +97,7 @@
   fastd_mesh_vpn = {
     -- List of crypto-methods to use.
     methods = {'salsa2012+umac'},
-    -- enabled = true,
+    enabled = true,
     -- configurable = true,
 
     mtu = 1364,
@@ -183,6 +183,9 @@
           allowed_prefix4 = '{{ item.value.prefix4 }}',
           allowed_prefix6 = '{{ item.value.prefix6 }}',
   },
+
+  mesh_on_lan = true,
+  vlan = 119,
 
   -- Node roles
   -- roles = {
