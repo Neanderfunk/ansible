@@ -11,5 +11,5 @@ vserver-0.ffnef.de
 vserver-0.ffnef.de
 
 [supernodes]
-neander-1.ffnef.de
+neander-1.ffnef.de ansible_ssh_user=neander
 #neander-2.ffnef.de

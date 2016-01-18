@@ -5,6 +5,8 @@
 - name: write bird configuration
   template: src=bird.conf.j2 dest=/etc/bird/bird.conf
   notify: reload bird
+- name: write sysctl
+  copy: src=90-forwarding.conf dest=/etc/sysctl.d/
 - name: install bridge-utils (needed by ifup for bridges)
   apt: name=bridge-utils update_cache=yes cache_valid_time=3600
 - name: configure bridge and dummy interfaces for freifunk
