@@ -14,3 +14,8 @@
 - name: configure ferm
   template: src="ferm.conf.j2" dest=/etc/ferm/ferm.conf
   notify: reload ferm
+- name: install isc-dhcp-server
+  apt: name=isc-dhcp-server update_cache=yes cache_valid_time=3600
+- name: configure dhcp-server
+  template: src="dhcpd.conf.j2" dest=/etc/dhcp/dhcpd.conf
+  notify: restart isc-dhcp-server

@@ -6,4 +6,14 @@ grePublicIP:
       bb-b.ak.ber: "110"
   neander-2:
     ip4: "185.66.195.79"
+    preference:
+      bb-a.ak.ber: "110"
+      bb-b.ak.ber: "110"
+
+meshDhcp:
+  neander-1:
+    range: "10.1.194.0 10.1.200.255"
+  neander-2:
+    range: "10.1.201.0 10.1.207.253"
+
 icVpnAs: 64863

@@ -2,3 +2,5 @@
   service: name=bird state=reloaded
 - name: reload ferm
   service: name=ferm state=reloaded
+- name: restart isc-dhcp-server
+  service: name=isc-dhcp-server state=restarted

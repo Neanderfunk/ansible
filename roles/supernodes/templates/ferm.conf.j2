@@ -1,0 +1,73 @@
+
+# -*- shell-script -*-
+#
+#  Configuration file for ferm(1).
+#
+
+domain (ip ip6) {
+    table filter {
+        chain INPUT {
+            policy ACCEPT;
+
+            proto gre ACCEPT;
+
+            # connection tracking
+            mod state state INVALID DROP;
+            mod state state (ESTABLISHED RELATED) ACCEPT;
+
+            # allow local packet
+            interface lo ACCEPT;
+
+            # respond to ping
+            proto icmp ACCEPT;
+            
+	    # allow fastd
+            proto udp dport 63974 ACCEPT;
+
+            # allow IPsec
+            proto udp dport 500 ACCEPT;
+            proto (esp) ACCEPT;
+
+            # allow SSH connections
+            proto tcp dport ssh ACCEPT;
+        }
+        chain OUTPUT {
+            policy ACCEPT;
+
+            # connection tracking
+            #mod state state INVALID DROP;
+            mod state state (ESTABLISHED RELATED) ACCEPT;
+        }
+        chain FORWARD {
+            policy ACCEPT;
+
+            # connection tracking
+            mod state state INVALID DROP;
+            mod state state (ESTABLISHED RELATED) ACCEPT;
+        }
+    }
+
+    table mangle {
+        chain PREROUTING {
+            interface tun-ffrl-+ {
+                # sockmark, hier ohne bedingung, ist die wichtig? also port 53 und so (zum direkt rauswerfen? dann brauchts noch ein nat gegen die ip auf eth0
+                # erstmal so funktionierend)
+                MARK set-mark 1;
+            }
+        }
+
+        chain POSTROUTING {
+            # mss clamping
+            outerface tun-ffrl-+ proto tcp tcp-flags (SYN RST) SYN TCPMSS clamp-mss-to-pmtu;
+        }
+    }
+    table nat {
+        chain POSTROUTING {
+            # nat translation (to 185.66.195.65 <- public IPv4 adress from FFRL for exit for NAT users)
+            outerface tun-ffrl-+ saddr 10.1.192.0/20 SNAT to {{ grePublicIP[ansible_hostname].ip4 }};
+            outerface tun-ffrl-+ { MASQUERADE;
+            }
+        }
+    }
+}
+
