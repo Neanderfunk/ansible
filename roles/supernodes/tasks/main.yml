@@ -5,3 +5,5 @@
 - name: write bird configuration
   template: src=bird.conf.j2 dest=/etc/bird/bird.conf
   notify: reload bird
+- name: write sysctl
+  copy: src=90-forwarding.conf dest=/etc/sysctl.d/
