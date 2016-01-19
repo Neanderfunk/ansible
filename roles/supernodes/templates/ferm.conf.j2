@@ -9,7 +9,11 @@ domain (ip ip6) {
         chain INPUT {
             policy ACCEPT;
 
+			# ipsec currently not used
             proto gre ACCEPT;
+            
+			# respond to ping
+            proto icmp ACCEPT;
 
             # connection tracking
             mod state state INVALID DROP;
@@ -17,11 +21,8 @@ domain (ip ip6) {
 
             # allow local packet
             interface lo ACCEPT;
-
-            # respond to ping
-            proto icmp ACCEPT;
             
-	    # allow fastd
+	    	# allow fastd
             proto udp dport 63974 ACCEPT;
 
             # allow IPsec

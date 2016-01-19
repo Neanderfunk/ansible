@@ -4,3 +4,5 @@
   service: name=ferm state=reloaded
 - name: restart isc-dhcp-server
   service: name=isc-dhcp-server state=restarted
+- name: restart procps
+  service: name=procps state=restarted
