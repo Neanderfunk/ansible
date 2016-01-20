@@ -1,0 +1,11 @@
+---
+fastdHosts:
+  vserver-0:
+    configs:
+    - name: neander
+      interface: tap0
+      mtu: 1364
+      batmanInterface: bat0
+      macSuffix: EE:EF:07:33:3C
+      peerSite:
+      - ffnef-met

@@ -34,6 +34,11 @@
     - unzip
     - gawk
     - libssl-dev # not mentioned in doc
+  vars_files:
+    - vars/fastd.yml
+    - vars/sites.yml
+  roles:
+  - fastd
 
 - hosts: webservers
   remote_user: root

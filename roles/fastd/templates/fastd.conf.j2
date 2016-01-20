@@ -1,0 +1,40 @@
+
+bind any:63974 default ipv4;
+include "secret.conf";
+interface "{{ item.interface }}";
+log level info;
+mode tap;
+method "salsa2012+umac";
+peer limit 200;
+hide mac addresses yes;
+mtu {{ item.mtu }};
+secure handshakes yes;
+log to syslog level verbose;
+
+on up "
+        ip link set address 04:{{ item.macSuffix }} dev {{ item.interface }}
+        ip link set up {{ item.interface }}
+        batctl -m {{ item.batmanInterface }} if add $INTERFACE
+        ip link set address 02:{{ item.macSuffix }} dev {{ item.batmanInterface }}
+        ip link set up dev {{ item.batmanInterface }}
+        brctl addif br0 {{ item.batmanInterface }}
+        batctl -m {{ item.batmanInterface }} it 5000
+        batctl -m {{ item.batmanInterface }} bl 0
+        batctl -m {{ item.batmanInterface }} gw server 48mbit/48mbit
+        batctl -m {{ item.batmanInterface }} vm server
+";
+
+{% if True %}
+on verify "/etc/fastd/{{ item.name }}/blacklist.sh $PEER_KEY";
+{% endif %}
+
+{% for peerSite in item.peerSite %}
+  {% for peer in sites[peerSite].fastd %}
+
+peer "{{ peer }}" {
+    key "{{ sites[peerSite].fastd[peer].key }}";
+    remote "{{ peer }}" port {{ sites[peerSite].fastd[peer].port }};
+}
+
+  {% endfor %}
+{% endfor %}
