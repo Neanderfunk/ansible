@@ -29,8 +29,11 @@ domain (ip ip6) {
             proto udp dport 500 ACCEPT;
             proto (esp) ACCEPT;
 
-            # allow SSH connections
             proto tcp dport ssh ACCEPT;
+            proto tcp dport bgp ACCEPT;
+
+			# only allow incoming connections to services ACCEPTed above
+            interface eth0 REJECT;
         }
         chain OUTPUT {
             policy ACCEPT;

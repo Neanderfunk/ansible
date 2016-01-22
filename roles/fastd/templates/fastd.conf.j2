@@ -5,7 +5,7 @@ interface "{{ item.interface }}";
 log level info;
 mode tap;
 method "salsa2012+umac";
-peer limit 200;
+peer limit {{ item.limit }};
 hide mac addresses yes;
 mtu {{ item.mtu }};
 secure handshakes yes;

@@ -1,9 +1,13 @@
 ---
 virtualHosts:
   - name: download.ffnef.de
-    directories: []
+    directories:
+    - name: firmware
+      owner: buildbot
+      mode: 755
     files: [sites]
-    apacheconf: ""
+    apacheconf: |+
+      ServerAlias firmware.ffnef.de
   - name: buildbot.ffnef.de
     directories: []
     files: []

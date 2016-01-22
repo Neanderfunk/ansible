@@ -25,7 +25,7 @@
   file: dest=/var/www/{{ item.name }} state=directory
   with_items: virtualHosts
 - name: create directories for web content
-  file: dest=/var/www/{{ item.0.name }}/{{ item.1 }} state=directory
+  file: dest=/var/www/{{ item.0.name }}/{{ item.1.name }} mode={{ item.1.mode }} owner={{ item.1.owner }} state=directory
   with_subelements:
     - virtualHosts
     - directories

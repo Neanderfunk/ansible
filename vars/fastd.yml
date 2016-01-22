@@ -4,8 +4,13 @@ fastdHosts:
     configs:
     - name: neander
       interface: tap0
+      bridge: br0
       mtu: 1364
       batmanInterface: bat0
       macSuffix: EE:EF:07:33:3C
+      limit: 1
       peerSite:
       - ffnef-met
+      batman:
+        ip4: 10.1.192.10/20
+        ip6: "2a03:2260:300e:337::/51"

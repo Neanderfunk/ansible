@@ -84,7 +84,7 @@ factory.addStep(ShellCommand(command=["/bin/sh", "./build.sh"], timeout=24*3600)
 
 factory.addStep(DirectoryUpload(
 	slavesrc="gluon/out",
-	masterdest="/var/www/download.ffnef.de/buildbot"))
+	masterdest="/var/www/download.ffnef.de/firmware/herebedragons"))
 
 from buildbot.config import BuilderConfig
 
