@@ -3,7 +3,7 @@ subnet 10.1.192.0 netmask 255.255.240.0 {
         range {{ meshDhcp[ansible_hostname].range }};
         default-lease-time 300;
         max-lease-time 600;
-        option domain-name-servers 8.8.8.8, 141.1.1.1;
+        option domain-name-servers 10.1.192.255, 8.8.8.8, 141.1.1.1;
         option routers 10.1.192.{{ ansible_hostname | regex_replace('[^0-9]', '') }};
         interface br0;
 }
