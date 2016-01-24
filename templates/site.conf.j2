@@ -160,7 +160,8 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/{{ item.key }}/stable/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade',
-	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/{{ item.key }}/stable/sysupgrade'
+	    'http://[{{ sites['ffnef-met'].prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/{{ item.key }}/stable/sysupgrade',
+	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/{{ item.key }}/stable/sysupgrade'
 	},
 
         -- Number of good signatures required.
@@ -180,10 +181,10 @@
         name = 'experimental',
 
         -- List of mirrors to fetch images from. IPv6 required!
-        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/experimental/sysupgrade',
-	    'http://firmware.{{ item.key }}.ffnef/firmware/{{ item.key }}/experimental/sysupgrade',
-	    'http://firmware.ffnef.de/firmware/{{ item.key }}/experimental/images/sysupgrade',
-	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/{{ item.key }}/experimental/sysupgrade'
+        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/broken/sysupgrade',
+	    'http://firmware.{{ item.key }}.ffnef/firmware/{{ item.key }}/broken/sysupgrade',
+	    'http://firmware.ffnef.de/firmware/{{ item.key }}/broken/images/sysupgrade',
+	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/{{ item.key }}/broken/sysupgrade'
 	},
 
         -- Number of good signatures required.
