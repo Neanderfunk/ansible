@@ -1,3 +1,5 @@
+- name: reload radvd
+  service: name=radvd state=reloaded
 - name: reload bird
   service: name=bird state=reloaded
 - name: reload ferm

@@ -1,0 +1,16 @@
+interface br0
+{
+        AdvSendAdvert on;
+        IgnoreIfMissing on;
+        MinRtrAdvInterval 3;
+        MaxRtrAdvInterval 10;
+        prefix {{ sites['ffnef-met'].prefix6 }}
+        {
+                AdvOnLink on;
+                AdvAutonomous on;
+                AdvRouterAddr off;
+        };
+        RDNSS {{ fastdHosts[ansible_hostname].configs[0].batman.ip6 | regex_replace('/{0-9]+','') }}
+        {
+        };
+};

@@ -157,11 +157,11 @@
         name = 'stable',
 
         -- List of mirrors to fetch images from. IPv6 required!
-        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade',
-	    'http://firmware.{{ item.key }}.ffnef/firmware/{{ item.key }}/stable/sysupgrade',
-	    'http://firmware.ffnef.de/firmware/{{ item.key }}/stable/sysupgrade',
-	    'http://[{{ sites['ffnef-met'].prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/{{ item.key }}/stable/sysupgrade',
-	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/{{ item.key }}/stable/sysupgrade'
+        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://firmware.{{ item.key }}.ffnef/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://firmware.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ sites['ffnef-met'].prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/stable/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
@@ -181,10 +181,10 @@
         name = 'experimental',
 
         -- List of mirrors to fetch images from. IPv6 required!
-        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/{{ item.key }}/broken/sysupgrade',
-	    'http://firmware.{{ item.key }}.ffnef/firmware/{{ item.key }}/broken/sysupgrade',
-	    'http://firmware.ffnef.de/firmware/{{ item.key }}/broken/images/sysupgrade',
-	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/{{ item.key }}/broken/sysupgrade'
+        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/broken/{{ item.key }}/sysupgrade',
+	    'http://firmware.{{ item.key }}.ffnef/firmware/broken/{{ item.key }}/sysupgrade',
+	    'http://firmware.ffnef.de/firmware/broken/{{ item.key }}/images/sysupgrade',
+	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/broken/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.

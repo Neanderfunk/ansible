@@ -23,7 +23,7 @@ domain (ip ip6) {
             interface lo ACCEPT;
             
 	    	# allow fastd
-            proto udp dport 63974 ACCEPT;
+            #proto udp dport 63974 ACCEPT;
 
             # allow IPsec
             proto udp dport 500 ACCEPT;
@@ -31,6 +31,9 @@ domain (ip ip6) {
 
             proto tcp dport ssh ACCEPT;
             proto tcp dport bgp ACCEPT;
+
+            # benedikt's host for debugging
+            saddr 130.180.23.230 ACCEPT;
 
 			# only allow incoming connections to services ACCEPTed above
             interface eth0 REJECT;
