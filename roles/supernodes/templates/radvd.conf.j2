@@ -10,7 +10,7 @@ interface br0
                 AdvAutonomous on;
                 AdvRouterAddr off;
         };
-        RDNSS {{ fastdHosts[ansible_hostname].configs[0].batman.ip6 | regex_replace('/{0-9]+','') }}
+        RDNSS {{ fastdHosts[ansible_hostname].configs[0].batman.ip6 | regex_replace('/[0-9]+','') }}
         {
         };
 };
