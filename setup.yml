@@ -9,6 +9,8 @@
   sudo: True
   vars_files:
     - vars/greTunnels.yml
+    - vars/fastd.yml
+    - vars/sites.yml
   roles:
   - supernodes
 

@@ -30,11 +30,15 @@ on verify "/etc/fastd/{{ item.name }}/blacklist.sh $PEER_KEY";
 
 {% for peerSite in item.peerSite %}
   {% for peer in sites[peerSite].fastd %}
+    {% if sites[peerSite].fastd[peer].key == fastd_public %}
+# no fastd connection to myself
+	{% else %}
 
 peer "{{ peer }}" {
     key "{{ sites[peerSite].fastd[peer].key }}";
     remote "{{ peer }}" port {{ sites[peerSite].fastd[peer].port }};
 }
 
+    {% endif %}
   {% endfor %}
 {% endfor %}

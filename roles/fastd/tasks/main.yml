@@ -24,3 +24,7 @@
   with_items: fastdHosts[ansible_hostname].configs
   tags: [ fastd-config ]
   notify: restart fastd
+- name: write fastd blacklist.sh
+  template: src=blacklist.sh.j2 dest=/etc/fastd/{{ item.name }}/blacklist.sh mode=750
+  with_items: fastdHosts[ansible_hostname].configs
+  tags: [ fastd-config ]

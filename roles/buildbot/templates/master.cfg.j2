@@ -67,11 +67,14 @@ from buildbot.process.factory import BuildFactory
 from buildbot.steps.source.git import Git
 from buildbot.steps.shell import ShellCommand
 from buildbot.steps.transfer import DirectoryUpload
+from buildbot.process.properties import Interpolate
 
 factory = BuildFactory()
 # check out the source
 #factory.addStep(Git(repourl='https://github.com/Neanderfunk/site-ffnef.git', mode='incremental'))
 #factory.addStep(Git(repourl='https://github.com/Neanderfunk/site-ffnef', mode='incremental'))
+factory.addStep(ShellCommand(command=
+                                      Interpolate('echo REVISION=%(prop:revision)s BRANCH=%(prop:branch)s')))
 factory.addStep(ShellCommand(command="""
 if [ ! -d .git ]; then
     git clone https://github.com/Neanderfunk/build-gluon.git .
