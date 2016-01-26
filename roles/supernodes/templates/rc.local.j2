@@ -1,0 +1,22 @@
+
+#!/bin/sh -e
+# rc.local
+
+ip -4 rule add prio 1000 from 10.1.192.0/20 table internet
+# ip -6 rule add prio 1000 from ... table internet
+
+ip -4 rule add prio 1000 fwmark 0x1 table internet
+ip -6 rule add prio 1000 fwmark 0x1 table internet
+
+# done via network-interfaces
+#FFRL_IFS="tun-ffrl-dus-a tun-ffrl-dus-b tun-ffrl-ber-a tun-ffrl-ber-b"
+#for interface in $FFRL_IFS; do
+#    ip -4 rule add prio 1001 iif $interface table internet
+#    ip -6 rule add prio 1001 iif $interface table internet
+#  done
+
+# unreachable default route, damit ihr freifunk pakete nie über die eth0 defaultroute schickt
+ip -4 rule add prio 2000 from 10.1.192.0/20 table unreachable
+ip -4 route add default unreachable table unreachable
+
+exit 0

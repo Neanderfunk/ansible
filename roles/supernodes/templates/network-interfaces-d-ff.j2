@@ -15,3 +15,4 @@ auto tun-ffrl-uplink
 iface tun-ffrl-uplink inet static
         address {{ grePublicIP[ansible_hostname].ip4 }}/32
         pre-up ip link add $IFACE type dummy
+        post-down ip link del $IFACE type dummy

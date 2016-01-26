@@ -1,7 +1,7 @@
 {% for router in greTunnels[ansible_nodename] %}
 # {{ router }}
-auto  tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^bb|-ak)-', '-') }}
-iface tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^bb|-ak)-', '-') }} inet tunnel
+auto  tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^bb|-ak|-ix)-', '-') }}
+iface tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^bb|-ak|-ix)-', '-') }} inet tunnel
         mode            gre
         netmask         255.255.255.254
         address         {{ greTunnels[ansible_nodename][router].ip4.local }}
@@ -10,5 +10,10 @@ iface tun-ffrl{{ router | regex_replace('[^_a-zA-Z0-9]','-') | regex_replace('(^
         local           {{ greTunnels[ansible_nodename][router].localIp4}}
         ttl             255
         mtu             1400
+        post-up         ip -6 addr add {{ greTunnels[ansible_nodename][router].ip6.local }}/64 dev $IFACE
+    	pre-up          ip -4 rule add prio 1001 iif $IFACE table internet
+    	pre-up          ip -6 rule add prio 1001 iif $IFACE table internet
+    	post-down       ip -4 rule del prio 1001 iif $IFACE table internet
+    	post-down       ip -6 rule del prio 1001 iif $IFACE table internet
 
 {% endfor %}
