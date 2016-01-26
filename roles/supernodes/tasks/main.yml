@@ -4,9 +4,13 @@
 - name: install bird
   apt: name=bird update_cache=yes cache_valid_time=3600
   tags: [ ffrlbb ]
-- name: write bird configuration
+- name: write bird ipv4 configuration
   template: src=bird.conf.j2 dest=/etc/bird/bird.conf
   notify: reload bird
+  tags: [ ffrlbb ]
+- name: write bird ipv6 configuration
+  template: src=bird6.conf.j2 dest=/etc/bird/bird6.conf
+  notify: reload bird6
   tags: [ ffrlbb ]
 - name: activate ip forwarding via sysctl
   copy: src=90-forwarding.conf dest=/etc/sysctl.d/
@@ -37,3 +41,7 @@
 - name: configure radvd
   template: src="radvd.conf.j2" dest=/etc/radvd.conf
   notify: reload radvd
+- name: name rt_tables
+  copy: src=rt_tables dest=/etc/iproute2/rt_tables
+- name: rc_local
+  template: src=rc.local.j2 dest=/etc/rc.local

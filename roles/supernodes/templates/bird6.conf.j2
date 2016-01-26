@@ -1,0 +1,46 @@
+#table ffrl;
+router id {{ grePublicIP[ansible_hostname]['ip4'] }};
+
+protocol direct announce {
+        table master; # implizit
+        import where net ~ [{{ grePublicIP[ansible_hostname]['ip6'] | regex_replace('::[a-fA-F0-9:+]', '::') }}/48];
+        #interface "tun-ffrl-uplink";
+        interface "br0";
+};
+
+protocol kernel {
+        table master;
+        device routes;
+        import none; # ihr wollt nichts aus der kernel routing tabelle lernen
+        export filter {
+                #  setze src addr beim route-export in kernel tabelle
+                krt_prefsrc = {{ grePublicIP[ansible_hostname]['ip6'] }};
+                accept;
+        };
+        kernel table 42;
+};
+
+protocol device {
+        scan time 15;
+};
+
+function is_default() {
+        return (net ~ [::/0]);
+};
+
+template bgp uplink {
+        local as {{ icVpnAs }}; # AS vom IC-VPN
+        import where is_default();
+        export where proto = "announce";
+};
+
+{% for router in greTunnels[ansible_nodename] %}
+protocol bgp ffrl_{{ router | regex_replace('[^_a-zA-Z0-9]','_') }} from uplink {
+	source address {{ greTunnels[ansible_nodename][router].ip6.local }};
+	neighbor {{ greTunnels[ansible_nodename][router].ip6.remote }} as 201701;
+{% if router in grePublicIP[ansible_hostname].preference %}
+	preference {{ grePublicIP[ansible_hostname].preference[router] }};
+{% endif %}
+};
+
+{% endfor %}

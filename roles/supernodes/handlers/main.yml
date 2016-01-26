@@ -2,6 +2,8 @@
   service: name=radvd state=reloaded
 - name: reload bird
   service: name=bird state=reloaded
+- name: reload bird6
+  service: name=bird6 state=reloaded
 - name: reload ferm
   service: name=ferm state=reloaded
 - name: restart isc-dhcp-server
