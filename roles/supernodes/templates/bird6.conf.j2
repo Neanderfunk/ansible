@@ -3,9 +3,9 @@ router id {{ grePublicIP[ansible_hostname]['ip4'] }};
 
 protocol direct announce {
         table master; # implizit
-        import where net ~ [{{ grePublicIP[ansible_hostname]['ip6'] | regex_replace('::[a-fA-F0-9:+]', '::') }}/48];
-        #interface "tun-ffrl-uplink";
-        interface "br0";
+        import where net ~ [{{ grePublicIP[ansible_hostname]['ip6'] | regex_replace('::[a-fA-F0-9:+]', '::') }}/56];
+        interface "tun-ffrl-uplink";
+        #interface "br0";
 };
 
 protocol kernel {
@@ -13,8 +13,6 @@ protocol kernel {
         device routes;
         import none; # ihr wollt nichts aus der kernel routing tabelle lernen
         export filter {
-                #  setze src addr beim route-export in kernel tabelle
-                krt_prefsrc = {{ grePublicIP[ansible_hostname]['ip6'] }};
                 accept;
         };
         kernel table 42;

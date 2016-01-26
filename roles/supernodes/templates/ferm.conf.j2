@@ -68,12 +68,14 @@ domain (ip ip6) {
             outerface tun-ffrl-+ proto tcp tcp-flags (SYN RST) SYN TCPMSS clamp-mss-to-pmtu;
         }
     }
-    table nat {
-        chain POSTROUTING {
-            # nat translation (to 185.66.195.65 <- public IPv4 adress from FFRL for exit for NAT users)
-            outerface tun-ffrl-+ saddr 10.1.192.0/20 SNAT to {{ grePublicIP[ansible_hostname].ip4 }};
-            outerface tun-ffrl-+ { MASQUERADE;
-            }
+}
+
+# only for ipv4
+table nat {
+    chain POSTROUTING {
+        # nat translation (to 185.66.195.65 <- public IPv4 adress from FFRL for exit for NAT users)
+        outerface tun-ffrl-+ saddr 10.1.192.0/20 SNAT to {{ grePublicIP[ansible_hostname].ip4 }};
+        outerface tun-ffrl-+ { MASQUERADE;
         }
     }
 }
