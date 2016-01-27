@@ -1,15 +1,18 @@
-auto br0
-iface br0 inet static
-        address {{ fastdHosts[ansible_hostname].configs[0].batman.ip4 }}
+{% for config in fastdHosts[ansible_hostname].configs %}
+auto {{ config.bridge }}
+iface {{ config.bridge }} inet static
+        address {{ config.batman.ip4 }}
         # non-existance only gives warning
         bridge_ports bat0
         bridge_stp no
-        post-up ip route add {{ sites['ffnef-met'].prefix4 }} dev $IFACE table 42
+        post-up ip route add {{ sites['ffnef-' + config.name].prefix4 }} dev $IFACE table 42
         post-up /etc/init.d/isc-dhcp-server status; if [ "$?" -eq 3 ]; then /etc/init.d/isc-dhcp-server start;fi
 
-iface br0 inet6 static
-        address {{ fastdHosts[ansible_hostname].configs[0].batman.ip6 }}
-        post-up ip -6 route add {{ sites['ffnef-met'].prefix6 }} dev $IFACE table 42
+iface {{ config.bridge }} inet6 static
+        address {{ config.batman.ip6 }}
+        post-up ip -6 route add {{ sites['ffnef-' + config.name].prefix6 }} dev $IFACE table 42
+
+{% endfor %}
 
 auto tun-ffrl-uplink
 iface tun-ffrl-uplink inet static

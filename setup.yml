@@ -11,6 +11,7 @@
     - vars/greTunnels.yml
     - vars/fastd.yml
     - vars/sites.yml
+    - vars/util.yml
   roles:
   - supernodes
 
