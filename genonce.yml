@@ -1,7 +1,0 @@
----
-- hosts: localhost
-  roles:
-  - fastd
-- tasks:
-  - name: genrate macs
-    command: printf %02x:%02x:%02x:%02x:%02x:% 255)) $(( $RANDOM & 255)) $(( $RANDOM & 255)) $(( $RANDOM & 255)) $(( $RANDOM & 255)) $(( $RANDOM & 255))

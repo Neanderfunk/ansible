@@ -16,8 +16,8 @@
   site_code = '{{ item.key }}',
 
   -- Prefixes used within the mesh. Both are required.
-  prefix4 = '{{ item.value.prefix4 }}',
-  prefix6 = '{{ item.value.prefix6 }}',
+  prefix4 = '{{ item.value.compressed4 }}',
+  prefix6 = '{{ item.value.compressed6 }}',
 
   -- Timezone of your community.
   -- See http://wiki.openwrt.org/doc/uci/system#time_zones
@@ -74,8 +74,8 @@
   -- connected to using a known IP address.
   next_node = {
     -- anycast IPs of all nodes
-    ip4 = '{{ item.value.prefix4 | regex_replace('\.0/[0-9]+$',) }}.255',
-    ip6 = '{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::ffff',
+    ip4 = '{{ item.value.next_node4 }}',
+    ip6 = '{{ item.value.next_node6 }}',
 
     -- anycast MAC of all nodes
     mac = '{{ item.value.next_mac }}',
@@ -160,8 +160,8 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/stable/{{ item.key }}/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ sites['ffnef-met'].prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}::337]/firmware/stable/{{ item.key }}/sysupgrade'
+	    'http://[{{ sites['ffnef-met'].network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ item.value.network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
@@ -184,7 +184,7 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/broken/{{ item.key }}/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/broken/{{ item.key }}/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/broken/{{ item.key }}/images/sysupgrade',
-	    'http://[{{ item.value.prefix6 | regex_replace('::/[0-9]+$',) }}:337::]/firmware/broken/{{ item.key }}/sysupgrade'
+	    'http://[{{ item.value.network6 | replace('::','') }}:337::]/firmware/broken/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
@@ -205,8 +205,8 @@
 
 
   roguenets_filter = {
-          allowed_prefix4 = '{{ item.value.prefix4 }}',
-          allowed_prefix6 = '{{ item.value.prefix6 }}',
+          allowed_prefix4 = '{{ item.value.compressed4 }}',
+          allowed_prefix6 = '{{ item.value.compressed6 }}',
   },
 
   mesh_on_lan = true,
