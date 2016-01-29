@@ -1,44 +1,42 @@
 
-bind any:63974 default ipv4;
+bind any:{{ item.value.fastd.peers[ansible_fqdn].port }} default ipv4;
 include "secret.conf";
-interface "{{ item.interface }}";
+interface "{{ item.value.fastd.interface }}";
 log level info;
 mode tap;
 method "salsa2012+umac";
-peer limit {{ item.limit }};
+peer limit {{ item.value.fastd.limit }};
 hide mac addresses yes;
-mtu {{ item.mtu }};
+mtu {{ item.value.fastd.mtu }};
 secure handshakes yes;
 log to syslog level verbose;
 
 on up "
-        ip link set address 04:{{ item.macSuffix }} dev {{ item.interface }}
-        ip link set up {{ item.interface }}
-        batctl -m {{ item.batmanInterface }} if add $INTERFACE
-        ip link set address 02:{{ item.macSuffix }} dev {{ item.batmanInterface }}
-        ip link set up dev {{ item.batmanInterface }}
-        brctl addif br0 {{ item.batmanInterface }}
-        batctl -m {{ item.batmanInterface }} it 5000
-        batctl -m {{ item.batmanInterface }} bl 0
-        batctl -m {{ item.batmanInterface }} gw server 48mbit/48mbit
-        batctl -m {{ item.batmanInterface }} vm server
+        ip link set address {{ item.value.fastd.mac[ansible_hostname]  }} dev {{ item.value.fastd.interface }}
+        ip link set up {{ item.value.fastd.interface }}
+        batctl -m {{ item.value.batman.interface }} if add $INTERFACE
+        ip link set address {{ item.value.batman.mac[ansible_hostname] }} dev {{ item.value.batman.interface }}
+        ip link set up dev {{ item.value.batman.interface }}
+        brctl addif {{ item.value.bridge }} {{ item.value.batman.interface }}
+        batctl -m {{ item.value.batman.interface }} it 5000
+        batctl -m {{ item.value.batman.interface }} bl 0
+        batctl -m {{ item.value.batman.interface }} gw server 48mbit/48mbit
+        batctl -m {{ item.value.batman.interface }} vm server
 ";
 
 {% if True %}
-on verify "/etc/fastd/{{ item.name }}/blacklist.sh $PEER_KEY";
+on verify "/etc/fastd/{{ item.key }}/blacklist.sh $PEER_KEY";
 {% endif %}
 
-{% for peerSite in item.peerSite %}
-  {% for peer in sites[peerSite].fastd %}
-    {% if sites[peerSite].fastd[peer].key == fastd_public %}
-# no fastd connection to myself
+{% for peer in item.value.fastd.peers %}
+  {% if peer == ansible_fqdn %}
+# no fastd connection to {{ peer }} (myself)
 	{% else %}
 
 peer "{{ peer }}" {
-    key "{{ sites[peerSite].fastd[peer].key }}";
-    remote "{{ peer }}" port {{ sites[peerSite].fastd[peer].port }};
+  key "{{ item.value.fastd.peers[peer].key }}";
+  remote "{{ peer }}" port {{ item.value.fastd.peers[peer].port }};
 }
 
-    {% endif %}
-  {% endfor %}
+  {% endif %}
 {% endfor %}

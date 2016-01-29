@@ -4,7 +4,7 @@ iface {{ sites[site].bridge }} inet static
         address {{ sites[site].supernodeAddr4[ansible_hostname] }}
     	netmask {{ sites[site].prefixlen4 }}
         # non-existance only gives warning
-        bridge_ports bat0
+        bridge_ports {{ sites[site].batman.interface }}
         bridge_stp no
         post-up ip route add {{ sites[site].compressed4 }} dev $IFACE table 42
         post-up /etc/init.d/isc-dhcp-server status; if [ "$?" -eq 3 ]; then /etc/init.d/isc-dhcp-server start;fi

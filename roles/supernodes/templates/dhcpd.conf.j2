@@ -1,13 +1,13 @@
-{% for config in fastdHosts[ansible_hostname].configs %}
 authoritative;
-subnet {{ sites['ffnef-' + config.name].prefix4 | regex_replace('/[0-9]+','') }}
-netmask {{ verboseNetmask[(config.batman.ip4 | regex_replace('[0-9.]+/','') | int)] }} {
-        range {{ meshDhcp[ansible_hostname].range }};
+
+{% for site in sites %}
+subnet {{ sites[site].network4 }} netmask {{ sites[site].netmask4 }} {
+        range {{ sites[site].dhcp.range[ansible_hostname]['from'] }} {{ sites[site].dhcp.range[ansible_hostname]['to'] }};
         default-lease-time 300;
         max-lease-time 600;
-        option domain-name-servers {{ sites['ffnef-' + config.name].prefix4 | regex_replace('\.0/.+$',) }}.255, 8.8.8.8, 141.1.1.1;
-        option routers {{ config.batman.ip4 | regex_replace('/[0-9]+','') }};
-        interface {{ config.bridge }};
+        option domain-name-servers {{ sites[site].next_node4 }}, 8.8.8.8, 141.1.1.1;
+        option routers {{ sites[site].supernodeAddr4[ansible_hostname] }};
+        interface {{ sites[site].bridge }};
 }
 
 {% endfor %}

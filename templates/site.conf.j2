@@ -100,7 +100,7 @@
     enabled = true,
     -- configurable = true,
 
-    mtu = 1364,
+    mtu = {{ item.value.fastd.mtu }},
     groups = {
       backbone = {
         limit = 1,
@@ -113,10 +113,10 @@
 --            -- You can also omit the ipv4 to allow both connection via ipv4 and ipv6
 --            remotes = {'ipv4 "xxx.somehost.invalid" port xxxxxx'},
 --          },
-	  {% for peer in item.value.fastd %}
+	  {% for peer in item.value.fastd.peers %}
 {{ peer | replace(".", "_") | replace("-", "_") }} = {
-	    key = '{{ item.value.fastd[peer].key }}',
-	    remotes = {'"{{ peer }}" port {{ item.value.fastd[peer].port }}'},
+	    key = '{{ item.value.fastd.peers[peer].key }}',
+	    remotes = {'"{{ peer }}" port {{ item.value.fastd.peers[peer].port }}'},
 	  },
 	  {% endfor %}
         },

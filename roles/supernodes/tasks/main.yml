@@ -24,6 +24,7 @@
   apt: name=bridge-utils update_cache=yes cache_valid_time=3600
 - name: configure bridge and dummy interfaces for freifunk
   template: src="network-interfaces-d-ff.j2" dest=/etc/network/interfaces.d/ff
+  tags: [ bridges ]
 - name: install ferm
   apt: name=ferm update_cache=yes cache_valid_time=3600
 - name: configure ferm
@@ -31,9 +32,11 @@
   notify: reload ferm
 - name: install isc-dhcp-server
   apt: name=isc-dhcp-server update_cache=yes cache_valid_time=3600
+  tags: [ dhcp ]
 - name: configure dhcp-server
   template: src="dhcpd.conf.j2" dest=/etc/dhcp/dhcpd.conf
   notify: restart isc-dhcp-server
+  tags: [ dhcp ]
 - name: install bind9
   apt: name=bind9 update_cache=yes cache_valid_time=3600
 - name: install radvd

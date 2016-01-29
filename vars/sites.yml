@@ -1,24 +1,54 @@
 sites:
   ffnef-erk:
+    batman:
+      interface: tap-erk
+      mac:
+        neander-1: b0:8c:58:e7:60:b7
+        neander-2: c0:8c:f7:7a:9d:9a
+        neander-3: d0:bc:cd:6e:b2:39
+        neander-4: b0:c7:25:a9:03:5e
     bridge: br-erk
     bssid: 30:c6:b3:63:f5:dc
     channel24: 13
     channel5: 44
     compressed4: 10.1.224.0/21
     compressed6: fdd9:a0b1:5bd0:6000::/51
+    dhcp:
+      range:
+        neander-1:
+          from: 10.1.225.0
+          to: 10.1.226.190
+        neander-2:
+          from: 10.1.226.191
+          to: 10.1.228.125
+        neander-3:
+          from: 10.1.228.126
+          to: 10.1.230.60
+        neander-4:
+          from: 10.1.230.61
+          to: 10.1.231.251
     fastd:
-      fastd1.ffnef-erk.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63979
-      fastd2.ffnef-erk.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63979
-      fastd3.ffnef-erk.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63979
-      fastd4.ffnef-erk.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63979
+      interface: bat-erk
+      limit: 200
+      mac:
+        neander-1: 00:7f:be:69:83:e3
+        neander-2: d0:26:35:cb:b6:ee
+        neander-3: d0:6c:f2:50:86:3b
+        neander-4: e0:59:27:21:74:eb
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63979
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63979
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63979
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63979
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:e000::'
@@ -29,6 +59,7 @@ sites:
     next_node6: fdd9:a0b1:5bd0:6000::ffff
     prefixlen4: 21
     prefixlen6: 51
+    reserved_ip_addresses: 255
     site: Erkrath
     site_name: Freifunk Erkrath
     supernodeAddr4:
@@ -42,25 +73,55 @@ sites:
       neander-3: fdd9:a0b1:5bd0:6000::3
       neander-4: fdd9:a0b1:5bd0:6000::4
   ffnef-han:
+    batman:
+      interface: tap-han
+      mac:
+        neander-1: 00:09:85:24:fa:2e
+        neander-2: 60:98:6c:3d:56:f8
+        neander-3: 10:ff:b7:14:5b:64
+        neander-4: f0:37:80:65:f3:0c
     bridge: br-han
     bssid: 00:0b:f1:d6:75:04
     channel24: 13
     channel5: 44
     compressed4: 10.1.232.0/21
     compressed6: fdd9:a0b1:5bd0:8000::/51
+    dhcp:
+      range:
+        neander-1:
+          from: 10.1.233.0
+          to: 10.1.234.190
+        neander-2:
+          from: 10.1.234.191
+          to: 10.1.236.125
+        neander-3:
+          from: 10.1.236.126
+          to: 10.1.238.60
+        neander-4:
+          from: 10.1.238.61
+          to: 10.1.239.251
     fastd:
-      fastd1.ffnef-han.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63981
-      fastd2.ffnef-han.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63981
-      fastd3.ffnef-han.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63981
-      fastd4.ffnef-han.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63981
+      interface: bat-han
+      limit: 200
+      mac:
+        neander-1: 90:0c:f2:e4:53:9f
+        neander-2: 20:eb:bc:ea:ec:a9
+        neander-3: f0:26:66:67:ec:b6
+        neander-4: 10:72:4d:72:bf:17
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63981
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63981
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63981
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63981
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:e000::'
@@ -71,6 +132,7 @@ sites:
     next_node6: fdd9:a0b1:5bd0:8000::ffff
     prefixlen4: 21
     prefixlen6: 51
+    reserved_ip_addresses: 255
     site: Haan
     site_name: Freifunk Haan
     supernodeAddr4:
@@ -84,25 +146,55 @@ sites:
       neander-3: fdd9:a0b1:5bd0:8000::3
       neander-4: fdd9:a0b1:5bd0:8000::4
   ffnef-hld:
+    batman:
+      interface: tap-hld
+      mac:
+        neander-1: 40:7d:e1:6c:a6:cc
+        neander-2: 10:10:d6:2d:b1:f3
+        neander-3: 60:f8:3a:10:fc:7b
+        neander-4: 30:20:12:7d:1c:79
     bridge: br-hld
     bssid: 30:89:20:9b:94:de
     channel24: 13
     channel5: 44
     compressed4: 10.11.128.0/20
     compressed6: fd06:b047:f7de::/48
+    dhcp:
+      range:
+        neander-1:
+          from: 10.11.129.0
+          to: 10.11.132.190
+        neander-2:
+          from: 10.11.132.191
+          to: 10.11.136.125
+        neander-3:
+          from: 10.11.136.126
+          to: 10.11.140.60
+        neander-4:
+          from: 10.11.140.61
+          to: 10.11.143.251
     fastd:
-      fastd1.ffnef-hld.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63978
-      fastd2.ffnef-hld.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63978
-      fastd3.ffnef-hld.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63978
-      fastd4.ffnef-hld.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63978
+      interface: bat-hld
+      limit: 200
+      mac:
+        neander-1: 60:c7:56:70:1d:fc
+        neander-2: 10:61:20:c9:56:16
+        neander-3: 80:0e:00:40:4b:50
+        neander-4: 60:33:a0:8e:8d:60
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63978
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63978
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63978
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63978
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff::'
@@ -113,6 +205,7 @@ sites:
     next_node6: fd06:b047:f7de::ffff
     prefixlen4: 20
     prefixlen6: 48
+    reserved_ip_addresses: 255
     site: Hilden
     site_name: Freifunk Hilden
     supernodeAddr4:
@@ -126,25 +219,55 @@ sites:
       neander-3: fd06:b047:f7de::3
       neander-4: fd06:b047:f7de::4
   ffnef-hlg:
+    batman:
+      interface: tap-hlg
+      mac:
+        neander-1: e0:ad:66:6d:c9:22
+        neander-2: b0:e1:e8:18:b1:6c
+        neander-3: 40:cb:6c:10:f5:32
+        neander-4: c0:39:37:bf:74:ba
     bridge: br-hlg
     bssid: c0:c3:5a:e6:04:45
     channel24: 13
     channel5: 44
     compressed4: 10.11.112.0/20
     compressed6: 2a03:2260:300e:0010::/64
+    dhcp:
+      range:
+        neander-1:
+          from: 10.11.113.0
+          to: 10.11.116.190
+        neander-2:
+          from: 10.11.116.191
+          to: 10.11.120.125
+        neander-3:
+          from: 10.11.120.126
+          to: 10.11.124.60
+        neander-4:
+          from: 10.11.124.61
+          to: 10.11.127.251
     fastd:
-      fastd1.ffnef-hlg.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63975
-      fastd2.ffnef-hlg.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63975
-      fastd3.ffnef-hlg.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63975
-      fastd4.ffnef-hlg.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63975
+      interface: bat-hlg
+      limit: 200
+      mac:
+        neander-1: 20:42:54:4f:8e:f8
+        neander-2: 90:28:79:b1:51:8e
+        neander-3: 10:4d:9e:e4:ae:71
+        neander-4: 80:3c:6f:2e:51:40
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63975
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63975
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63975
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63975
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -155,6 +278,7 @@ sites:
     next_node6: 2a03:2260:300e:10::ffff
     prefixlen4: 20
     prefixlen6: 64
+    reserved_ip_addresses: 255
     site: Heiligenhaus
     site_name: Freifunk Heiligenhaus
     supernodeAddr4:
@@ -168,25 +292,55 @@ sites:
       neander-3: 2a03:2260:300e:10::3
       neander-4: 2a03:2260:300e:10::4
   ffnef-lgf:
+    batman:
+      interface: tap-lgf
+      mac:
+        neander-1: 70:9b:d7:4d:dd:06
+        neander-2: b0:d5:d9:fb:45:79
+        neander-3: b0:7b:2b:4c:bf:88
+        neander-4: 70:0f:06:6d:76:00
     bridge: br-lgf
     bssid: c0:06:1a:7a:82:a3
     channel24: 13
     channel5: 44
     compressed4: 10.1.240.0/21
     compressed6: fdd9:a0b1:5bd0:a000::/51
+    dhcp:
+      range:
+        neander-1:
+          from: 10.1.241.0
+          to: 10.1.242.190
+        neander-2:
+          from: 10.1.242.191
+          to: 10.1.244.125
+        neander-3:
+          from: 10.1.244.126
+          to: 10.1.246.60
+        neander-4:
+          from: 10.1.246.61
+          to: 10.1.247.251
     fastd:
-      fastd1.ffnef-lgf.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63982
-      fastd2.ffnef-lgf.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63982
-      fastd3.ffnef-lgf.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63982
-      fastd4.ffnef-lgf.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63982
+      interface: bat-lgf
+      limit: 200
+      mac:
+        neander-1: 30:3f:1f:5b:c2:6b
+        neander-2: 20:3d:3a:aa:9a:7f
+        neander-3: 90:89:6e:0b:b2:d3
+        neander-4: 60:5c:a1:73:5a:a4
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63982
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63982
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63982
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63982
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:e000::'
@@ -197,6 +351,7 @@ sites:
     next_node6: fdd9:a0b1:5bd0:a000::ffff
     prefixlen4: 21
     prefixlen6: 51
+    reserved_ip_addresses: 255
     site: Langenfeld
     site_name: Freifunk Langenfeld
     supernodeAddr4:
@@ -210,25 +365,55 @@ sites:
       neander-3: fdd9:a0b1:5bd0:a000::3
       neander-4: fdd9:a0b1:5bd0:a000::4
   ffnef-met:
+    batman:
+      interface: tap-met
+      mac:
+        neander-1: 20:2e:34:f4:84:38
+        neander-2: e0:a0:46:4c:bc:f8
+        neander-3: 90:4f:0d:b1:4f:d6
+        neander-4: 10:48:12:67:60:6b
     bridge: br0
     bssid: 80:b5:cb:a3:2c:bc
     channel24: 13
     channel5: 44
     compressed4: 10.1.192.0/20
     compressed6: 2a03:2260:300e::/64
+    dhcp:
+      range:
+        neander-1:
+          from: 10.1.194.0
+          to: 10.1.197.126
+        neander-2:
+          from: 10.1.197.127
+          to: 10.1.200.253
+        neander-3:
+          from: 10.1.200.254
+          to: 10.1.204.124
+        neander-4:
+          from: 10.1.204.125
+          to: 10.1.207.251
     fastd:
-      fastd1.ffnef-met.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63974
-      fastd2.ffnef-met.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63974
-      fastd3.ffnef-met.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63974
-      fastd4.ffnef-met.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63974
+      interface: bat-met
+      limit: 200
+      mac:
+        neander-1: 70:42:46:53:85:37
+        neander-2: d0:7e:9b:a5:f2:9f
+        neander-3: 40:bb:88:35:72:c8
+        neander-4: 70:52:97:00:50:51
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63974
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63974
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63974
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63974
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -239,6 +424,7 @@ sites:
     next_node6: 2a03:2260:300e::ffff
     prefixlen4: 20
     prefixlen6: 64
+    reserved_ip_addresses: 511
     site: Mettmann
     site_name: Freifunk Mettmann
     supernodeAddr4:
@@ -252,25 +438,55 @@ sites:
       neander-3: 2a03:2260:300e::3
       neander-4: 2a03:2260:300e::4
   ffnef-mon:
+    batman:
+      interface: tap-mon
+      mac:
+        neander-1: e0:12:8f:a1:fd:20
+        neander-2: 20:ae:9f:39:18:11
+        neander-3: e0:b0:cb:b7:73:ab
+        neander-4: 40:ec:79:61:bb:d9
     bridge: br-mon
     bssid: 90:ae:b9:89:9e:d7
     channel24: 13
     channel5: 44
     compressed4: 10.1.208.0/21
     compressed6: fdd9:a0b1:5bd0:2000::/51
+    dhcp:
+      range:
+        neander-1:
+          from: 10.1.209.0
+          to: 10.1.210.190
+        neander-2:
+          from: 10.1.210.191
+          to: 10.1.212.125
+        neander-3:
+          from: 10.1.212.126
+          to: 10.1.214.60
+        neander-4:
+          from: 10.1.214.61
+          to: 10.1.215.251
     fastd:
-      fastd1.ffnef-mon.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63977
-      fastd2.ffnef-mon.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63977
-      fastd3.ffnef-mon.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63977
-      fastd4.ffnef-mon.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63977
+      interface: bat-mon
+      limit: 200
+      mac:
+        neander-1: c0:0a:a0:99:7b:ff
+        neander-2: b0:8a:2d:ca:84:78
+        neander-3: b0:ef:e4:c8:90:79
+        neander-4: a0:d9:a3:26:f6:7d
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63977
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63977
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63977
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63977
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:e000::'
@@ -281,6 +497,7 @@ sites:
     next_node6: fdd9:a0b1:5bd0:2000::ffff
     prefixlen4: 21
     prefixlen6: 51
+    reserved_ip_addresses: 255
     site: Monheim
     site_name: Freifunk Monheim
     supernodeAddr4:
@@ -294,25 +511,55 @@ sites:
       neander-3: fdd9:a0b1:5bd0:2000::3
       neander-4: fdd9:a0b1:5bd0:2000::4
   ffnef-rat:
+    batman:
+      interface: tap-rat
+      mac:
+        neander-1: 40:c1:38:10:cc:f6
+        neander-2: 20:4b:ac:55:58:46
+        neander-3: e0:76:9d:f2:c7:9f
+        neander-4: 30:7d:28:ff:6a:e8
     bridge: br-rat
     bssid: f0:9a:96:65:fc:6b
     channel24: 13
     channel5: 44
     compressed4: 10.11.64.0/20
     compressed6: fde0:105b:1d87::/48
+    dhcp:
+      range:
+        neander-1:
+          from: 10.11.65.0
+          to: 10.11.68.190
+        neander-2:
+          from: 10.11.68.191
+          to: 10.11.72.125
+        neander-3:
+          from: 10.11.72.126
+          to: 10.11.76.60
+        neander-4:
+          from: 10.11.76.61
+          to: 10.11.79.251
     fastd:
-      fastd1.ffnef-rat.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63980
-      fastd2.ffnef-rat.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63980
-      fastd3.ffnef-rat.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63980
-      fastd4.ffnef-rat.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63980
+      interface: bat-rat
+      limit: 200
+      mac:
+        neander-1: 90:ea:f6:27:14:f9
+        neander-2: 90:c0:fe:e1:e5:55
+        neander-3: 60:43:17:c9:82:ec
+        neander-4: c0:49:d6:34:ae:0e
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63980
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63980
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63980
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63980
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff::'
@@ -323,6 +570,7 @@ sites:
     next_node6: fde0:105b:1d87::ffff
     prefixlen4: 20
     prefixlen6: 48
+    reserved_ip_addresses: 255
     site: Ratingen
     site_name: Freifunk Ratingen
     supernodeAddr4:
@@ -336,25 +584,55 @@ sites:
       neander-3: fde0:105b:1d87::3
       neander-4: fde0:105b:1d87::4
   ffnef-vel:
+    batman:
+      interface: tap-vel
+      mac:
+        neander-1: 20:00:74:a9:94:f4
+        neander-2: 60:55:1f:68:5d:f3
+        neander-3: 60:85:6f:30:f0:51
+        neander-4: e0:62:e8:85:ff:ae
     bridge: br-vel
     bssid: 70:fa:07:2b:2e:7e
     channel24: 13
     channel5: 44
     compressed4: 10.11.80.0/20
     compressed6: fdc8:08a2:b198::/48
+    dhcp:
+      range:
+        neander-1:
+          from: 10.11.81.0
+          to: 10.11.84.190
+        neander-2:
+          from: 10.11.84.191
+          to: 10.11.88.125
+        neander-3:
+          from: 10.11.88.126
+          to: 10.11.92.60
+        neander-4:
+          from: 10.11.92.61
+          to: 10.11.95.251
     fastd:
-      fastd1.ffnef-vel.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63976
-      fastd2.ffnef-vel.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63976
-      fastd3.ffnef-vel.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63976
-      fastd4.ffnef-vel.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63976
+      interface: bat-vel
+      limit: 200
+      mac:
+        neander-1: 90:cf:83:15:a7:8b
+        neander-2: 10:e4:17:0e:f8:a0
+        neander-3: d0:0b:68:d5:9d:4f
+        neander-4: 20:a4:06:88:88:a9
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63976
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63976
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63976
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63976
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff::'
@@ -365,6 +643,7 @@ sites:
     next_node6: fdc8:8a2:b198::ffff
     prefixlen4: 20
     prefixlen6: 48
+    reserved_ip_addresses: 255
     site: Velbert
     site_name: Freifunk Velbert
     supernodeAddr4:
@@ -378,25 +657,55 @@ sites:
       neander-3: fdc8:8a2:b198::3
       neander-4: fdc8:8a2:b198::4
   ffnef-wlf:
+    batman:
+      interface: tap-wlf
+      mac:
+        neander-1: 30:cd:84:0e:5c:ae
+        neander-2: 70:9f:eb:dc:ca:06
+        neander-3: b0:47:03:47:52:e9
+        neander-4: 30:a8:a3:f2:14:9b
     bridge: br-wlf
     bssid: 70:99:e7:43:d4:24
     channel24: 13
     channel5: 44
     compressed4: 10.1.248.0/21
     compressed6: fdd9:a0b1:5bd0:c000::/51
+    dhcp:
+      range:
+        neander-1:
+          from: 10.1.249.0
+          to: 10.1.250.190
+        neander-2:
+          from: 10.1.250.191
+          to: 10.1.252.125
+        neander-3:
+          from: 10.1.252.126
+          to: 10.1.254.60
+        neander-4:
+          from: 10.1.254.61
+          to: 10.1.255.251
     fastd:
-      fastd1.ffnef-wfr.ffnef.de:
-        key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
-        port: 63983
-      fastd2.ffnef-wfr.ffnef.de:
-        key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
-        port: 63983
-      fastd3.ffnef-wfr.ffnef.de:
-        key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
-        port: 63983
-      fastd4.ffnef-wfr.ffnef.de:
-        key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
-        port: 63983
+      interface: bat-wlf
+      limit: 200
+      mac:
+        neander-1: d0:d0:08:32:63:04
+        neander-2: 00:d9:f6:aa:9c:5e
+        neander-3: d0:1a:c3:a3:ce:74
+        neander-4: 20:57:8b:a2:a0:90
+      mtu: 1364
+      peers:
+        neander-1.ffnef.de:
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63983
+        neander-2.ffnef.de:
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63983
+        neander-3.ffnef.de:
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63983
+        neander-4.ffnef.de:
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63983
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:e000::'
@@ -407,6 +716,7 @@ sites:
     next_node6: fdd9:a0b1:5bd0:c000::ffff
     prefixlen4: 21
     prefixlen6: 51
+    reserved_ip_addresses: 255
     site: Wuelfrath
     site_name: Freifunk Wuelfrath
     supernodeAddr4:
@@ -420,7 +730,15 @@ sites:
       neander-3: fdd9:a0b1:5bd0:c000::3
       neander-4: fdd9:a0b1:5bd0:c000::4
 supernodes:
-- neander-1
-- neander-2
-- neander-3
-- neander-4
+- domain: ffnef.de
+  fqdn: neander-1ffnef.de
+  host: neander-1
+- domain: ffnef.de
+  fqdn: neander-2ffnef.de
+  host: neander-2
+- domain: ffnef.de
+  fqdn: neander-3ffnef.de
+  host: neander-3
+- domain: ffnef.de
+  fqdn: neander-4ffnef.de
+  host: neander-4

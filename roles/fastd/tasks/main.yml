@@ -12,19 +12,19 @@
   sudo: True
   apt: name=fastd update_cache=yes
 - name: create fastd config dirs
-  file: dest=/etc/fastd/{{ item.name }} state=directory
-  with_items: fastdHosts[ansible_hostname].configs
+  file: dest=/etc/fastd/{{ item.key }} state=directory
   tags: [ fastd-config ]
+  with_dict: sites
 - name: write fastd keys # should not be logged
-  lineinfile: dest=/etc/fastd/{{ item.name }}/secret.conf create=yes mode=0600 line='secret "{{ fastd_secret }}";'
-  with_items: fastdHosts[ansible_hostname].configs
+  lineinfile: dest=/etc/fastd/{{ item.key }}/secret.conf create=yes mode=0600 line='secret "{{ fastd_secret }}";'
+  with_dict: sites
   tags: [ fastd-config ]
 - name: write fastd configs
-  template: src=fastd.conf.j2 dest=/etc/fastd/{{ item.name }}/fastd.conf
-  with_items: fastdHosts[ansible_hostname].configs
+  template: src=fastd.conf.j2 dest=/etc/fastd/{{ item.key }}/fastd.conf
+  with_dict: sites
   tags: [ fastd-config ]
   notify: restart fastd
 - name: write fastd blacklist.sh
-  template: src=blacklist.sh.j2 dest=/etc/fastd/{{ item.name }}/blacklist.sh mode=750
-  with_items: fastdHosts[ansible_hostname].configs
+  template: src=blacklist.sh.j2 dest=/etc/fastd/{{ item.key }}/blacklist.sh mode=750
+  with_dict: sites
   tags: [ fastd-config ]
