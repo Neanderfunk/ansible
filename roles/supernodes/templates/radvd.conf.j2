@@ -1,17 +1,17 @@
-{% for config in fastdHosts[ansible_hostname].configs %}
-interface {{ config.bridge }}
+{% for site in sites %}
+interface {{ sites[site].bridge }}
 {
         AdvSendAdvert on;
         IgnoreIfMissing on;
         MinRtrAdvInterval 3;
         MaxRtrAdvInterval 10;
-        prefix {{ sites['ffnef-' + config.name].prefix6 }}
+        prefix {{ sites[site].compressed6 }}
         {
                 AdvOnLink on;
                 AdvAutonomous on;
                 AdvRouterAddr off;
         };
-        RDNSS {{ config.batman.ip6 | regex_replace('/[0-9]+','') }}
+        RDNSS {{ sites[site].supernodeAddr6[ansible_hostname] }}
         {
         };
 };

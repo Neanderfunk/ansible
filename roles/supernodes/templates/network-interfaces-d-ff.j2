@@ -1,18 +1,24 @@
 {% for site in sites %}
 auto {{ sites[site].bridge }}
 iface {{ sites[site].bridge }} inet static
+        netmask {{ sites[site].prefixlen4 }}
+    	{% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
+    	{# host is supernode #}
         address {{ sites[site].supernodeAddr4[ansible_hostname] }}
-    	netmask {{ sites[site].prefixlen4 }}
         # non-existance only gives warning
         bridge_ports {{ sites[site].batman.interface }}
         bridge_stp no
         post-up ip route add {{ sites[site].compressed4 }} dev $IFACE table 42
         post-up /etc/init.d/isc-dhcp-server status; if [ "$?" -eq 3 ]; then /etc/init.d/isc-dhcp-server start;fi
+    	{% endif %}
 
 iface {{ sites[site].bridge }} inet6 static
+    	{% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
+    	{# host is supernode #}
         address {{ sites[site].supernodeAddr6[ansible_hostname] }}
-    	netmask {{ sites[site].prefixlen6 }}
         post-up ip -6 route add {{ sites[site].compressed6 }} dev $IFACE table 42
+    	{% endif %}
+        netmask {{ sites[site].prefixlen6 }}
 
 {% endfor %}
 

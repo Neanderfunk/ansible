@@ -74,7 +74,9 @@ domain (ip ip6) {
 table nat {
     chain POSTROUTING {
         # nat translation (to 185.66.195.65 <- public IPv4 adress from FFRL for exit for NAT users)
-        outerface tun-ffrl-+ saddr 10.1.192.0/20 SNAT to {{ grePublicIP[ansible_hostname].ip4 }};
+		{% for site in sites %}
+        outerface tun-ffrl-+ saddr {{ sites[site].compressed4 }} SNAT to {{ grePublicIP[ansible_hostname].ip4 }};
+		{% endfor %}
         outerface tun-ffrl-+ { MASQUERADE;
         }
     }
