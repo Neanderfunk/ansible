@@ -1,5 +1,6 @@
-
+{% if item.value.fastd.peers[ansible_fqdn] is defined %}
 bind any:{{ item.value.fastd.peers[ansible_fqdn].port }} default ipv4;
+{% endif %}
 include "secret.conf";
 interface "{{ item.value.fastd.interface }}";
 log level info;
@@ -9,8 +10,10 @@ peer limit {{ item.value.fastd.limit }};
 hide mac addresses yes;
 mtu {{ item.value.fastd.mtu }};
 secure handshakes yes;
-log to syslog level verbose;
+#log to syslog level verbose;
+log to syslog level warn;
 
+{% if item.value.fastd.mac[ansible_hostname] is defined %}
 on up "
         ip link set address {{ item.value.fastd.mac[ansible_hostname]  }} dev {{ item.value.fastd.interface }}
         ip link set up {{ item.value.fastd.interface }}
@@ -24,7 +27,6 @@ on up "
         batctl -m {{ item.value.batman.interface }} vm server
 ";
 
-{% if True %}
 on verify "/etc/fastd/{{ item.key }}/blacklist.sh $PEER_KEY";
 {% endif %}
 
