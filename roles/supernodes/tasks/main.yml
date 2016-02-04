@@ -22,8 +22,8 @@
   tags: [ routing ]
 - name: install bridge-utils (needed by ifup for bridges)
   apt: name=bridge-utils update_cache=yes cache_valid_time=3600
-- name: configure bridge and dummy interfaces for freifunk
-  template: src="network-interfaces-d-ff.j2" dest=/etc/network/interfaces.d/ff
+- name: configure dummy interfaces for ffrl
+  template: src="network-interfaces-d-ffrl-uplink.j2" dest=/etc/network/interfaces.d/ffrl-uplink
   tags: [ bridges ]
 - name: install ferm
   apt: name=ferm update_cache=yes cache_valid_time=3600
