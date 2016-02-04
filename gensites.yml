@@ -3,31 +3,35 @@
   vars_files:
     - vars/sites.yml
   tasks:
+  - name: check for site.conf
+    stat: path=./templates/site.conf{{ '-' + branch if branch is defined else '' }}.j2
+
+  - set_fact: sites_path="{{ lookup('env', 'ANSIBLE_DIR') }}/out/sites/{{ branch if branch is defined else 'master' }}/"
   - name: create root directory for sites
-    file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/ state=directory
+    file: dest={{ sites_path }} state=directory
   - name: generate gluon-site.conf directories
-    file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/{{ item.key }}/ state=directory
+    file: dest={{ sites_path }}{{ item.key }}/ state=directory
     with_dict: sites
-  - name: generate gluon-site.conf files
-    template: src=templates/site.conf.j2 dest=./files/sites/{{ item.key }}/site.conf
+  - name: generate gluon-site.conf out
+    template: src=templates/site.conf{{ '-' + branch if branch is defined else '' }}.j2 dest={{ sites_path }}{{ item.key }}/site.conf
     with_dict: sites
-  - name: generate gluon-site.mk files
-    template: src=templates/site.mk.j2 dest=./files/sites/{{ item.key }}/site.mk
+  - name: generate gluon-site.mk out
+    template: src=templates/site.mk{{ '-' + branch if branch is defined else '' }}.j2 dest={{ sites_path }}{{ item.key }}/site.mk
     with_dict: sites
-  - name: generate modules files
-    template: src=templates/modules.j2 dest=./files/sites/{{ item.key }}/modules.incomplete
+  - name: generate modules out
+    template: src=templates/modules{{ '-' + branch if branch is defined else '' }}.j2 dest={{ sites_path }}{{ item.key }}/modules.incomplete
     with_dict: sites
   - name: generate gluon-i18n directories
-    file: dest={{ lookup('env', 'ANSIBLE_DIR') }}/files/sites/{{ item.key }}/i18n/ state=directory
+    file: dest={{ sites_path }}{{ item.key }}/i18n/ state=directory
     with_dict: sites
-  - name: generate German gluon-i18n files
-    template: src=templates/de.po.j2 dest=./files/sites/{{ item.key }}/i18n/de.po
+  - name: generate German gluon-i18n out
+    template: src=templates/de.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/de.po
     with_dict: sites
-  - name: generate English gluon-i18n files
-    template: src=templates/en.po.j2 dest=./files/sites/{{ item.key }}/i18n/en.po
+  - name: generate English gluon-i18n out
+    template: src=templates/en.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/en.po
     with_dict: sites
-  - name: generate French gluon-i18n files
-    template: src=templates/fr.po.j2 dest=./files/sites/{{ item.key }}/i18n/fr.po
+  - name: generate French gluon-i18n out
+    template: src=templates/fr.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/fr.po
     with_dict: sites
 
 

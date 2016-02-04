@@ -44,18 +44,22 @@ c['change_source'] = []
 # Configure the Schedulers, which decide how to react to incoming changes.  In this
 # case, just kick off a 'runtests' build
 
-from buildbot.schedulers.basic import SingleBranchScheduler
+from buildbot.schedulers.basic import SingleBranchScheduler, AnyBranchScheduler
 from buildbot.schedulers.forcesched import ForceScheduler
 from buildbot.changes import filter
 c['schedulers'] = []
-c['schedulers'].append(SingleBranchScheduler(
-                            name="all",
-                            change_filter=filter.ChangeFilter(branch='master'),
+#c['schedulers'].append(SingleBranchScheduler(
+#                            name="master",
+#                            change_filter=filter.ChangeFilter(branch='master'),
+#                            treeStableTimer=None,
+#                            builderNames=["runtests"]))
+c['schedulers'].append(AnyBranchScheduler(
+                            name="multi",
                             treeStableTimer=None,
-                            builderNames=["runtests"]))
-c['schedulers'].append(ForceScheduler(
-                            name="force",
-                            builderNames=["runtests"]))
+                            builderNames=["multiBranch"]))
+#c['schedulers'].append(ForceScheduler(
+#                            name="force",
+#                            builderNames=["runtests"]))
 
 ####### BUILDERS
 
@@ -67,7 +71,7 @@ from buildbot.process.factory import BuildFactory
 from buildbot.steps.source.git import Git
 from buildbot.steps.shell import ShellCommand
 from buildbot.steps.transfer import DirectoryUpload
-from buildbot.process.properties import Interpolate
+from buildbot.process.properties import Interpolate, Property
 
 factory = BuildFactory()
 # check out the source
@@ -83,19 +87,49 @@ else
     git pull
 fi
 """))
-factory.addStep(ShellCommand(command=["/bin/sh", "./build.sh"], timeout=24*3600))
+factory.addStep(ShellCommand(command=["/bin/sh", "-v", "./build.sh"], timeout=24*3600))
 
 factory.addStep(DirectoryUpload(
 	slavesrc="gluon/out",
 	masterdest="/var/www/download.ffnef.de/firmware/herebedragons"))
 
+
+multiBranchFactory = BuildFactory()
+multiBranchFactory.addStep(ShellCommand(command=
+                                      Interpolate('echo REVISION=%(prop:revision)s BRANCH=%(prop:branch)s')))
+multiBranchFactory.addStep(ShellCommand(command=Interpolate("""
+mkdir -p %(prop:branch)s
+cd %(prop:branch)s
+if [ ! -d .git ]; then
+    git clone https://github.com/Neanderfunk/build-gluon.git -b %(prop:branch)s .
+else
+    git reset --hard
+    git pull
+fi
+""")))
+multiBranchFactory.addStep(ShellCommand(command=[
+	"/bin/sh",
+	Interpolate("%(prop:branch)s/build.sh"),
+	Property('revision'),
+	Property('branch')
+	], timeout=24*3600))
+
+multiBranchFactory.addStep(DirectoryUpload(
+	slavesrc=Interpolate("%(prop:branch)s/gluon/out"),
+	masterdest=Interpolate("/var/www/gluon/%(prop:branch)s/")))
+
 from buildbot.config import BuilderConfig
 
 c['builders'] = []
+#c['builders'].append(
+#    BuilderConfig(name="runtests",
+#      slavenames=["localhost-slave", "horst-slave"],
+#      factory=factory))
+
 c['builders'].append(
-    BuilderConfig(name="runtests",
-      slavenames=["localhost-slave", "horst-slave"],
-      factory=factory))
+    BuilderConfig(name="multiBranch",
+      slavenames=["horst-slave"],
+      factory=multiBranchFactory))
 
 
 
@@ -125,6 +159,13 @@ authz_cfg=authz.Authz(
 c['status'].append(html.WebStatus(http_port=8010, authz=authz_cfg,
     change_hook_auth=["file:changehook.passwd"],
     change_hook_dialects={ 'github' : True }))
+
+
+
+from buildbot.status import mail
+c['status'].append(mail.MailNotifier(fromaddr="buildbot@{{ ansible_hostname }}",
+                      extraRecipients=["buildbot@benedikt-wildenhain.de"],
+                      sendToInterestedUsers=False))
 
 ####### PROJECT IDENTITY
 

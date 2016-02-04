@@ -1,3 +1,8 @@
+othernodes:
+  vserver-0:
+    domain: ffnef.de
+    postfix4: 10
+    postfix6: 733
 sites:
   ffnef-erk:
     batman:
@@ -12,7 +17,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.1.224.0/21
-    compressed6: fdd9:a0b1:5bd0:6000::/51
+    compressed6: 2a03:2260:300e:0070::/64
     dhcp:
       range:
         neander-1:
@@ -51,14 +56,14 @@ sites:
           port: 63979
     hostname_prefix: ME-
     netmask4: 255.255.248.0
-    netmask6: 'ffff:ffff:ffff:e000::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.224.0
-    network6: 'fdd9:a0b1:5bd0:6000::'
+    network6: '2a03:2260:300e:70::'
     next_mac: d0:e7:c1:43:4b:eb
     next_node4: 10.1.224.255
-    next_node6: fdd9:a0b1:5bd0:6000::ffff
+    next_node6: 2a03:2260:300e:70::ffff
     prefixlen4: 21
-    prefixlen6: 51
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Erkrath
     site_name: Freifunk Erkrath
@@ -68,10 +73,10 @@ sites:
       neander-3: 10.1.224.3
       neander-4: 10.1.224.4
     supernodeAddr6:
-      neander-1: fdd9:a0b1:5bd0:6000::1
-      neander-2: fdd9:a0b1:5bd0:6000::2
-      neander-3: fdd9:a0b1:5bd0:6000::3
-      neander-4: fdd9:a0b1:5bd0:6000::4
+      neander-1: 2a03:2260:300e:70::1
+      neander-2: 2a03:2260:300e:70::2
+      neander-3: 2a03:2260:300e:70::3
+      neander-4: 2a03:2260:300e:70::4
   ffnef-han:
     batman:
       interface: tap-han
@@ -85,7 +90,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.1.232.0/21
-    compressed6: fdd9:a0b1:5bd0:8000::/51
+    compressed6: 2a03:2260:300e:0090::/64
     dhcp:
       range:
         neander-1:
@@ -124,14 +129,14 @@ sites:
           port: 63981
     hostname_prefix: ME-
     netmask4: 255.255.248.0
-    netmask6: 'ffff:ffff:ffff:e000::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.232.0
-    network6: 'fdd9:a0b1:5bd0:8000::'
+    network6: '2a03:2260:300e:90::'
     next_mac: 80:81:25:1f:ea:56
     next_node4: 10.1.232.255
-    next_node6: fdd9:a0b1:5bd0:8000::ffff
+    next_node6: 2a03:2260:300e:90::ffff
     prefixlen4: 21
-    prefixlen6: 51
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Haan
     site_name: Freifunk Haan
@@ -141,10 +146,10 @@ sites:
       neander-3: 10.1.232.3
       neander-4: 10.1.232.4
     supernodeAddr6:
-      neander-1: fdd9:a0b1:5bd0:8000::1
-      neander-2: fdd9:a0b1:5bd0:8000::2
-      neander-3: fdd9:a0b1:5bd0:8000::3
-      neander-4: fdd9:a0b1:5bd0:8000::4
+      neander-1: 2a03:2260:300e:90::1
+      neander-2: 2a03:2260:300e:90::2
+      neander-3: 2a03:2260:300e:90::3
+      neander-4: 2a03:2260:300e:90::4
   ffnef-hld:
     batman:
       interface: tap-hld
@@ -158,7 +163,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.11.128.0/20
-    compressed6: fd06:b047:f7de::/48
+    compressed6: 2a03:2260:300e:0050::/64
     dhcp:
       range:
         neander-1:
@@ -197,14 +202,14 @@ sites:
           port: 63978
     hostname_prefix: ME-
     netmask4: 255.255.240.0
-    netmask6: 'ffff:ffff:ffff::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.128.0
-    network6: 'fd06:b047:f7de::'
+    network6: '2a03:2260:300e:50::'
     next_mac: d0:cb:02:8f:04:de
     next_node4: 10.11.128.255
-    next_node6: fd06:b047:f7de::ffff
+    next_node6: 2a03:2260:300e:50::ffff
     prefixlen4: 20
-    prefixlen6: 48
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Hilden
     site_name: Freifunk Hilden
@@ -214,10 +219,10 @@ sites:
       neander-3: 10.11.128.3
       neander-4: 10.11.128.4
     supernodeAddr6:
-      neander-1: fd06:b047:f7de::1
-      neander-2: fd06:b047:f7de::2
-      neander-3: fd06:b047:f7de::3
-      neander-4: fd06:b047:f7de::4
+      neander-1: 2a03:2260:300e:50::1
+      neander-2: 2a03:2260:300e:50::2
+      neander-3: 2a03:2260:300e:50::3
+      neander-4: 2a03:2260:300e:50::4
   ffnef-hlg:
     batman:
       interface: tap-hlg
@@ -231,7 +236,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.11.112.0/20
-    compressed6: 2a03:2260:300e:0010::/64
+    compressed6: 2a03:2260:300e:0020::/64
     dhcp:
       range:
         neander-1:
@@ -272,10 +277,10 @@ sites:
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.112.0
-    network6: '2a03:2260:300e:10::'
+    network6: '2a03:2260:300e:20::'
     next_mac: b0:e8:9b:b7:e1:9b
     next_node4: 10.11.112.255
-    next_node6: 2a03:2260:300e:10::ffff
+    next_node6: 2a03:2260:300e:20::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -287,10 +292,10 @@ sites:
       neander-3: 10.11.112.3
       neander-4: 10.11.112.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:10::1
-      neander-2: 2a03:2260:300e:10::2
-      neander-3: 2a03:2260:300e:10::3
-      neander-4: 2a03:2260:300e:10::4
+      neander-1: 2a03:2260:300e:20::1
+      neander-2: 2a03:2260:300e:20::2
+      neander-3: 2a03:2260:300e:20::3
+      neander-4: 2a03:2260:300e:20::4
   ffnef-lgf:
     batman:
       interface: tap-lgf
@@ -304,7 +309,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.1.240.0/21
-    compressed6: fdd9:a0b1:5bd0:a000::/51
+    compressed6: 2a03:2260:300e:00a0::/64
     dhcp:
       range:
         neander-1:
@@ -343,14 +348,14 @@ sites:
           port: 63982
     hostname_prefix: ME-
     netmask4: 255.255.248.0
-    netmask6: 'ffff:ffff:ffff:e000::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.240.0
-    network6: 'fdd9:a0b1:5bd0:a000::'
+    network6: '2a03:2260:300e:a0::'
     next_mac: f0:d0:90:d6:dd:df
     next_node4: 10.1.240.255
-    next_node6: fdd9:a0b1:5bd0:a000::ffff
+    next_node6: 2a03:2260:300e:a0::ffff
     prefixlen4: 21
-    prefixlen6: 51
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Langenfeld
     site_name: Freifunk Langenfeld
@@ -360,10 +365,10 @@ sites:
       neander-3: 10.1.240.3
       neander-4: 10.1.240.4
     supernodeAddr6:
-      neander-1: fdd9:a0b1:5bd0:a000::1
-      neander-2: fdd9:a0b1:5bd0:a000::2
-      neander-3: fdd9:a0b1:5bd0:a000::3
-      neander-4: fdd9:a0b1:5bd0:a000::4
+      neander-1: 2a03:2260:300e:a0::1
+      neander-2: 2a03:2260:300e:a0::2
+      neander-3: 2a03:2260:300e:a0::3
+      neander-4: 2a03:2260:300e:a0::4
   ffnef-met:
     batman:
       interface: tap-met
@@ -377,7 +382,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.1.192.0/20
-    compressed6: 2a03:2260:300e::/64
+    compressed6: 2a03:2260:300e:0010::/64
     dhcp:
       range:
         neander-1:
@@ -418,10 +423,10 @@ sites:
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.192.0
-    network6: '2a03:2260:300e::'
+    network6: '2a03:2260:300e:10::'
     next_mac: 10:80:f4:66:82:9f
     next_node4: 10.1.192.255
-    next_node6: 2a03:2260:300e::ffff
+    next_node6: 2a03:2260:300e:10::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 511
@@ -433,10 +438,10 @@ sites:
       neander-3: 10.1.192.3
       neander-4: 10.1.192.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e::1
-      neander-2: 2a03:2260:300e::2
-      neander-3: 2a03:2260:300e::3
-      neander-4: 2a03:2260:300e::4
+      neander-1: 2a03:2260:300e:10::1
+      neander-2: 2a03:2260:300e:10::2
+      neander-3: 2a03:2260:300e:10::3
+      neander-4: 2a03:2260:300e:10::4
   ffnef-mon:
     batman:
       interface: tap-mon
@@ -450,7 +455,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.1.208.0/21
-    compressed6: fdd9:a0b1:5bd0:2000::/51
+    compressed6: 2a03:2260:300e:0040::/64
     dhcp:
       range:
         neander-1:
@@ -489,14 +494,14 @@ sites:
           port: 63977
     hostname_prefix: ME-
     netmask4: 255.255.248.0
-    netmask6: 'ffff:ffff:ffff:e000::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.208.0
-    network6: 'fdd9:a0b1:5bd0:2000::'
+    network6: '2a03:2260:300e:40::'
     next_mac: 20:24:e0:1d:ee:da
     next_node4: 10.1.208.255
-    next_node6: fdd9:a0b1:5bd0:2000::ffff
+    next_node6: 2a03:2260:300e:40::ffff
     prefixlen4: 21
-    prefixlen6: 51
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Monheim
     site_name: Freifunk Monheim
@@ -506,10 +511,10 @@ sites:
       neander-3: 10.1.208.3
       neander-4: 10.1.208.4
     supernodeAddr6:
-      neander-1: fdd9:a0b1:5bd0:2000::1
-      neander-2: fdd9:a0b1:5bd0:2000::2
-      neander-3: fdd9:a0b1:5bd0:2000::3
-      neander-4: fdd9:a0b1:5bd0:2000::4
+      neander-1: 2a03:2260:300e:40::1
+      neander-2: 2a03:2260:300e:40::2
+      neander-3: 2a03:2260:300e:40::3
+      neander-4: 2a03:2260:300e:40::4
   ffnef-rat:
     batman:
       interface: tap-rat
@@ -523,7 +528,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.11.64.0/20
-    compressed6: fde0:105b:1d87::/48
+    compressed6: 2a03:2260:300e:0080::/64
     dhcp:
       range:
         neander-1:
@@ -562,14 +567,14 @@ sites:
           port: 63980
     hostname_prefix: ME-
     netmask4: 255.255.240.0
-    netmask6: 'ffff:ffff:ffff::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.64.0
-    network6: 'fde0:105b:1d87::'
+    network6: '2a03:2260:300e:80::'
     next_mac: 20:5e:1a:a7:36:4e
     next_node4: 10.11.64.255
-    next_node6: fde0:105b:1d87::ffff
+    next_node6: 2a03:2260:300e:80::ffff
     prefixlen4: 20
-    prefixlen6: 48
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Ratingen
     site_name: Freifunk Ratingen
@@ -579,10 +584,10 @@ sites:
       neander-3: 10.11.64.3
       neander-4: 10.11.64.4
     supernodeAddr6:
-      neander-1: fde0:105b:1d87::1
-      neander-2: fde0:105b:1d87::2
-      neander-3: fde0:105b:1d87::3
-      neander-4: fde0:105b:1d87::4
+      neander-1: 2a03:2260:300e:80::1
+      neander-2: 2a03:2260:300e:80::2
+      neander-3: 2a03:2260:300e:80::3
+      neander-4: 2a03:2260:300e:80::4
   ffnef-vel:
     batman:
       interface: tap-vel
@@ -596,7 +601,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.11.80.0/20
-    compressed6: fdc8:08a2:b198::/48
+    compressed6: 2a03:2260:300e:0030::/64
     dhcp:
       range:
         neander-1:
@@ -635,14 +640,14 @@ sites:
           port: 63976
     hostname_prefix: ME-
     netmask4: 255.255.240.0
-    netmask6: 'ffff:ffff:ffff::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.80.0
-    network6: 'fdc8:8a2:b198::'
+    network6: '2a03:2260:300e:30::'
     next_mac: a0:a9:6f:ce:6d:7e
     next_node4: 10.11.80.255
-    next_node6: fdc8:8a2:b198::ffff
+    next_node6: 2a03:2260:300e:30::ffff
     prefixlen4: 20
-    prefixlen6: 48
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Velbert
     site_name: Freifunk Velbert
@@ -652,10 +657,10 @@ sites:
       neander-3: 10.11.80.3
       neander-4: 10.11.80.4
     supernodeAddr6:
-      neander-1: fdc8:8a2:b198::1
-      neander-2: fdc8:8a2:b198::2
-      neander-3: fdc8:8a2:b198::3
-      neander-4: fdc8:8a2:b198::4
+      neander-1: 2a03:2260:300e:30::1
+      neander-2: 2a03:2260:300e:30::2
+      neander-3: 2a03:2260:300e:30::3
+      neander-4: 2a03:2260:300e:30::4
   ffnef-wlf:
     batman:
       interface: tap-wlf
@@ -669,7 +674,7 @@ sites:
     channel24: 13
     channel5: 44
     compressed4: 10.1.248.0/21
-    compressed6: fdd9:a0b1:5bd0:c000::/51
+    compressed6: 2a03:2260:300e:00b0::/64
     dhcp:
       range:
         neander-1:
@@ -708,14 +713,14 @@ sites:
           port: 63983
     hostname_prefix: ME-
     netmask4: 255.255.248.0
-    netmask6: 'ffff:ffff:ffff:e000::'
+    netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.248.0
-    network6: 'fdd9:a0b1:5bd0:c000::'
+    network6: '2a03:2260:300e:b0::'
     next_mac: 90:99:33:39:94:85
     next_node4: 10.1.248.255
-    next_node6: fdd9:a0b1:5bd0:c000::ffff
+    next_node6: 2a03:2260:300e:b0::ffff
     prefixlen4: 21
-    prefixlen6: 51
+    prefixlen6: 64
     reserved_ip_addresses: 255
     site: Wuelfrath
     site_name: Freifunk Wuelfrath
@@ -725,10 +730,10 @@ sites:
       neander-3: 10.1.248.3
       neander-4: 10.1.248.4
     supernodeAddr6:
-      neander-1: fdd9:a0b1:5bd0:c000::1
-      neander-2: fdd9:a0b1:5bd0:c000::2
-      neander-3: fdd9:a0b1:5bd0:c000::3
-      neander-4: fdd9:a0b1:5bd0:c000::4
+      neander-1: 2a03:2260:300e:b0::1
+      neander-2: 2a03:2260:300e:b0::2
+      neander-3: 2a03:2260:300e:b0::3
+      neander-4: 2a03:2260:300e:b0::4
 supernodes:
 - domain: ffnef.de
   fqdn: neander-1ffnef.de

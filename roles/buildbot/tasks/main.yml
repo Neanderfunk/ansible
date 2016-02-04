@@ -1,26 +1,43 @@
-- name: update apt cache
-  apt: update_cache=yes cache_valid_time=3600
 - name: install buildbot
-  apt: name=buildbot state=installed
+  apt: name=buildbot state=installed update_cache=yes cache_valid_time=3600
+  tags: [ buildbot ]
+- stat: path=~buildbot/masters/gluon/buildbot.tac
+  register: buildbot_config
+  tags: [ buildbot ]
 - name: create master directory for gluon
   command: /bin/su -s /bin/sh buildbot -c 'cd;buildbot create-master masters/gluon'
-- name: configure master directory for gluon
+  when: buildbot_config.stat.exists == False
+  tags: [ buildbot ]
+- name: configure buildbot master directory for gluon
   template: src=master.cfg.j2 dest=/var/lib/buildbot/masters/gluon/master.cfg
   notify: restart buildmaster
+  tags: [ buildbot ]
 - name: set github password
   template: src=changehook.passwd.j2 dest=/var/lib/buildbot/masters/gluon/changehook.passwd
   notify: restart buildmaster
+  tags: [ buildbot ]
 - name: enable buildmaster
   copy: src=etc-default-buildmaster dest=/etc/default/buildmaster
   notify: restart buildmaster
+  tags: [ buildbot ]
 - name: create user gluon-builder
   user: name=gluon-builder home=/var/lib/buildbot/slaves/gluon-builder
-- name: create master directory for gluon
+  tags: [ buildbot ]
+- name: create buildbot slave directory for gluon
   command: /bin/su -s /bin/sh gluon-builder -c \
     'cd;buildslave create-slave . localhost:9989 localhost-slave "{{ buildbotSlavePassword }}"'
+  tags: [ buildbot ]
 # consider putting builder into a container/chroot
 - name: admin info
   copy: src=gluon-builder-info-admin dest=/var/lib/buildbot/slaves/gluon-builder/info/admin
   notify: restart buildslave
+  tags: [ buildbot ]
 - name: allow ssh-tunnel
   authorized_key: user=ssh-tunnel key="{{ buildbotTunnelAuthorized }}"
+  tags: [ buildbot ]
+- name: link for webserver to gluon beta
+  file: src=/var/www/gluon/beta dest=/var/www/download.ffnef.de/firmware/beta state=link
+  tags: [ buildbot ]
+- name: link for webserver to gluon experimental
+  file: src=/var/www/gluon/master dest=/var/www/download.ffnef.de/firmware/broken state=link
+  tags: [ buildbot ]

@@ -13,18 +13,4 @@ fastdHosts:
       - ffnef-met
       batman:
         ip4: 10.1.192.10/20
-        ip6: "2a03:2260:300e::337/64"
-  neander-1:
-    configs:
-    - name: met
-      interface: tap0
-      bridge: br0
-      mtu: 1364
-      batmanInterface: bat0
-      macSuffix: EE:EF:CA:FE:3B
-      limit: 200
-      peerSite:
-      - ffnef-met
-      batman:
-        ip4: 10.1.192.1/20
-        ip6: "2a03:2260:300e::1/64"
+        ip6: "2a03:2260:300e:10::337/64"
