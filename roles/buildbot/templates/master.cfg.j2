@@ -57,6 +57,9 @@ c['schedulers'].append(AnyBranchScheduler(
                             name="multi",
                             treeStableTimer=None,
                             builderNames=["multiBranch"]))
+c['schedulers'].append(ForceScheduler(
+                            name="forceMulti",
+                            builderNames=["multiBranch"]))
 #c['schedulers'].append(ForceScheduler(
 #                            name="force",
 #                            builderNames=["runtests"]))

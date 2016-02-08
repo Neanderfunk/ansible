@@ -1,0 +1,31 @@
+{% for site in sites %}
+auto {{ sites[site].bridge }}
+iface {{ sites[site].bridge }} inet static
+        netmask {{ sites[site].prefixlen4 }}
+    	{% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
+    	{# host is supernode #}
+        address {{ sites[site].supernodeAddr4[ansible_hostname] }}
+        # non-existance only gives warning
+        bridge_ports {{ sites[site].batman.interface }}
+        bridge_stp no
+        pre-up ip rule add prio 1000 iif $IFACE table internet
+        pre-up ip rule add prio 2000 iif $IFACE table unreachable
+        post-up ip route add {{ sites[site].compressed4 }} dev $IFACE table internet
+        post-up /etc/init.d/isc-dhcp-server status; if [ "$?" -eq 3 ]; then /etc/init.d/isc-dhcp-server start;fi
+        post-down ip rule del prio 1000 iif $IFACE table internet
+        post-down ip rule del prio 2000 iif $IFACE table unreachable
+    	{% endif %}
+		{% if othernodes[ansible_hostname] is defined %}
+    	{# host isn't supernode, but another service #}
+		address {{ sites[site].network4 | regex_replace('\.0$', '') }} {{ othernodes[ansible_hostname].mesh.postfix4 }}
+    	{% endif %}
+
+iface {{ sites[site].bridge }} inet6 static
+    	{% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
+    	{# host is supernode #}
+        address {{ sites[site].supernodeAddr6[ansible_hostname] }}
+        post-up ip -6 route add {{ sites[site].compressed6 }} dev $IFACE table internet
+    	{% endif %}
+        netmask {{ sites[site].prefixlen6 }}
+
+{% endfor %}

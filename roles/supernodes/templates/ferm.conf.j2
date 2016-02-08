@@ -32,9 +32,6 @@ domain (ip ip6) {
             proto tcp dport ssh ACCEPT;
             proto tcp dport bgp ACCEPT;
 
-            # benedikt's host for debugging
-            saddr 130.180.23.230 ACCEPT;
-
 			# only allow incoming connections to services ACCEPTed above
             interface eth0 REJECT;
         }

@@ -18,6 +18,7 @@
 - name: write fastd keys # should not be logged
   lineinfile: dest=/etc/fastd/{{ item.key }}/secret.conf create=yes mode=0600 line='secret "{{ fastd_secret }}";'
   with_dict: sites
+  when: fastd_secret is defined
   tags: [ fastd ]
 - name: write fastd configs
   template: src=fastd.conf.j2 dest=/etc/fastd/{{ item.key }}/fastd.conf

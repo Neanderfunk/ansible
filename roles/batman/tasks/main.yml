@@ -1,0 +1,8 @@
+- name: install batctl
+  apt: name=batctl update_cache=yes cache_valid_time=3600
+- name: install bridge-utils (needed by ifup for bridges)
+  apt: name=bridge-utils update_cache=yes cache_valid_time=3600
+- name: load batman-adv on boot
+  lineinfile: dest=/etc/modules-load.d/batman-adv.conf create=yes line='batman-adv'
+- name: configure bridges for Freifunk
+  template: src="network-interfaces-d-ff.j2" dest=/etc/network/interfaces.d/ff

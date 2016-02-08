@@ -177,6 +177,30 @@
 		'2a61930930a240c027f6ca4197203d400b6e4a32f9e92041e5f086907796c9bc', -- adorfer
         },
       },
+      beta = {
+        name = 'beta',
+
+        -- List of mirrors to fetch images from. IPv6 required!
+        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://firmware.{{ item.key }}.ffnef/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://firmware.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ sites['ffnef-met'].network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ item.value.network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade'
+	},
+
+        -- Number of good signatures required.
+        -- Have multiple maintainers sign your build and only
+        -- accept it when a sufficient number of them have
+        -- signed it.
+        good_signatures = 1,
+
+        -- List of public keys of maintainers.
+        pubkeys = {
+                'dd6a9d1aefc175f885705691498e904cbda12cc4602316f04816d78026c7c0f0', -- Benedikt Wi
+		'fb919d4adc69bd404f5093ce6b43badf351f9e642ad458406be986baf6096247', -- PetaByteBoy
+		'2a61930930a240c027f6ca4197203d400b6e4a32f9e92041e5f086907796c9bc', -- adorfer
+        },
+      },
       experimental = {
         name = 'experimental',
 
