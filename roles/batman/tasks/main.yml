@@ -6,3 +6,4 @@
   lineinfile: dest=/etc/modules-load.d/batman-adv.conf create=yes line='batman-adv'
 - name: configure bridges for Freifunk
   template: src="network-interfaces-d-ff.j2" dest=/etc/network/interfaces.d/ff
+  tags: [ interfaces ]

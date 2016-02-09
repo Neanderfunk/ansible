@@ -160,8 +160,8 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/stable/{{ item.key }}/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ sites['ffnef-met'].network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ item.value.network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade'
+	    'http://[{{ sites['ffnef-met'].network6 }}733]/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ item.value.network6 }}733]/firmware/stable/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
@@ -184,8 +184,8 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/stable/{{ item.key }}/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ sites['ffnef-met'].network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ item.value.network6 }}337]/firmware/stable/{{ item.key }}/sysupgrade'
+	    'http://[{{ sites['ffnef-met'].network6 }}733]/firmware/stable/{{ item.key }}/sysupgrade',
+	    'http://[{{ item.value.network6 }}733]/firmware/stable/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
@@ -208,7 +208,7 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/broken/{{ item.key }}/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/broken/{{ item.key }}/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/broken/{{ item.key }}/images/sysupgrade',
-	    'http://[{{ item.value.network6 | replace('::','') }}:337::]/firmware/broken/{{ item.key }}/sysupgrade'
+	    'http://[{{ item.value.network6 | replace('::','') }}:733::]/firmware/broken/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
