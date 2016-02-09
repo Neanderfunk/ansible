@@ -3,6 +3,8 @@
 import yaml
 import hashlib
 import ipaddr
+import jinja2
+import os
    
 def getMacFromString(string):
     stringHash = hashlib.sha1(string.encode()).hexdigest()
@@ -41,7 +43,7 @@ for site_code in sites['sites'].keys():
         supernodes[ver]=list((sn['host'], next(hostaddr)) for sn in sites['supernodes'])
 
         sites['sites'][site_code]['supernodeAddr' + ver] = \
-			dict((node[0], str(node[1])) for node in supernodes[ver])
+            dict((node[0], str(node[1])) for node in supernodes[ver])
     
     sites['sites'][site_code]['next_node4'] = str(supernodes['4'][0][1] + 254)
     sites['sites'][site_code]['next_node6'] = str(supernodes['6'][0][1] + 0xfffe)
@@ -56,16 +58,40 @@ for site_code in sites['sites'].keys():
     sites['sites'][site_code]['bridge'] = 'br0' if site_code == 'ffnef-met' else 'br-' + site_code.split('-')[-1]
 
     sites['sites'][site_code]['fastd'] = {
-			'peers': sites['sites'][site_code]['fastd'],
-			'limit': 200,
-			'mtu': 1364,
-			'interface': 'bat-' + site_code.split('-')[-1],
-			'mac': dict((node[0], getMacFromString('fastd'+site_code+node[0])) for node in supernodes[ver])
-			}
+            'peers': sites['sites'][site_code]['fastd'],
+            'limit': 200,
+            'mtu': 1364,
+            'interface': 'bat-' + site_code.split('-')[-1],
+            'mac': dict((node[0], getMacFromString('fastd'+site_code+node[0])) for node in supernodes[ver])
+            }
     sites['sites'][site_code]['batman'] = {
-			'mac': dict((node[0], getMacFromString('batman'+site_code+node[0])) for node in supernodes[ver]),
-    		'interface': 'tap-' + site_code.split('-')[-1]
-			}
+            'mac': dict((node[0], getMacFromString('batman'+site_code+node[0])) for node in supernodes[ver]),
+            'interface': 'tap-' + site_code.split('-')[-1]
+            }
+   
+    fastd_template = jinja2.Template("""key "{{ key }}";
+remote ipv4 "{{ host }}" port {{ port }};
+
+""");
+    i=0
+    try:
+      os.mkdir ('out/fastd-peers/')
+    except FileExistsError:
+      True
+
+    for peer in sites['sites'][site_code]['fastd']['peers']:
+        try:
+            os.mkdir ('out/fastd-peers/' + site_code[2:])
+        except FileExistsError:
+          True
+
+        peerFile = open('out/fastd-peers/' + site_code[2:] + '/' +
+            site_code.split('-')[1] + str(i), 'w')
+        peerFile.write (fastd_template.render(host=peer,
+            key=sites['sites'][site_code]['fastd']['peers'][peer]['key'],
+            port=sites['sites'][site_code]['fastd']['peers'][peer]['port']))
+        peerFile.close()
+        i = i+1
 
         
 

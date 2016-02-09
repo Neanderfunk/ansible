@@ -1,8 +1,12 @@
 othernodes:
   vserver-0:
     domain: ffnef.de
-    postfix4: 10
-    postfix6: 733
+    local:
+      ip6:
+        addr: 2a03:4000:6:1b0::1/64
+    mesh:
+      postfix4: 10
+      postfix6: 733
 sites:
   ffnef-erk:
     batman:

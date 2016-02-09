@@ -13,10 +13,10 @@ supernodes:
 othernodes:
   vserver-0:
     domain: ffnef.de
-	local:
-		ip6:
-			addr: 2a03:4000:6:1b0::1/64
-	mesh:
+    local:
+        ip6:
+            addr: 2a03:4000:6:1b0::1/64
+    mesh:
       postfix4: 10
       postfix6: 733
 
