@@ -11,27 +11,38 @@
     file: dest={{ sites_path }} state=directory
   - name: generate gluon-site.conf directories
     file: dest={{ sites_path }}{{ item.key }}/ state=directory
-    with_dict: sites
+    with_dict: own_sites
   - name: generate gluon-site.conf out
     template: src=templates/site.conf{{ '-' + branch if branch is defined else '' }}.j2 dest={{ sites_path }}{{ item.key }}/site.conf
-    with_dict: sites
+    with_dict: own_sites
   - name: generate gluon-site.mk out
     template: src=templates/site.mk{{ '-' + branch if branch is defined else '' }}.j2 dest={{ sites_path }}{{ item.key }}/site.mk
-    with_dict: sites
+    with_dict: own_sites
   - name: generate modules out
     template: src=templates/modules{{ '-' + branch if branch is defined else '' }}.j2 dest={{ sites_path }}{{ item.key }}/modules.incomplete
-    with_dict: sites
+    with_dict: own_sites
   - name: generate gluon-i18n directories
     file: dest={{ sites_path }}{{ item.key }}/i18n/ state=directory
-    with_dict: sites
+    with_dict: own_sites
   - name: generate German gluon-i18n out
     template: src=templates/de.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/de.po
-    with_dict: sites
+    with_dict: own_sites
   - name: generate English gluon-i18n out
     template: src=templates/en.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/en.po
-    with_dict: sites
+    with_dict: own_sites
   - name: generate French gluon-i18n out
     template: src=templates/fr.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/fr.po
-    with_dict: sites
-
-
+    with_dict: own_sites
+#  - name: create dirs for peer documentation
+#    file: dest="{{ lookup('env', 'ANSIBLE_DIR') }}/out/peers-ffdus/item.1" state=directory
+#    tags: [ test ]
+#    with_nested_dict:
+#     - sites
+#     - fastd.peers
+#  - name: write files for peer documentation
+#    template: src=fastd-peer.j2 dest="{{ lookup('env', 'ANSIBLE_DIR') }}/out/peers-ffdus/ffnef-{{ item.key }}{{ item.key }}/fastd.conf
+#    with_dict: own_sites
+#    tags: [ test ]
+#    with_sublements:
+#     - sites
+#     - fastd.peers

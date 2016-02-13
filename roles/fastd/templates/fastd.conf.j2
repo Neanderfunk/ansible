@@ -1,3 +1,5 @@
+{% if is_supernode[ansible_hostname] is not defined or not item.value.foreign %}
+
 {% if item.value.fastd.peers[ansible_fqdn] is defined %}
 bind any:{{ item.value.fastd.peers[ansible_fqdn].port }} default ipv4;
 {% endif %}
@@ -13,20 +15,26 @@ secure handshakes yes;
 #log to syslog level verbose;
 log to syslog level warn;
 
-{% if item.value.fastd.mac[ansible_hostname] is defined %}
 on up "
+{% if item.value.fastd.mac[ansible_hostname] is defined %}
         ip link set address {{ item.value.fastd.mac[ansible_hostname]  }} dev {{ item.value.fastd.interface }}
+{% endif %}
         ip link set up {{ item.value.fastd.interface }}
         batctl -m {{ item.value.batman.interface }} if add $INTERFACE
+{% if item.value.batman.mac[ansible_hostname] is defined %}
         ip link set address {{ item.value.batman.mac[ansible_hostname] }} dev {{ item.value.batman.interface }}
+{% endif %}
         ip link set up dev {{ item.value.batman.interface }}
         brctl addif {{ item.value.bridge }} {{ item.value.batman.interface }}
         batctl -m {{ item.value.batman.interface }} it 5000
         batctl -m {{ item.value.batman.interface }} bl 0
+{% if item.value.fastd.mac[ansible_hostname] is defined %}
         batctl -m {{ item.value.batman.interface }} gw server 48mbit/48mbit
         batctl -m {{ item.value.batman.interface }} vm server
+{% endif %}
 ";
 
+{% if item.value.fastd.mac[ansible_hostname] is defined %}
 on verify "/etc/fastd/{{ item.key }}/blacklist.sh $PEER_KEY";
 {% endif %}
 
@@ -42,3 +50,6 @@ peer "{{ peer }}" {
 
   {% endif %}
 {% endfor %}
+
+{# if is_supernode[ansible_hostname] is not defined or not item.value.foreign #}
+{% endif %}

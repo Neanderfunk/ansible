@@ -1,3 +1,10 @@
+config:
+  my_meta_community: ffnef
+is_supernode:
+  neander-1: true
+  neander-2: true
+  neander-3: true
+  neander-4: true
 othernodes:
   vserver-0:
     domain: ffnef.de
@@ -7,8 +14,8 @@ othernodes:
     mesh:
       postfix4: 10
       postfix6: 733
-sites:
-  ffnef-erk:
+own_sites:
+  ffnef-erk: &id001
     batman:
       interface: tap-erk
       mac:
@@ -58,6 +65,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63979
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -81,7 +89,7 @@ sites:
       neander-2: 2a03:2260:300e:70::2
       neander-3: 2a03:2260:300e:70::3
       neander-4: 2a03:2260:300e:70::4
-  ffnef-han:
+  ffnef-han: &id002
     batman:
       interface: tap-han
       mac:
@@ -131,6 +139,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63981
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -154,7 +163,7 @@ sites:
       neander-2: 2a03:2260:300e:90::2
       neander-3: 2a03:2260:300e:90::3
       neander-4: 2a03:2260:300e:90::4
-  ffnef-hld:
+  ffnef-hld: &id003
     batman:
       interface: tap-hld
       mac:
@@ -204,6 +213,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63978
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -227,7 +237,7 @@ sites:
       neander-2: 2a03:2260:300e:50::2
       neander-3: 2a03:2260:300e:50::3
       neander-4: 2a03:2260:300e:50::4
-  ffnef-hlg:
+  ffnef-hlg: &id004
     batman:
       interface: tap-hlg
       mac:
@@ -277,6 +287,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63975
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -300,7 +311,7 @@ sites:
       neander-2: 2a03:2260:300e:20::2
       neander-3: 2a03:2260:300e:20::3
       neander-4: 2a03:2260:300e:20::4
-  ffnef-lgf:
+  ffnef-lgf: &id005
     batman:
       interface: tap-lgf
       mac:
@@ -350,6 +361,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63982
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -373,7 +385,7 @@ sites:
       neander-2: 2a03:2260:300e:a0::2
       neander-3: 2a03:2260:300e:a0::3
       neander-4: 2a03:2260:300e:a0::4
-  ffnef-met:
+  ffnef-met: &id006
     batman:
       interface: tap-met
       mac:
@@ -423,6 +435,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63974
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -446,7 +459,7 @@ sites:
       neander-2: 2a03:2260:300e:10::2
       neander-3: 2a03:2260:300e:10::3
       neander-4: 2a03:2260:300e:10::4
-  ffnef-mon:
+  ffnef-mon: &id007
     batman:
       interface: tap-mon
       mac:
@@ -496,6 +509,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63977
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -519,7 +533,7 @@ sites:
       neander-2: 2a03:2260:300e:40::2
       neander-3: 2a03:2260:300e:40::3
       neander-4: 2a03:2260:300e:40::4
-  ffnef-rat:
+  ffnef-rat: &id008
     batman:
       interface: tap-rat
       mac:
@@ -569,6 +583,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63980
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -592,7 +607,7 @@ sites:
       neander-2: 2a03:2260:300e:80::2
       neander-3: 2a03:2260:300e:80::3
       neander-4: 2a03:2260:300e:80::4
-  ffnef-vel:
+  ffnef-vel: &id009
     batman:
       interface: tap-vel
       mac:
@@ -642,6 +657,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63976
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -665,7 +681,7 @@ sites:
       neander-2: 2a03:2260:300e:30::2
       neander-3: 2a03:2260:300e:30::3
       neander-4: 2a03:2260:300e:30::4
-  ffnef-wlf:
+  ffnef-wlf: &id010
     batman:
       interface: tap-wlf
       mac:
@@ -715,6 +731,7 @@ sites:
         neander-4.ffnef.de:
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63983
+    foreign: false
     hostname_prefix: ME-
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
@@ -738,6 +755,49 @@ sites:
       neander-2: 2a03:2260:300e:b0::2
       neander-3: 2a03:2260:300e:b0::3
       neander-4: 2a03:2260:300e:b0::4
+sites:
+  ffdus:
+    batman:
+      interface: tap-ffdus
+      mac: false
+    bridge: br-ffdus
+    bssid: 10:6b:0a:1b:c2:40
+    channel24: 13
+    channel5: 44
+    compressed4: 10.155.0.0/20
+    compressed6: fda0:747e:ab29:9375::/64
+    fastd:
+      interface: bat-ffdus
+      limit: 200
+      mac: false
+      mtu: 1364
+      peers:
+        flingern-1.ffdus.de:
+          key: 815ec60792942be119273a0bfc682d492cc2bd61966cb43e85cc42c1b2e3e2e0
+          port: 10000
+        w6.ffdus.de:
+          key: 6775943433146a1c16a33940805fbafa8ba0cc6ef328d66cffc0ffe2480226fa
+          port: 40227
+    foreign: true
+    hostname_prefix: '-'
+    netmask4: 255.255.240.0
+    netmask6: 'ffff:ffff:ffff:ffff::'
+    network4: 10.155.0.0
+    network6: 'fda0:747e:ab29:9375::'
+    prefixlen4: 20
+    prefixlen6: 64
+    reserved_ip_addresses: 255
+    site: Flingern
+  ffnef-erk: *id001
+  ffnef-han: *id002
+  ffnef-hld: *id003
+  ffnef-hlg: *id004
+  ffnef-lgf: *id005
+  ffnef-met: *id006
+  ffnef-mon: *id007
+  ffnef-rat: *id008
+  ffnef-vel: *id009
+  ffnef-wlf: *id010
 supernodes:
 - domain: ffnef.de
   fqdn: neander-1ffnef.de

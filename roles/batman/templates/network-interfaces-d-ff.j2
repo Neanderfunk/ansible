@@ -1,11 +1,31 @@
 {% for site in sites %}
+{% set node_type='unknown' %}
+{% if (othernodes[ansible_hostname] is defined) and not sites[site].foreign %}
+    {% set node_type='known_host' %}
+{% else %}
+    {% if sites[site].supernodeAddr4 is defined %}
+	{% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
+	    {% set node_type='supernode' %}
+	{% else %}
+	    {% if is_supernode[ansible_hostname] is not defined %}
+		{% set node_type='dhcp' %}
+	    {% endif %}
+	{% endif %}
+    {% else %}
+	{% if is_supernode[ansible_hostname] is not defined %}
+	    {% set node_type='dhcp' %}
+	{% endif %}
+    {% endif %}
+{% endif %}
+
+{% if node_type != 'unknown' %}
 auto {{ sites[site].bridge }}
-iface {{ sites[site].bridge }} inet static
+iface {{ sites[site].bridge }} inet {{ 'dhcp' if node_type=='dhcp' else 'static' }}
         netmask {{ sites[site].prefixlen4 }}
-        bridge_ports {{ sites[site].batman.interface }}
+        bridge_ports {{ sites[site].fastd.interface }}
+        pre-up ip link set {{ sites[site].fastd.interface }} up
         bridge_stp no
-        {% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
-        {# host is supernode #}
+        {% if node_type == 'supernode' %}
         address {{ sites[site].supernodeAddr4[ansible_hostname] }}
         # non-existance only gives warning
         pre-up ip rule add prio 1000 iif $IFACE table internet
@@ -15,14 +35,17 @@ iface {{ sites[site].bridge }} inet static
         post-down ip rule del prio 1000 iif $IFACE table internet
         post-down ip rule del prio 2000 iif $IFACE table unreachable
         {% endif %}
-    	{% if othernodes[ansible_hostname] is defined %}
-        {# host isn't supernode, but another service #}
-    	address {{ sites[site].network4 | regex_replace('\.0$', '') }}.{{ othernodes[ansible_hostname].mesh.postfix4 }}
+{% if node_type == 'known_host' %}
+address {{ sites[site].network4 | regex_replace('\.0$', '') }}.{{ othernodes[ansible_hostname].mesh.postfix4 }}
         {% endif %}
+{% if node_type == 'dhcp' %}
+metric 2048
+	{% endif %}
 
+{% if node_type != 'dhcp' %}
 iface {{ sites[site].bridge }} inet6 static
         netmask {{ sites[site].prefixlen6 }}
-        {% if sites[site].supernodeAddr4[ansible_hostname] is defined %}
+        {% if node_type=='supernode' %}
         {# host is supernode #}
         pre-up ip -6 rule add prio 1000 iif $IFACE table internet
         pre-up ip -6 rule add prio 2000 iif $IFACE table unreachable
@@ -31,9 +54,12 @@ iface {{ sites[site].bridge }} inet6 static
         post-down ip -6 rule del prio 1000 iif $IFACE table internet
         post-down ip -6 rule del prio 2000 iif $IFACE table unreachable
         {% endif %}
-    	{% if othernodes[ansible_hostname] is defined %}
-        {# host isn't supernode, but another service #}
-    	address {{ sites[site].network6 }}{{ othernodes[ansible_hostname].mesh.postfix6 }}
+{% if node_type=='known_host' %}
+address {{ sites[site].network6 }}{{ othernodes[ansible_hostname].mesh.postfix6 }}
         {% endif %}
+{% endif %}
+
+{% endif %}{# node type is defined #}
 
 {% endfor %}
+

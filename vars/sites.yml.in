@@ -10,6 +10,9 @@ supernodes:
   - host: neander-4
     domain: ffnef.de
 
+config:
+    my_meta_community: ffnef
+
 othernodes:
   vserver-0:
     domain: ffnef.de
@@ -184,6 +187,19 @@ othernodes:
       "neander-2.ffnef.de": { "port": 63983, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
       "neander-3.ffnef.de": { "port": 63983, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
       "neander-4.ffnef.de": { "port": 63983, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffdus": {
+    "hostname_prefix" : "-",
+    "site" : "Flingern",
+    "compressed4"  : "10.155.0.0/20",
+    "compressed6" : "fda0:747e:ab29:9375::/64",
+    "channel24" : 13, # ???
+    "channel5" : 44, # ???
+    "fastd": {
+      "flingern-1.ffdus.de": { "port": 10000, "key": "815ec60792942be119273a0bfc682d492cc2bd61966cb43e85cc42c1b2e3e2e0" },
+      "w6.ffdus.de": { "port": 40227, "key": "6775943433146a1c16a33940805fbafa8ba0cc6ef328d66cffc0ffe2480226fa" },
     },
     reserved_ip_addresses: 255
   },

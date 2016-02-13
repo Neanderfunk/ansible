@@ -17,7 +17,9 @@
   notify:
   - reload apache
 - name: enable apache virtual hosts
-  command: a2ensite {{ item.name }}
+  file: src='/etc/apache2/sites-available/{{ item.name }}.conf' \
+    dest='/etc/apache2/sites-enabled/{{ item.name }}.conf' \
+    owner=root group=root state=link
   with_items: virtualHosts
   notify:
   - reload apache

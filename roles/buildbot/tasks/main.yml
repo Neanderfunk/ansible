@@ -23,10 +23,14 @@
 - name: create user gluon-builder
   user: name=gluon-builder home=/var/lib/buildbot/slaves/gluon-builder
   tags: [ buildbot ]
+- stat: path=~gluon-builder/buildbot.tac
+  register: buildbot_slave_config
+  tags: [ buildbot ]
 - name: create buildbot slave directory for gluon
   command: /bin/su -s /bin/sh gluon-builder -c \
     'cd;buildslave create-slave . localhost:9989 localhost-slave "{{ buildbotSlavePassword }}"'
   tags: [ buildbot ]
+  when: buildbot_slave_config.stat.exists == False
 # consider putting builder into a container/chroot
 - name: admin info
   copy: src=gluon-builder-info-admin dest=/var/lib/buildbot/slaves/gluon-builder/info/admin
