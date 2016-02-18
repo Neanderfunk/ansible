@@ -41,12 +41,17 @@
     channel = {{ item.value.channel24 }},
 
     -- ESSID used for client network.
-    ssid = 'Freifunk-test',
-	htmode = 'HT20',
+    ap = {
+      ssid = 'Freifunk',
+      -- disabled = true, (optional)
+    },
 
-    mesh_ssid = '{{ item.key }}-mesh',
-    mesh_mcast_rate = 6000,
-    mesh_bssid = '{{ item.value.bssid }}',
+    mesh = {
+      -- Adjust these values!
+      id = '{{ item.key }}-mesh',
+      mcast_rate = 6000,
+      -- disabled = true, (optional)
+    },
   },
 
   -- Wireless configuration for 5 GHz interfaces.
@@ -54,12 +59,13 @@
   -- for channel.
   wifi5 = {
     channel = {{ item.value.channel5 }},
-    ssid = 'Freifunk-test',
-	htmode = 'HT20',
-    
-    mesh_ssid = '{{ item.key }}-mesh',
-    mesh_bssid = '{{ item.value.bssid }}',
-    mesh_mcast_rate = 6000,
+    ap = {
+      ssid = 'Freifunk',
+    },
+    mesh = {
+      id = '{{ item.key }}-mesh',
+      mcast_rate = 6000,
+    },
   },
 
   -- The next node feature allows clients to always reach the node it is
@@ -201,7 +207,7 @@
         mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/broken/{{ item.key }}/sysupgrade',
 	    'http://firmware.{{ item.key }}.ffnef/firmware/broken/{{ item.key }}/sysupgrade',
 	    'http://firmware.ffnef.de/firmware/broken/{{ item.key }}/images/sysupgrade',
-	    'http://[{{ item.value.network6 }}733firmware/broken/{{ item.key }}/sysupgrade'
+	    'http://[{{ item.value.network6 }}733]/firmware/broken/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.
