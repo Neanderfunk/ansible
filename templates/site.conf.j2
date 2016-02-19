@@ -181,11 +181,11 @@
         name = 'beta',
 
         -- List of mirrors to fetch images from. IPv6 required!
-        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://firmware.{{ item.key }}.ffnef/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://firmware.ffnef.de/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ sites['ffnef-met'].network6 }}733]/firmware/stable/{{ item.key }}/sysupgrade',
-	    'http://[{{ item.value.network6 }}733]/firmware/stable/{{ item.key }}/sysupgrade'
+        mirrors = { 'http://firmware.{{ item.key }}.ffnef.de/firmware/beta/{{ item.key }}/sysupgrade',
+	    'http://firmware.{{ item.key }}.ffnef/firmware/beta/{{ item.key }}/sysupgrade',
+	    'http://firmware.ffnef.de/firmware/beta/{{ item.key }}/sysupgrade',
+	    'http://[{{ sites['ffnef-met'].network6 }}733]/firmware/beta/{{ item.key }}/sysupgrade',
+	    'http://[{{ item.value.network6 }}733]/firmware/beta/{{ item.key }}/sysupgrade'
 	},
 
         -- Number of good signatures required.

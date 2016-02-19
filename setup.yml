@@ -48,3 +48,8 @@
   roles:
   - webservers
   - buildbot
+
+- hosts: authorative-nameservers
+  remote_user: root
+  roles:
+  - authorative-ns

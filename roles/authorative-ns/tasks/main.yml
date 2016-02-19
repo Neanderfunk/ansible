@@ -1,0 +1,16 @@
+- name: install bind9
+  apt: name=bind9 state=installed
+  tags: [ dns ]
+- name: bind local config
+  template: src=named.conf.local.j2 dest=/etc/bind/named.conf.local
+  tags: [ dns ]
+  notify: reload bind9
+- name: bind9 options
+  template: src=named.conf.options.j2 dest=/etc/bind/named.conf.options
+  tags: [ dns ]
+  notify: reload bind9
+- name: zone files
+  template: src=db.{{ item.key }}.j2 dest=/etc/bind/db.{{ item.key }}
+  with_dict: ourZones
+  tags: [ dns ]
+  notify: reload bind9
