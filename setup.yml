@@ -13,6 +13,7 @@
     - vars/sites.yml
   roles:
   - supernodes
+  - slave-ns
 
 - hosts: firmware-hosts
   remote_user: root
@@ -52,4 +53,4 @@
 - hosts: authorative-nameservers
   remote_user: root
   roles:
-  - authorative-ns
+  - master-ns

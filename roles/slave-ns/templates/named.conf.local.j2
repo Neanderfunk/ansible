@@ -1,0 +1,9 @@
+{% for zone in ourZones %}
+
+zone "{{ zone }}" {
+        type slave;
+        masters { 5.45.103.213; };
+        file "{{ zone }}-slave";
+};
+
+{% endfor %}

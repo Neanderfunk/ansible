@@ -16,6 +16,8 @@ vserver-0.ffnef.de
 
 [nameservers]
 vserver-0.ffnef.de
+neander-1.ffnef.de
+neander-2.ffnef.de
 
 [supernodes]
 neander-1.ffnef.de
