@@ -1,6 +1,6 @@
 authoritative;
 
-{% for site in sites %}
+{% for site in own_sites %}
 subnet {{ sites[site].network4 }} netmask {{ sites[site].netmask4 }} {
         range {{ sites[site].dhcp.range[ansible_hostname]['from'] }} {{ sites[site].dhcp.range[ansible_hostname]['to'] }};
         default-lease-time 300;
