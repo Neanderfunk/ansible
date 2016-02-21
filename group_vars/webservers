@@ -1,6 +1,7 @@
 ---
 virtualHosts:
   - name: download.ffnef.de
+    default: True
     directories:
     - name: firmware
       owner: buildbot

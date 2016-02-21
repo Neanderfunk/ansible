@@ -18,11 +18,12 @@
   - reload apache
 - name: enable apache virtual hosts
   file: src='/etc/apache2/sites-available/{{ item.name }}.conf' \
-    dest='/etc/apache2/sites-enabled/{{ item.name }}.conf' \
+    dest='/etc/apache2/sites-enabled/{{ '000-' if (item.default is defined and item.default) else '' }}{{ item.name }}.conf' \
     owner=root group=root state=link
   with_items: virtualHosts
   notify:
   - reload apache
+  tags: [t2]
 - name: create root directory for web content
   file: dest=/var/www/{{ item.name }} state=directory
   with_items: virtualHosts
