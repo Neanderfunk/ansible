@@ -115,6 +115,7 @@ remote ipv4 "{{ host }}" port {{ port }};
                 peerFile.close()
                 i = i+1
 
+sites['site_partitions'] = { 'all': sites['sites'], 'own': sites['own_sites'] }
         
 
 #print (yaml.dump(sites, default_flow_style=False))

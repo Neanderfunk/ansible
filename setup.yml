@@ -6,6 +6,19 @@
     copy: src=files/.ssh dest=/root/ owner=root group=root mode=700
 
 - hosts: supernodes
+  vars_files:
+    - vars/sites.yml
+  tasks:
+  - name: set site_selection (supernode)
+    set_fact: site_selection=own
+    when: is_supernode[ansible_hostname] is defined
+    tags: [ fastd ]
+  - name: set site_selection (no supernode)
+    set_fact: site_selection=all
+    when: is_supernode[ansible_hostname] is not defined
+    tags: [ fastd ]
+
+- hosts: supernodes
   sudo: True
   vars_files:
     - vars/greTunnels.yml
