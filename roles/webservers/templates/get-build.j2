@@ -1,6 +1,6 @@
 #!/bin/sh
 
-rsync -aHAXvzzzP --delete-after $* \
+rsync -aHAXvzzzP --chmod=+rX --delete-after $* \
         --exclude-from /usr/local/etc/rsync.gluon.exclude \
         buildbot@10.155.0.99:/home/buildbot/ffnef-slave/multiBranch/build/v2016.1.x/ \
         /var/www/gluon/v2016.1.x

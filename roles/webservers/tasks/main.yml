@@ -48,8 +48,14 @@
 - name: install letsencrypt
   apt: update_cache=yes name=python-letsencrypt-apache
   when: ansible_distribution == 'Debian'
-- name: link for webserver to gluon beta
+- name: link for webserver to gluon beta firmware
   file: src=/var/www/gluon/v2016.1.x/gluon/out/ dest=/var/www/download.ffnef.de/firmware/beta state=link
+  tags: [ buildbot ]
+- name: create dir for source code
+  file: name=/var/www/download.ffnef.de/source state=directory
+  tags: [ buildbot ]
+- name: link for webserver to gluon beta
+  file: src=/var/www/gluon/v2016.1.x/ dest=/var/www/download.ffnef.de/source/beta state=link
   tags: [ buildbot ]
 - name: link for webserver to gluon experimental
   file: src=/var/www/gluon/master dest=/var/www/download.ffnef.de/firmware/broken state=link
