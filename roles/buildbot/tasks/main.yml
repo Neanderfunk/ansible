@@ -39,9 +39,3 @@
 - name: allow ssh-tunnel
   authorized_key: user=ssh-tunnel key="{{ buildbotTunnelAuthorized }}"
   tags: [ buildbot ]
-- name: link for webserver to gluon beta
-  file: src=/var/www/gluon/beta dest=/var/www/download.ffnef.de/firmware/beta state=link
-  tags: [ buildbot ]
-- name: link for webserver to gluon experimental
-  file: src=/var/www/gluon/master dest=/var/www/download.ffnef.de/firmware/broken state=link
-  tags: [ buildbot ]
