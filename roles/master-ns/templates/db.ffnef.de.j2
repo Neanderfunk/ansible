@@ -2,7 +2,7 @@ $ORIGIN ffnef.de.
 $TTL 1h
 
 @				IN      SOA     vserver-0 nic (
-                                  2016022000    ; Serial
+                                  2016031200    ; Serial
                                        10800    ; Refresh
                                         3600    ; Retry
                                       604800    ; Expire
@@ -26,3 +26,11 @@ ntp				IN		CNAME	0.freifunk.pool.ntp.org.
 
 map				IN		CNAME	karte.ffdus.de.
 karte			IN		CNAME	karte.ffdus.de.
+
+{% set i=0 %}{#
+	#}{% for site in own_sites %}{#
+	#}{% for peer in sites[site].fastd.peers | sort %}{#
+	#}{% set i=(i + 1) %}{#
+	#}{{ peer }}.	IN CNAME	neander-{{ i }}
+{#	#}{% endfor %}
+{% endfor %}

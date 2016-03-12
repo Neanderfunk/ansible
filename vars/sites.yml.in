@@ -32,10 +32,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63974, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63974, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63974, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63974, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-met.ffnef.de": { "port": 63974, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-met.ffnef.de": { "port": 63974, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-met.ffnef.de": { "port": 63974, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-met.ffnef.de": { "port": 63974, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 511
 
@@ -48,10 +48,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63975, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63975, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63975, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63975, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-hlg.ffnef.de": { "port": 63975, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-hlg.ffnef.de": { "port": 63975, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-hlg.ffnef.de": { "port": 63975, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-hlg.ffnef.de": { "port": 63975, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -63,10 +63,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63976, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63976, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63976, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63976, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-vel.ffnef.de": { "port": 63976, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-vel.ffnef.de": { "port": 63976, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-vel.ffnef.de": { "port": 63976, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-vel.ffnef.de": { "port": 63976, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -78,10 +78,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63977, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63977, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63977, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63977, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-mon.ffnef.de": { "port": 63977, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-mon.ffnef.de": { "port": 63977, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-mon.ffnef.de": { "port": 63977, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-mon.ffnef.de": { "port": 63977, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -93,10 +93,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63978, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63978, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63978, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63978, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-hld.ffnef.de": { "port": 63978, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-hld.ffnef.de": { "port": 63978, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-hld.ffnef.de": { "port": 63978, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-hld.ffnef.de": { "port": 63978, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -108,10 +108,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63979, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63979, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63979, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63979, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-erk.ffnef.de": { "port": 63979, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-erk.ffnef.de": { "port": 63979, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-erk.ffnef.de": { "port": 63979, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-erk.ffnef.de": { "port": 63979, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -123,10 +123,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63979, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63979, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63979, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63979, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-erk.ffnef.de": { "port": 63979, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-erk.ffnef.de": { "port": 63979, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-erk.ffnef.de": { "port": 63979, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-erk.ffnef.de": { "port": 63979, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -138,10 +138,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63980, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63980, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63980, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63980, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-rat.ffnef.de": { "port": 63980, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-rat.ffnef.de": { "port": 63980, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-rat.ffnef.de": { "port": 63980, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-rat.ffnef.de": { "port": 63980, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -153,10 +153,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63981, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63981, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63981, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63981, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-han.ffnef.de": { "port": 63981, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-han.ffnef.de": { "port": 63981, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-han.ffnef.de": { "port": 63981, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-han.ffnef.de": { "port": 63981, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -168,10 +168,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63982, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63982, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63982, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63982, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-lgf.ffnef.de": { "port": 63982, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-lgf.ffnef.de": { "port": 63982, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-lgf.ffnef.de": { "port": 63982, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-lgf.ffnef.de": { "port": 63982, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },
@@ -183,10 +183,10 @@ othernodes:
     "channel24" : 13,
     "channel5" : 44,
     "fastd": {
-      "neander-1.ffnef.de": { "port": 63983, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
-      "neander-2.ffnef.de": { "port": 63983, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
-      "neander-3.ffnef.de": { "port": 63983, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
-      "neander-4.ffnef.de": { "port": 63983, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+      "fastd1.ffnef-wfr.ffnef.de": { "port": 63983, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-wfr.ffnef.de": { "port": 63983, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-wfr.ffnef.de": { "port": 63983, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-wfr.ffnef.de": { "port": 63983, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
     },
     reserved_ip_addresses: 255
   },

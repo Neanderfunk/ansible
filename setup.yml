@@ -65,5 +65,7 @@
 
 - hosts: authorative-nameservers
   remote_user: root
+  vars_files:
+    - vars/sites.yml
   roles:
   - master-ns
