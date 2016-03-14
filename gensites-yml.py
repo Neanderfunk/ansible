@@ -20,7 +20,7 @@ sites['is_supernode'] = {}
 sites['own_sites'] = {}
 
 for node in range(len(sites['supernodes'])):
-  sites['supernodes'][node]['fqdn'] = sites['supernodes'][node]['host'] + sites['supernodes'][node]['domain']
+  sites['supernodes'][node]['fqdn'] = sites['supernodes'][node]['host'] + '.' + sites['supernodes'][node]['domain']
   sites['is_supernode'][sites['supernodes'][node]['host']] = True
 
 for site_code in sites['sites'].keys():
