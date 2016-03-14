@@ -5,7 +5,7 @@
   sudo: True
   apt_repository: repo="deb https://repo.universe-factory.net/debian/ sid main"
   # there are only packages in 'sid' there
-  when: ansible_distribution == 'Debian'
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 - name: add fastd repo key
   apt_key: id=6664E7BDA6B669881EC52E7516EF3F64CB201D9C url=https://sks-keyservers.net/pks/lookup?op=get&search=0x16EF3F64CB201D9C state=present
 - name: install fastd

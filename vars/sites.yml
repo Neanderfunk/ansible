@@ -54,15 +54,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-erk.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63979
         fastd2.ffnef-erk.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63979
         fastd3.ffnef-erk.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63979
         fastd4.ffnef-erk.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63979
     foreign: false
@@ -128,15 +132,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-han.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63981
         fastd2.ffnef-han.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63981
         fastd3.ffnef-han.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63981
         fastd4.ffnef-han.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63981
     foreign: false
@@ -202,15 +210,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-hld.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63978
         fastd2.ffnef-hld.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63978
         fastd3.ffnef-hld.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63978
         fastd4.ffnef-hld.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63978
     foreign: false
@@ -276,15 +288,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-hlg.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63975
         fastd2.ffnef-hlg.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63975
         fastd3.ffnef-hlg.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63975
         fastd4.ffnef-hlg.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63975
     foreign: false
@@ -350,15 +366,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-lgf.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63982
         fastd2.ffnef-lgf.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63982
         fastd3.ffnef-lgf.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63982
         fastd4.ffnef-lgf.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63982
     foreign: false
@@ -424,15 +444,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-met.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63974
         fastd2.ffnef-met.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63974
         fastd3.ffnef-met.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63974
         fastd4.ffnef-met.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63974
     foreign: false
@@ -498,15 +522,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-mon.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63977
         fastd2.ffnef-mon.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63977
         fastd3.ffnef-mon.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63977
         fastd4.ffnef-mon.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63977
     foreign: false
@@ -572,15 +600,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-rat.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63980
         fastd2.ffnef-rat.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63980
         fastd3.ffnef-rat.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63980
         fastd4.ffnef-rat.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63980
     foreign: false
@@ -646,15 +678,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-vel.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63976
         fastd2.ffnef-vel.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63976
         fastd3.ffnef-vel.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63976
         fastd4.ffnef-vel.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63976
     foreign: false
@@ -720,15 +756,19 @@ own_sites: &id011
       mtu: 1364
       peers:
         fastd1.ffnef-wfr.ffnef.de:
+          host: neander-1.ffnef.de
           key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
           port: 63983
         fastd2.ffnef-wfr.ffnef.de:
+          host: neander-2.ffnef.de
           key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
           port: 63983
         fastd3.ffnef-wfr.ffnef.de:
+          host: neander-3.ffnef.de
           key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
           port: 63983
         fastd4.ffnef-wfr.ffnef.de:
+          host: neander-4.ffnef.de
           key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
           port: 63983
     foreign: false
@@ -803,14 +843,14 @@ site_partitions:
 sites: *id012
 supernodes:
 - domain: ffnef.de
-  fqdn: neander-1ffnef.de
+  fqdn: neander-1.ffnef.de
   host: neander-1
 - domain: ffnef.de
-  fqdn: neander-2ffnef.de
+  fqdn: neander-2.ffnef.de
   host: neander-2
 - domain: ffnef.de
-  fqdn: neander-3ffnef.de
+  fqdn: neander-3.ffnef.de
   host: neander-3
 - domain: ffnef.de
-  fqdn: neander-4ffnef.de
+  fqdn: neander-4.ffnef.de
   host: neander-4

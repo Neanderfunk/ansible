@@ -16,7 +16,7 @@ domain (ip ip6) {
             proto icmp ACCEPT;
 
             # connection tracking
-            mod state state INVALID DROP;
+            mod state state INVALID REJECT;
             mod state state (ESTABLISHED RELATED) ACCEPT;
 
             # allow local packet
@@ -33,6 +33,7 @@ domain (ip ip6) {
             proto tcp dport bgp ACCEPT;
 
 			# only allow incoming connections to services ACCEPTed above
+			# (on neander-2)
             interface eth0 REJECT;
         }
         chain OUTPUT {
@@ -40,13 +41,6 @@ domain (ip ip6) {
 
             # connection tracking
             #mod state state INVALID DROP;
-            mod state state (ESTABLISHED RELATED) ACCEPT;
-        }
-        chain FORWARD {
-            policy ACCEPT;
-
-            # connection tracking
-            mod state state INVALID DROP;
             mod state state (ESTABLISHED RELATED) ACCEPT;
         }
     }
@@ -68,6 +62,15 @@ domain (ip ip6) {
 }
 
 # only for ipv4
+table filter {
+	chain FORWARD {
+		policy ACCEPT;
+
+		# connection tracking
+		mod state state INVALID REJECT;
+		mod state state (ESTABLISHED RELATED) ACCEPT;
+	}
+}
 table nat {
     chain POSTROUTING {
         # nat translation (to 185.66.195.65 <- public IPv4 adress from FFRL for exit for NAT users)

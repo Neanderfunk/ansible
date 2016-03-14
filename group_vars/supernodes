@@ -11,6 +11,12 @@ grePublicIP:
     preference:
       bb-a.ak.ber: "110"
       bb-b.ak.ber: "110"
+  neander-3:
+    ip4: "185.66.193.110"
+    ip6: "2a03:2260:300e::3"
+    preference:
+      bb-a.ix.dus: "110"
+      bb-b.ix.dus: "110"
 
 meshDhcp:
   neander-1:

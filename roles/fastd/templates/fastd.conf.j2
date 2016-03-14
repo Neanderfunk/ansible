@@ -1,8 +1,11 @@
 {% if is_supernode[ansible_hostname] is not defined or not item.value.foreign %}
 
-{% if item.value.fastd.peers[ansible_fqdn] is defined %}
-bind any:{{ item.value.fastd.peers[ansible_fqdn].port }} default ipv4;
-{% endif %}
+{% for peer in item.value.fastd.peers %}{#
+	#}{% if item.value.fastd.peers[peer].host == ansible_fqdn %}{#
+		#}bind any:{{ item.value.fastd.peers[peer].port }} default ipv4;{#
+	#}{% endif %}{#
+#}{% endfor %}
+
 include "secret.conf";
 interface "{{ item.value.fastd.interface }}";
 log level info;
@@ -39,7 +42,7 @@ on verify "/etc/fastd/{{ item.key }}/blacklist.sh $PEER_KEY";
 {% endif %}
 
 {% for peer in item.value.fastd.peers %}
-  {% if peer == ansible_fqdn %}
+  {% if item.value.fastd.peers[peer].host == ansible_fqdn %}
 # no fastd connection to {{ peer }} (myself)
 	{% else %}
 
