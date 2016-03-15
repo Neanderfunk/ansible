@@ -842,15 +842,26 @@ site_partitions:
   own: *id011
 sites: *id012
 supernodes:
-- domain: ffnef.de
+- &id013
+  domain: ffnef.de
   fqdn: neander-1.ffnef.de
   host: neander-1
-- domain: ffnef.de
+  installed: '2016-01-08T23:07:00'
+- &id014
+  domain: ffnef.de
   fqdn: neander-2.ffnef.de
   host: neander-2
-- domain: ffnef.de
+- &id015
+  domain: ffnef.de
   fqdn: neander-3.ffnef.de
   host: neander-3
-- domain: ffnef.de
+  installed: '2016-03-01T00:01:00'
+- &id016
+  domain: ffnef.de
   fqdn: neander-4.ffnef.de
   host: neander-4
+supernodesByName:
+  neander-1: *id013
+  neander-2: *id014
+  neander-3: *id015
+  neander-4: *id016

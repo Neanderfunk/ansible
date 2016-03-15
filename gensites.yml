@@ -33,6 +33,9 @@
   - name: generate French gluon-i18n out
     template: src=templates/fr.po.j2 dest={{ sites_path }}{{ item.key }}/i18n/fr.po
     with_dict: own_sites
+  - set_fact: aliases_path="{{ lookup('env', 'ANSIBLE_DIR') }}/out/aliases.json"
+  - name: create root directory for aliases.json
+    file: dest={{ aliases_path }} state=directory
 #  - name: create dirs for peer documentation
 #    file: dest="{{ lookup('env', 'ANSIBLE_DIR') }}/out/peers-ffdus/item.1" state=directory
 #    tags: [ test ]

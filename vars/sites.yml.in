@@ -3,10 +3,12 @@
 supernodes:
   - host: neander-1
     domain: ffnef.de
+    installed: '2016-01-08T23:07:00'
   - host: neander-2
     domain: ffnef.de
   - host: neander-3
     domain: ffnef.de
+    installed: '2016-03-01T00:01:00'
   - host: neander-4
     domain: ffnef.de
 
