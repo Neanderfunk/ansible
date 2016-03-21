@@ -206,6 +206,6 @@ for site_code in sites['own_sites']:
       }
 	}
 	}
-	aliasesOutHandle=open('out/aliases.json/aliases.json.' + site_code, 'w')
+	aliasesOutHandle=open('out/aliases.json/aliases.json.' + site_code.replace('ffnef-', 'nef'), 'w')
 	aliasesOutHandle.write(json.dumps(aliases, indent=2))
 	aliasesOutHandle.close()
