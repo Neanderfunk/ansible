@@ -17,7 +17,7 @@ othernodes:
 own_sites: &id011
   ffnef-erk: &id001
     batman:
-      interface: tap-erk
+      interface: bat-erk
       mac:
         neander-1: b0:8c:58:e7:60:b7
         neander-2: c0:8c:f7:7a:9d:9a
@@ -44,7 +44,7 @@ own_sites: &id011
           from: 10.1.230.61
           to: 10.1.231.251
     fastd:
-      interface: bat-erk
+      interface: tap-erk
       limit: 200
       mac:
         neander-1: 00:7f:be:69:83:e3
@@ -95,7 +95,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:70::4
   ffnef-han: &id002
     batman:
-      interface: tap-han
+      interface: bat-han
       mac:
         neander-1: 00:09:85:24:fa:2e
         neander-2: 60:98:6c:3d:56:f8
@@ -122,7 +122,7 @@ own_sites: &id011
           from: 10.1.238.61
           to: 10.1.239.251
     fastd:
-      interface: bat-han
+      interface: tap-han
       limit: 200
       mac:
         neander-1: 90:0c:f2:e4:53:9f
@@ -173,7 +173,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:90::4
   ffnef-hld: &id003
     batman:
-      interface: tap-hld
+      interface: bat-hld
       mac:
         neander-1: 40:7d:e1:6c:a6:cc
         neander-2: 10:10:d6:2d:b1:f3
@@ -200,7 +200,7 @@ own_sites: &id011
           from: 10.11.140.61
           to: 10.11.143.251
     fastd:
-      interface: bat-hld
+      interface: tap-hld
       limit: 200
       mac:
         neander-1: 60:c7:56:70:1d:fc
@@ -251,7 +251,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:50::4
   ffnef-hlg: &id004
     batman:
-      interface: tap-hlg
+      interface: bat-hlg
       mac:
         neander-1: e0:ad:66:6d:c9:22
         neander-2: b0:e1:e8:18:b1:6c
@@ -278,7 +278,7 @@ own_sites: &id011
           from: 10.11.124.61
           to: 10.11.127.251
     fastd:
-      interface: bat-hlg
+      interface: tap-hlg
       limit: 200
       mac:
         neander-1: 20:42:54:4f:8e:f8
@@ -329,7 +329,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:20::4
   ffnef-lgf: &id005
     batman:
-      interface: tap-lgf
+      interface: bat-lgf
       mac:
         neander-1: 70:9b:d7:4d:dd:06
         neander-2: b0:d5:d9:fb:45:79
@@ -356,7 +356,7 @@ own_sites: &id011
           from: 10.1.246.61
           to: 10.1.247.251
     fastd:
-      interface: bat-lgf
+      interface: tap-lgf
       limit: 200
       mac:
         neander-1: 30:3f:1f:5b:c2:6b
@@ -407,7 +407,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:a0::4
   ffnef-met: &id006
     batman:
-      interface: tap-met
+      interface: bat-met
       mac:
         neander-1: 20:2e:34:f4:84:38
         neander-2: e0:a0:46:4c:bc:f8
@@ -434,7 +434,7 @@ own_sites: &id011
           from: 10.1.204.125
           to: 10.1.207.251
     fastd:
-      interface: bat-met
+      interface: tap-met
       limit: 200
       mac:
         neander-1: 70:42:46:53:85:37
@@ -485,7 +485,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:10::4
   ffnef-mon: &id007
     batman:
-      interface: tap-mon
+      interface: bat-mon
       mac:
         neander-1: e0:12:8f:a1:fd:20
         neander-2: 20:ae:9f:39:18:11
@@ -512,7 +512,7 @@ own_sites: &id011
           from: 10.1.214.61
           to: 10.1.215.251
     fastd:
-      interface: bat-mon
+      interface: tap-mon
       limit: 200
       mac:
         neander-1: c0:0a:a0:99:7b:ff
@@ -563,7 +563,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:40::4
   ffnef-rat: &id008
     batman:
-      interface: tap-rat
+      interface: bat-rat
       mac:
         neander-1: 40:c1:38:10:cc:f6
         neander-2: 20:4b:ac:55:58:46
@@ -590,7 +590,7 @@ own_sites: &id011
           from: 10.11.76.61
           to: 10.11.79.251
     fastd:
-      interface: bat-rat
+      interface: tap-rat
       limit: 200
       mac:
         neander-1: 90:ea:f6:27:14:f9
@@ -641,7 +641,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:80::4
   ffnef-vel: &id009
     batman:
-      interface: tap-vel
+      interface: bat-vel
       mac:
         neander-1: 20:00:74:a9:94:f4
         neander-2: 60:55:1f:68:5d:f3
@@ -668,7 +668,7 @@ own_sites: &id011
           from: 10.11.92.61
           to: 10.11.95.251
     fastd:
-      interface: bat-vel
+      interface: tap-vel
       limit: 200
       mac:
         neander-1: 90:cf:83:15:a7:8b
@@ -719,7 +719,7 @@ own_sites: &id011
       neander-4: 2a03:2260:300e:30::4
   ffnef-wlf: &id010
     batman:
-      interface: tap-wlf
+      interface: bat-wlf
       mac:
         neander-1: 30:cd:84:0e:5c:ae
         neander-2: 70:9f:eb:dc:ca:06
@@ -746,7 +746,7 @@ own_sites: &id011
           from: 10.1.254.61
           to: 10.1.255.251
     fastd:
-      interface: bat-wlf
+      interface: tap-wlf
       limit: 200
       mac:
         neander-1: d0:d0:08:32:63:04
@@ -799,7 +799,7 @@ site_partitions:
   all: &id012
     ffdus:
       batman:
-        interface: tap-ffdus
+        interface: bat-ffdus
         mac: false
       bridge: br-ffdus
       bssid: 10:6b:0a:1b:c2:40
@@ -808,7 +808,7 @@ site_partitions:
       compressed4: 10.155.0.0/20
       compressed6: fda0:747e:ab29:9375::/64
       fastd:
-        interface: bat-ffdus
+        interface: tap-ffdus
         limit: 200
         mac: false
         mtu: 1364

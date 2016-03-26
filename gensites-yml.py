@@ -96,14 +96,14 @@ for site_code in sites['sites'].keys():
         'peers': sites['sites'][site_code]['fastd'],
         'limit': 200,
         'mtu': 1364,
-        'interface': 'bat-' + site_code.split('-')[-1],
+        'interface': 'tap-' + site_code.split('-')[-1],
         'mac': (False if foreign else dict((node[0],
             getMacFromString('fastd'+site_code+node[0])) for node in supernodes[ver]))
         }
     sites['sites'][site_code]['batman'] = {
             'mac': (False if foreign else dict((node[0],
         getMacFromString('batman'+site_code+node[0])) for node in supernodes[ver])),
-            'interface': 'tap-' + site_code.split('-')[-1]
+            'interface': 'bat-' + site_code.split('-')[-1]
             }
    
     fastd_template = jinja2.Template("""key "{{ key }}";

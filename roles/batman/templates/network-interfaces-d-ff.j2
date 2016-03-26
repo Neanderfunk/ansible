@@ -22,10 +22,10 @@
 auto {{ sites[site].bridge }}
 iface {{ sites[site].bridge }} inet {{ 'dhcp' if node_type=='dhcp' else 'static' }}
         netmask {{ sites[site].prefixlen4 }}
-        bridge_ports {{ sites[site].fastd.interface }}
-        pre-up ip link set {{ sites[site].fastd.interface }} up
+        bridge_ports {{ sites[site].batman.interface }}
+        pre-up ip link set {{ sites[site].batman.interface }} up
         bridge_stp no
-        {% if node_type == 'supernode' %}
+{#    #}{% if node_type == 'supernode' %}
         address {{ sites[site].supernodeAddr4[ansible_hostname] }}
         # non-existance only gives warning
         pre-up ip rule add prio 1000 iif $IFACE table internet
@@ -46,7 +46,7 @@ metric 2048
 iface {{ sites[site].bridge }} inet6 static
         netmask {{ sites[site].prefixlen6 }}
         {% if node_type=='supernode' %}
-        {# host is supernode #}
+{#      host is supernode #}
         pre-up ip -6 rule add prio 1000 iif $IFACE table internet
         pre-up ip -6 rule add prio 2000 iif $IFACE table unreachable
         address {{ sites[site].supernodeAddr6[ansible_hostname] }}
