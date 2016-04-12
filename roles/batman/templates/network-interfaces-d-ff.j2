@@ -23,7 +23,7 @@ auto {{ sites[site].bridge }}
 iface {{ sites[site].bridge }} inet {{ 'dhcp' if node_type=='dhcp' else 'static' }}
         netmask {{ sites[site].prefixlen4 }}
         bridge_ports {{ sites[site].batman.interface }}
-        pre-up ip link set {{ sites[site].batman.interface }} up
+        pre-up ip link set {{ sites[site].batman.interface }} up || true
         bridge_stp no
 {#    #}{% if node_type == 'supernode' %}
         address {{ sites[site].supernodeAddr4[ansible_hostname] }}
