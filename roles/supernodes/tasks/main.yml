@@ -16,6 +16,10 @@
   copy: src=90-forwarding.conf dest=/etc/sysctl.d/
   notify: restart procps
   tags: [ routing ]
+- name: increase netfilter connection tracking table size
+  copy: src=90-netfilter.conf dest=/etc/sysctl.d/
+  notify: restart procps
+  tags: [ routing ]
 - name: fix icmp forwarding via sysctl
   copy: src=90-icmp-replies.conf dest=/etc/sysctl.d/
   notify: restart procps
