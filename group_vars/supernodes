@@ -1,10 +1,16 @@
 grePublicIP:
-  neander-1:
+  neander-00:
     ip4: "185.66.195.78"
     ip6: "2a03:2260:300e::1"
     preference:
       bb-a.ak.ber: "110"
       bb-b.ak.ber: "110"
+  neander-1:
+    ip4: "185.66.193.111"
+    ip6: "2a03:2260:300e::1"
+    preference:
+      bb-a.ix.dus: "110"
+      bb-b.ix.dus: "110"
   neander-2:
     ip4: "185.66.195.79"
     ip6: "2a03:2260:300e::2"
