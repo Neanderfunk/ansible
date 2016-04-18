@@ -93,6 +93,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:70::2
       neander-3: 2a03:2260:300e:70::3
       neander-4: 2a03:2260:300e:70::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-han: &id002
     batman:
       interface: bat-han
@@ -171,6 +172,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:90::2
       neander-3: 2a03:2260:300e:90::3
       neander-4: 2a03:2260:300e:90::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-hld: &id003
     batman:
       interface: bat-hld
@@ -249,6 +251,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:50::2
       neander-3: 2a03:2260:300e:50::3
       neander-4: 2a03:2260:300e:50::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-hlg: &id004
     batman:
       interface: bat-hlg
@@ -327,6 +330,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:20::2
       neander-3: 2a03:2260:300e:20::3
       neander-4: 2a03:2260:300e:20::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-lgf: &id005
     batman:
       interface: bat-lgf
@@ -405,6 +409,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:a0::2
       neander-3: 2a03:2260:300e:a0::3
       neander-4: 2a03:2260:300e:a0::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-met: &id006
     batman:
       interface: bat-met
@@ -483,6 +488,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:10::2
       neander-3: 2a03:2260:300e:10::3
       neander-4: 2a03:2260:300e:10::4
+    website: http://freifunk-mettmann.de/
   ffnef-mon: &id007
     batman:
       interface: bat-mon
@@ -561,6 +567,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:40::2
       neander-3: 2a03:2260:300e:40::3
       neander-4: 2a03:2260:300e:40::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-rat: &id008
     batman:
       interface: bat-rat
@@ -639,6 +646,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:80::2
       neander-3: 2a03:2260:300e:80::3
       neander-4: 2a03:2260:300e:80::4
+    website: http://freifunk-ratingen.de/
   ffnef-vel: &id009
     batman:
       interface: bat-vel
@@ -717,6 +725,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:30::2
       neander-3: 2a03:2260:300e:30::3
       neander-4: 2a03:2260:300e:30::4
+    website: http://freifunk-neanderfunk.de/
   ffnef-wlf: &id010
     batman:
       interface: bat-wlf
@@ -795,6 +804,7 @@ own_sites: &id011
       neander-2: 2a03:2260:300e:b0::2
       neander-3: 2a03:2260:300e:b0::3
       neander-4: 2a03:2260:300e:b0::4
+    website: http://freifunk-neanderfunk.de/
 site_partitions:
   all: &id012
     ffdus:
