@@ -14,6 +14,7 @@ supernodes:
 
 config:
     my_meta_community: ffnef
+    konzentratoren: 4
 
 othernodes:
   vserver-0:

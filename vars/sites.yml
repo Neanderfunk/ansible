@@ -1,4 +1,5 @@
 config:
+  konzentratoren: 4
   my_meta_community: ffnef
 is_supernode:
   neander-1: true
@@ -43,6 +44,11 @@ own_sites: &id011
         neander-4:
           from: 10.1.230.61
           to: 10.1.231.251
+    extra_networks6:
+    - 2a03:2260:300e:70::/64
+    - 2a03:2260:300e:170::/64
+    - 2a03:2260:300e:270::/64
+    - 2a03:2260:300e:370::/64
     fastd:
       interface: tap-erk
       limit: 200
@@ -122,6 +128,11 @@ own_sites: &id011
         neander-4:
           from: 10.1.238.61
           to: 10.1.239.251
+    extra_networks6:
+    - 2a03:2260:300e:90::/64
+    - 2a03:2260:300e:190::/64
+    - 2a03:2260:300e:290::/64
+    - 2a03:2260:300e:390::/64
     fastd:
       interface: tap-han
       limit: 200
@@ -201,6 +212,11 @@ own_sites: &id011
         neander-4:
           from: 10.11.140.61
           to: 10.11.143.251
+    extra_networks6:
+    - 2a03:2260:300e:50::/64
+    - 2a03:2260:300e:150::/64
+    - 2a03:2260:300e:250::/64
+    - 2a03:2260:300e:350::/64
     fastd:
       interface: tap-hld
       limit: 200
@@ -280,6 +296,11 @@ own_sites: &id011
         neander-4:
           from: 10.11.124.61
           to: 10.11.127.251
+    extra_networks6:
+    - 2a03:2260:300e:20::/64
+    - 2a03:2260:300e:120::/64
+    - 2a03:2260:300e:220::/64
+    - 2a03:2260:300e:320::/64
     fastd:
       interface: tap-hlg
       limit: 200
@@ -359,6 +380,11 @@ own_sites: &id011
         neander-4:
           from: 10.1.246.61
           to: 10.1.247.251
+    extra_networks6:
+    - 2a03:2260:300e:a0::/64
+    - 2a03:2260:300e:1a0::/64
+    - 2a03:2260:300e:2a0::/64
+    - 2a03:2260:300e:3a0::/64
     fastd:
       interface: tap-lgf
       limit: 200
@@ -438,6 +464,11 @@ own_sites: &id011
         neander-4:
           from: 10.1.204.125
           to: 10.1.207.251
+    extra_networks6:
+    - 2a03:2260:300e:10::/64
+    - 2a03:2260:300e:110::/64
+    - 2a03:2260:300e:210::/64
+    - 2a03:2260:300e:310::/64
     fastd:
       interface: tap-met
       limit: 200
@@ -517,6 +548,11 @@ own_sites: &id011
         neander-4:
           from: 10.1.214.61
           to: 10.1.215.251
+    extra_networks6:
+    - 2a03:2260:300e:40::/64
+    - 2a03:2260:300e:140::/64
+    - 2a03:2260:300e:240::/64
+    - 2a03:2260:300e:340::/64
     fastd:
       interface: tap-mon
       limit: 200
@@ -596,6 +632,11 @@ own_sites: &id011
         neander-4:
           from: 10.11.76.61
           to: 10.11.79.251
+    extra_networks6:
+    - 2a03:2260:300e:80::/64
+    - 2a03:2260:300e:180::/64
+    - 2a03:2260:300e:280::/64
+    - 2a03:2260:300e:380::/64
     fastd:
       interface: tap-rat
       limit: 200
@@ -675,6 +716,11 @@ own_sites: &id011
         neander-4:
           from: 10.11.92.61
           to: 10.11.95.251
+    extra_networks6:
+    - 2a03:2260:300e:30::/64
+    - 2a03:2260:300e:130::/64
+    - 2a03:2260:300e:230::/64
+    - 2a03:2260:300e:330::/64
     fastd:
       interface: tap-vel
       limit: 200
@@ -754,6 +800,11 @@ own_sites: &id011
         neander-4:
           from: 10.1.254.61
           to: 10.1.255.251
+    extra_networks6:
+    - 2a03:2260:300e:b0::/64
+    - 2a03:2260:300e:1b0::/64
+    - 2a03:2260:300e:2b0::/64
+    - 2a03:2260:300e:3b0::/64
     fastd:
       interface: tap-wlf
       limit: 200

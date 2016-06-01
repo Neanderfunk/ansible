@@ -81,6 +81,8 @@ for site_code in sites['sites'].keys():
     if not foreign:
         sites['sites'][site_code]['next_node4'] = str(supernodes['4'][0][1] + 254)
         sites['sites'][site_code]['next_node6'] = str(supernodes['6'][0][1] + 0xfffe)
+        
+        sites['sites'][site_code]['extra_networks6'] = list(str(ip['6'].network+(n*16**18))+'/64' for n in range(sites['config']['konzentratoren']))
     
         sites['sites'][site_code]['dhcp'] = {'range': {}}
         currentIP=supernodes['4'][0][1] + sites['sites'][site_code]['reserved_ip_addresses']
