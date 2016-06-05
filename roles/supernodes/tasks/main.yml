@@ -1,3 +1,12 @@
+- name: install check_mk agent
+  apt: name=check-mk-agent update_cache=yes cache_valid_time=3600
+  tags: [ monitoring ]
+- name: install check_mk local supernode script
+  copy: src=check-mk-local-supernode dest=/usr/lib/check_mk_agent/local/supernode mode=755
+  tags: [ monitoring ]
+- name: install bc
+  apt: name=bc update_cache=yes cache_valid_time=3600
+  tags: [ monitoring ]
 - name: generate /etc/network/interfaces.d/gre
   template: src=network-interfaces-d-gre.j2 dest=/etc/network/interfaces.d/gre
   tags: [ ffrlbb ]
@@ -54,3 +63,9 @@
   copy: src=rt_tables dest=/etc/iproute2/rt_tables
 - name: rc_local
   template: src=rc.local.j2 dest=/etc/rc.local
+- name: install check_mk agent
+  apt: name=check-mk-agent update_cache=yes cache_valid_time=3600
+  tags: [ check_mk ]
+- name: install xinetd
+  apt: name=xinetd update_cache=yes cache_valid_time=3600
+  tags: [ check_mk ]

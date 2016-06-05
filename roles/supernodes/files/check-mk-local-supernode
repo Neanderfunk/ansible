@@ -3,7 +3,7 @@
 
 bat_interfaces=$(ip l|grep -F 'pfifo_fast master' | sed -r -e 's/.+pfifo_fast master //' -e 's/ state .+//')
 bat_interfaces_num=$(echo $bat_interfaces|wc -w)
-bat_interfaces_low_traffic='^bat-(erk|han|mon|lgf|wlf)$'
+bat_interfaces_low_traffic='^bat-(erk|han|hlg|mon|lgf|wlf)$'
 
 #Get data
 bat_version=$(batctl -v);
@@ -58,7 +58,7 @@ for intf in $bat_interfaces sum; do
   if echo $intf | grep -qE $bat_interfaces_low_traffic; then
     echo "P Batman-Router$suffix_name Router=${bat_router[$intf]};0:450;0:500;"
     echo "P Batman-Clients$suffix_name Clients=${bat_clients[$intf]};0:2000;0:25000; ${bat_clients[$intf]} Clients";
-    echo "P Clients-per-Router$suffix_name Ratio=${CpR[$intf]};0.1:5;0.0:10;"
+    echo "P Clients-per-Router$suffix_name Ratio=${CpR[$intf]};0.0:5;0.0:10;"
   else
     echo "P Batman-Router$suffix_name Router=${bat_router[$intf]};10:450;5:500;"
     echo "P Batman-Clients$suffix_name Clients=${bat_clients[$intf]};5:2000;0:25000; ${bat_clients[$intf]} Clients";
