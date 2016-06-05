@@ -1,0 +1,206 @@
+---
+
+supernodes:
+  - host: neander-1
+    domain: ffnef.de
+  - host: neander-2
+    domain: ffnef.de
+  - host: neander-3
+    domain: ffnef.de
+  - host: neander-4
+    domain: ffnef.de
+
+config:
+    my_meta_community: ffnef
+
+othernodes:
+  vserver-0:
+    domain: ffnef.de
+    local:
+        ip6:
+            addr: 2a03:4000:6:1b0::1/64
+    mesh:
+      postfix4: 10
+      postfix6: 733
+
+"sites": {
+  "ffnef-met": {
+    "hostname_prefix" : "ME-",
+    "site" : "Mettmann",
+    "compressed4"  : "10.1.192.0/20",
+    "compressed6" : "2a03:2260:300e:0010::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63974, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63974, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63974, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63974, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 511
+
+  },
+  "ffnef-hlg": {
+    "hostname_prefix" : "ME-",
+    "site" : "Heiligenhaus",
+    "compressed4"  : "10.11.112.0/20",
+    "compressed6" : "2a03:2260:300e:0020::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63975, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63975, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63975, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63975, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-vel": {
+    "hostname_prefix" : "ME-",
+    "site" : "Velbert",
+    "compressed4"  : "10.11.80.0/20",
+    "compressed6" : "2a03:2260:300e:0030::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63976, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63976, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63976, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63976, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-mon": {
+    "hostname_prefix" : "ME-",
+    "site" : "Monheim",
+    "compressed4"  : "10.1.208.0/21",
+    "compressed6" : "2a03:2260:300e:0040::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63977, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63977, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63977, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63977, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-hld": {
+    "hostname_prefix" : "ME-",
+    "site" : "Hilden",
+    "compressed4"  : "10.11.128.0/20",
+    "compressed6" : "2a03:2260:300e:0050::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "fastd1.ffnef-hld.ffnef.de": { "port": 63978, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "fastd2.ffnef-hld.ffnef.de": { "port": 63978, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "fastd3.ffnef-hld.ffnef.de": { "port": 63978, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "fastd4.ffnef-hld.ffnef.de": { "port": 63978, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-erk": {
+    "hostname_prefix" : "ME-",
+    "site" : "Erkrath",
+    "compressed4"  : "10.1.216.0/21",
+    "compressed6" : "2a03:2260:300e:0060::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63979, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63979, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63979, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63979, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-erk": {
+    "hostname_prefix" : "ME-",
+    "site" : "Erkrath",
+    "compressed4"  : "10.1.224.0/21",
+    "compressed6" : "2a03:2260:300e:0070::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63979, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63979, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63979, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63979, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-rat": {
+    "hostname_prefix" : "ME-",
+    "site" : "Ratingen",
+    "compressed4"  : "10.11.64.0/20",
+    "compressed6" : "2a03:2260:300e:0080::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63980, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63980, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63980, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63980, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-han": {
+    "hostname_prefix" : "ME-",
+    "site" : "Haan",
+    "compressed4"  : "10.1.232.0/21",
+    "compressed6" : "2a03:2260:300e:0090::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63981, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63981, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63981, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63981, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-lgf": {
+    "hostname_prefix" : "ME-",
+    "site" : "Langenfeld",
+    "compressed4"  : "10.1.240.0/21",
+    "compressed6" : "2a03:2260:300e:00a0::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63982, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63982, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63982, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63982, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffnef-wlf": {
+    "hostname_prefix" : "ME-",
+    "site" : "Wuelfrath",
+    "compressed4"  : "10.1.248.0/21",
+    "compressed6" : "2a03:2260:300e:00b0::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "neander-1.ffnef.de": { "port": 63983, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059" },
+      "neander-2.ffnef.de": { "port": 63983, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4" },
+      "neander-3.ffnef.de": { "port": 63983, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20" },
+      "neander-4.ffnef.de": { "port": 63983, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a" },
+    },
+    reserved_ip_addresses: 255
+  },
+  "ffdus": {
+    "hostname_prefix" : "-",
+    "site" : "Flingern",
+    "compressed4"  : "10.155.0.0/20",
+    "compressed6" : "fda0:747e:ab29:9375::/64",
+    "channel24" : 13, # ???
+    "channel5" : 44, # ???
+    "fastd": {
+      "flingern-1.ffdus.de": { "port": 10000, "key": "815ec60792942be119273a0bfc682d492cc2bd61966cb43e85cc42c1b2e3e2e0" },
+      "w6.ffdus.de": { "port": 40227, "key": "6775943433146a1c16a33940805fbafa8ba0cc6ef328d66cffc0ffe2480226fa" },
+    },
+    reserved_ip_addresses: 255
+  },
+ }

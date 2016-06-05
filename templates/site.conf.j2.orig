@@ -46,10 +46,11 @@
       -- disabled = true, (optional)
     },
 
-    mesh = {
+    ibss = {
       -- Adjust these values!
-      id = '{{ item.key }}-mesh',
+      ssid = '{{ item.key }}-mesh',
       mcast_rate = 6000,
+      bssid = '{{ item.value.bssid }}',
       -- disabled = true, (optional)
     },
   },
@@ -60,10 +61,11 @@
   wifi5 = {
     channel = {{ item.value.channel5 }},
     ap = {
-      ssid = 'Freifunk',
+      ssid = 'Freifunk-test',
     },
-    mesh = {
-      id = '{{ item.key }}-mesh',
+    ibss = {
+      ssid = '{{ item.key }}-mesh',
+      bssid = '{{ item.value.bssid }}',
       mcast_rate = 6000,
     },
   },
@@ -173,8 +175,6 @@
                 'dd6a9d1aefc175f885705691498e904cbda12cc4602316f04816d78026c7c0f0', -- Benedikt Wi
 		'fb919d4adc69bd404f5093ce6b43badf351f9e642ad458406be986baf6096247', -- PetaByteBoy
 		'2a61930930a240c027f6ca4197203d400b6e4a32f9e92041e5f086907796c9bc', -- adorfer
-		'd02f8e60fb7a5069556500694ebe512b6017b01e9950476e4cfcf10d5130c296', -- JJX
-		'96d644ff1ce07d6f67d9329a0eb9a1548d0d01a3519d17ec1fe9d49da3270bfc', -- plaste
         },
       },
       beta = {
@@ -200,8 +200,6 @@
                 'e2f48369e2bd55780908c06f2d10318f2844676c44ec3e70b4a9b8635b2a09d6', -- Benedikt Wi
 		'fb919d4adc69bd404f5093ce6b43badf351f9e642ad458406be986baf6096247', -- PetaByteBoy
 		'2a61930930a240c027f6ca4197203d400b6e4a32f9e92041e5f086907796c9bc', -- adorfer
-		'd02f8e60fb7a5069556500694ebe512b6017b01e9950476e4cfcf10d5130c296', -- JJX
-		'96d644ff1ce07d6f67d9329a0eb9a1548d0d01a3519d17ec1fe9d49da3270bfc', -- plaste
         },
       },
       experimental = {
@@ -226,19 +224,9 @@
                 'e2f48369e2bd55780908c06f2d10318f2844676c44ec3e70b4a9b8635b2a09d6', -- Benedikt Wi
 		'fb919d4adc69bd404f5093ce6b43badf351f9e642ad458406be986baf6096247', -- PetaByteBoy
 		'2a61930930a240c027f6ca4197203d400b6e4a32f9e92041e5f086907796c9bc', -- adorfer
-		'd02f8e60fb7a5069556500694ebe512b6017b01e9950476e4cfcf10d5130c296', -- JJX
-		'96d644ff1ce07d6f67d9329a0eb9a1548d0d01a3519d17ec1fe9d49da3270bfc', -- plaste
         },
       },
     },
-  },
-
-
-  opkg = {
-	openwrt = 'http://downloads.openwrt.org/%n/%v/%S/packages',
-	extra = {
-	  modules = 'http://download.ffnef.de/firmware/modules/%GR/%S',
-	},
   },
 
 
@@ -248,6 +236,18 @@
   },
 
   mesh_on_lan = true,
+  vlan = 119,
+
+  -- Node roles
+  -- roles = {
+  --   default = 'node',
+  --   list = {
+  --     'node',
+  --     'test',
+  --     'backbone',
+  --     'service',
+  --   },
+  -- },
 
   -- Skip setup mode (config mode) on first boot
   -- setup_mode = {
