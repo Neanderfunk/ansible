@@ -1,6 +1,6 @@
 vserver-0.ffnef.de ansible_host=5.45.103.213
 neander-1.ffnef.de ansible_ssh_user=neander
-neander-2.ffnef.de ansible_ssh_user=charly
+#neander-2.ffnef.de ansible_ssh_user=charly
 neander-3.ffnef.de ansible_ssh_user=neander
 
 [encrypted-root]
@@ -18,10 +18,10 @@ vserver-0.ffnef.de
 [nameservers]
 vserver-0.ffnef.de
 neander-1.ffnef.de
-neander-2.ffnef.de
+#neander-2.ffnef.de
 neander-3.ffnef.de
 
 [supernodes]
 neander-1.ffnef.de
-neander-2.ffnef.de
+#neander-2.ffnef.de
 neander-3.ffnef.de

@@ -1,31 +1,42 @@
+; this file is generated from https://github.com/Neaderfunk/ansible/roles/master-ns/templates/db.ffnef.de.j2
+
+
 $ORIGIN ffnef.de.
 $TTL 1h
 
-@				IN      SOA     vserver-0 nic (
-                                  2016031200    ; Serial
+@                               IN      SOA     vserver-0 nic (
+                                  2016060600    ; Serial
                                        10800    ; Refresh
                                         3600    ; Retry
                                       604800    ; Expire
                                        40000 )  ; Negative Cache TTL
 
-				IN      NS      ns2.afraid.org.
-				IN      NS      puck.nether.net.
-				IN		A		5.45.103.213
-				IN		MX		10 vserver-0
+                                IN NS		ns2.afraid.org.
+                                IN NS		puck.nether.net.
+                                IN A		5.45.103.213
+                                IN MX		10 vserver-0
 
-vserver-0		IN		A		5.45.103.213
-				IN		AAAA	2a03:4000:6:1b0::1
-*				IN		CNAME	vserver-0
+vserver-0               		IN A		5.45.103.213
+                                IN AAAA		2a03:4000:6:1b0::1
+*                               IN CNAME	vserver-0
 
-neander-1		IN		A		151.80.11.200
-neander-2		IN		A		51.255.150.69
-neander-3		IN		A		151.80.11.203
+buildbot                        IN CNAME	vserver-0
+download                        IN CNAME	vserver-0
+firmware                        IN CNAME	vserver-0
+
+neander-1               		IN A		151.80.11.200
+neander-3               		IN A		151.80.11.203
+
+fileserver						IN A		37.59.64.74	
 
 
-ntp				IN		CNAME	0.freifunk.pool.ntp.org.
+ntp                             IN CNAME	0.freifunk.pool.ntp.org.
 
-map				IN		CNAME	karte.ffdus.de.
-karte			IN		CNAME	karte.ffdus.de.
+map                             IN CNAME	karte.ffdus.de.
+karte                           IN CNAME	karte.ffdus.de.
+FF-ME-Blech1                    IN A		94.23.63.216
+met-1                           IN A		37.59.64.73
+blech1-konz                     IN A		37.59.64.72
 
 {% set i=0 %}{#
 	#}{% for site in own_sites %}{#
