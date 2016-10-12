@@ -252,6 +252,13 @@
 	},
   },
 
+    -- for ffho stuff
+	additional_prefix6 = {
+{% for network in item.value.extra_networks6 %}
+		'{{ network }}',
+{% endfor %}
+	},
+
   mesh_on_lan = true,
 
   -- Skip setup mode (config mode) on first boot
