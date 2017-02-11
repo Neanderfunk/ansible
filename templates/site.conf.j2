@@ -245,6 +245,11 @@
   roguenets_filter = {
           allowed_prefix4 = '{{ item.value.compressed4 }}',
           allowed_prefix6 = '{{ item.value.compressed6 }}',
+		  additional_prefix6 = {
+{% for network in item.value.extra_networks6 %}
+		'{{ network }}',
+{% endfor %}
+	},
   },
 
   mesh_on_lan = true,
