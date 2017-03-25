@@ -57,7 +57,7 @@ for site_code in sites['sites'].keys():
 
     ip = {
         '4': ipaddr.IPNetwork(sites['sites'][site_code]['compressed4']),
-        '6': ipaddr.IPNetwork(sites['sites'][site_code]['compressed6'])
+        '6': ipaddr.IPNetwork(sites['sites'][site_code]['compressed6']),
     }
 
     supernodes={}
@@ -79,10 +79,13 @@ for site_code in sites['sites'].keys():
                 dict((node[0], str(node[1])) for node in supernodes[ver])
        
     if not foreign:
+        extra6=ipaddr.IPNetwork(sites['sites'][site_code]['extra6'])
+        assert(extra6.prefixlen <= 64);
+
         sites['sites'][site_code]['next_node4'] = str(supernodes['4'][0][1] + 254)
         sites['sites'][site_code]['next_node6'] = str(supernodes['6'][0][1] + 0xfffe)
         
-        sites['sites'][site_code]['extra_networks6'] = list(str(ip['6'].network+(n*16**18))+'/64' for n in range(sites['config']['konzentratoren']))
+        sites['sites'][site_code]['extra_networks6'] = list(str(extra6.network+(n*16**18))+'/64' for n in range(sites['config']['konzentratoren']))
     
         sites['sites'][site_code]['dhcp'] = {'range': {}}
         currentIP=supernodes['4'][0][1] + sites['sites'][site_code]['reserved_ip_addresses']

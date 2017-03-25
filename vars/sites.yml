@@ -7,6 +7,11 @@ is_supernode:
   neander-3: true
   neander-4: true
 othernodes:
+  fileserver:
+    domain: ffnef.de
+    mesh:
+      postfix4: 11
+      postfix6: 1733
   vserver-0:
     domain: ffnef.de
     local:
@@ -29,7 +34,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.1.224.0/21
-    compressed6: 2a03:2260:300e:0070::/64
+    compressed6: 2a03:2260:122:1177::/64
     dhcp:
       range:
         neander-1:
@@ -44,6 +49,7 @@ own_sites: &id011
         neander-4:
           from: 10.1.230.61
           to: 10.1.231.251
+    extra6: 2a03:2260:300e:0070::/64
     extra_networks6:
     - 2a03:2260:300e:70::/64
     - 2a03:2260:300e:170::/64
@@ -80,10 +86,10 @@ own_sites: &id011
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.224.0
-    network6: '2a03:2260:300e:70::'
+    network6: '2a03:2260:122:1177::'
     next_mac: d0:e7:c1:43:4b:eb
     next_node4: 10.1.224.255
-    next_node6: 2a03:2260:300e:70::ffff
+    next_node6: 2a03:2260:122:1177::ffff
     prefixlen4: 21
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -95,10 +101,10 @@ own_sites: &id011
       neander-3: 10.1.224.3
       neander-4: 10.1.224.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:70::1
-      neander-2: 2a03:2260:300e:70::2
-      neander-3: 2a03:2260:300e:70::3
-      neander-4: 2a03:2260:300e:70::4
+      neander-1: 2a03:2260:122:1177::1
+      neander-2: 2a03:2260:122:1177::2
+      neander-3: 2a03:2260:122:1177::3
+      neander-4: 2a03:2260:122:1177::4
     website: http://freifunk-neanderfunk.de/
   ffnef-han: &id002
     batman:
@@ -113,7 +119,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.1.232.0/21
-    compressed6: 2a03:2260:300e:0090::/64
+    compressed6: 2a03:2260:122:1179::/64
     dhcp:
       range:
         neander-1:
@@ -128,6 +134,7 @@ own_sites: &id011
         neander-4:
           from: 10.1.238.61
           to: 10.1.239.251
+    extra6: 2a03:2260:300e:0090::/64
     extra_networks6:
     - 2a03:2260:300e:90::/64
     - 2a03:2260:300e:190::/64
@@ -164,10 +171,10 @@ own_sites: &id011
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.232.0
-    network6: '2a03:2260:300e:90::'
+    network6: '2a03:2260:122:1179::'
     next_mac: 80:81:25:1f:ea:56
     next_node4: 10.1.232.255
-    next_node6: 2a03:2260:300e:90::ffff
+    next_node6: 2a03:2260:122:1179::ffff
     prefixlen4: 21
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -179,10 +186,10 @@ own_sites: &id011
       neander-3: 10.1.232.3
       neander-4: 10.1.232.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:90::1
-      neander-2: 2a03:2260:300e:90::2
-      neander-3: 2a03:2260:300e:90::3
-      neander-4: 2a03:2260:300e:90::4
+      neander-1: 2a03:2260:122:1179::1
+      neander-2: 2a03:2260:122:1179::2
+      neander-3: 2a03:2260:122:1179::3
+      neander-4: 2a03:2260:122:1179::4
     website: http://freifunk-neanderfunk.de/
   ffnef-hld: &id003
     batman:
@@ -197,7 +204,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.11.128.0/20
-    compressed6: 2a03:2260:300e:0050::/64
+    compressed6: 2a03:2260:122:1175::/64
     dhcp:
       range:
         neander-1:
@@ -212,6 +219,7 @@ own_sites: &id011
         neander-4:
           from: 10.11.140.61
           to: 10.11.143.251
+    extra6: 2a03:2260:300e:0050::/64
     extra_networks6:
     - 2a03:2260:300e:50::/64
     - 2a03:2260:300e:150::/64
@@ -248,10 +256,10 @@ own_sites: &id011
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.128.0
-    network6: '2a03:2260:300e:50::'
+    network6: '2a03:2260:122:1175::'
     next_mac: d0:cb:02:8f:04:de
     next_node4: 10.11.128.255
-    next_node6: 2a03:2260:300e:50::ffff
+    next_node6: 2a03:2260:122:1175::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -263,10 +271,10 @@ own_sites: &id011
       neander-3: 10.11.128.3
       neander-4: 10.11.128.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:50::1
-      neander-2: 2a03:2260:300e:50::2
-      neander-3: 2a03:2260:300e:50::3
-      neander-4: 2a03:2260:300e:50::4
+      neander-1: 2a03:2260:122:1175::1
+      neander-2: 2a03:2260:122:1175::2
+      neander-3: 2a03:2260:122:1175::3
+      neander-4: 2a03:2260:122:1175::4
     website: http://freifunk-neanderfunk.de/
   ffnef-hlg: &id004
     batman:
@@ -281,7 +289,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.11.112.0/20
-    compressed6: 2a03:2260:300e:0020::/64
+    compressed6: 2a03:2260:122:1172::/64
     dhcp:
       range:
         neander-1:
@@ -296,6 +304,7 @@ own_sites: &id011
         neander-4:
           from: 10.11.124.61
           to: 10.11.127.251
+    extra6: 2a03:2260:300e:0020::/64
     extra_networks6:
     - 2a03:2260:300e:20::/64
     - 2a03:2260:300e:120::/64
@@ -332,10 +341,10 @@ own_sites: &id011
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.112.0
-    network6: '2a03:2260:300e:20::'
+    network6: '2a03:2260:122:1172::'
     next_mac: b0:e8:9b:b7:e1:9b
     next_node4: 10.11.112.255
-    next_node6: 2a03:2260:300e:20::ffff
+    next_node6: 2a03:2260:122:1172::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -347,10 +356,10 @@ own_sites: &id011
       neander-3: 10.11.112.3
       neander-4: 10.11.112.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:20::1
-      neander-2: 2a03:2260:300e:20::2
-      neander-3: 2a03:2260:300e:20::3
-      neander-4: 2a03:2260:300e:20::4
+      neander-1: 2a03:2260:122:1172::1
+      neander-2: 2a03:2260:122:1172::2
+      neander-3: 2a03:2260:122:1172::3
+      neander-4: 2a03:2260:122:1172::4
     website: http://freifunk-neanderfunk.de/
   ffnef-lgf: &id005
     batman:
@@ -365,7 +374,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.1.240.0/21
-    compressed6: 2a03:2260:300e:00a0::/64
+    compressed6: 2a03:2260:122:117a::/64
     dhcp:
       range:
         neander-1:
@@ -380,6 +389,7 @@ own_sites: &id011
         neander-4:
           from: 10.1.246.61
           to: 10.1.247.251
+    extra6: 2a03:2260:300e:00a0::/64
     extra_networks6:
     - 2a03:2260:300e:a0::/64
     - 2a03:2260:300e:1a0::/64
@@ -416,10 +426,10 @@ own_sites: &id011
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.240.0
-    network6: '2a03:2260:300e:a0::'
+    network6: '2a03:2260:122:117a::'
     next_mac: f0:d0:90:d6:dd:df
     next_node4: 10.1.240.255
-    next_node6: 2a03:2260:300e:a0::ffff
+    next_node6: 2a03:2260:122:117a::ffff
     prefixlen4: 21
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -431,10 +441,10 @@ own_sites: &id011
       neander-3: 10.1.240.3
       neander-4: 10.1.240.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:a0::1
-      neander-2: 2a03:2260:300e:a0::2
-      neander-3: 2a03:2260:300e:a0::3
-      neander-4: 2a03:2260:300e:a0::4
+      neander-1: 2a03:2260:122:117a::1
+      neander-2: 2a03:2260:122:117a::2
+      neander-3: 2a03:2260:122:117a::3
+      neander-4: 2a03:2260:122:117a::4
     website: http://freifunk-neanderfunk.de/
   ffnef-met: &id006
     batman:
@@ -449,7 +459,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.1.192.0/20
-    compressed6: 2a03:2260:300e:0010::/64
+    compressed6: 2a03:2260:122:1171::/64
     dhcp:
       range:
         neander-1:
@@ -464,6 +474,7 @@ own_sites: &id011
         neander-4:
           from: 10.1.204.125
           to: 10.1.207.251
+    extra6: 2a03:2260:300e:0010::/64
     extra_networks6:
     - 2a03:2260:300e:10::/64
     - 2a03:2260:300e:110::/64
@@ -500,10 +511,10 @@ own_sites: &id011
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.192.0
-    network6: '2a03:2260:300e:10::'
+    network6: '2a03:2260:122:1171::'
     next_mac: 10:80:f4:66:82:9f
     next_node4: 10.1.192.255
-    next_node6: 2a03:2260:300e:10::ffff
+    next_node6: 2a03:2260:122:1171::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 511
@@ -515,10 +526,10 @@ own_sites: &id011
       neander-3: 10.1.192.3
       neander-4: 10.1.192.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:10::1
-      neander-2: 2a03:2260:300e:10::2
-      neander-3: 2a03:2260:300e:10::3
-      neander-4: 2a03:2260:300e:10::4
+      neander-1: 2a03:2260:122:1171::1
+      neander-2: 2a03:2260:122:1171::2
+      neander-3: 2a03:2260:122:1171::3
+      neander-4: 2a03:2260:122:1171::4
     website: http://freifunk-mettmann.de/
   ffnef-mon: &id007
     batman:
@@ -533,7 +544,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.1.208.0/21
-    compressed6: 2a03:2260:300e:0040::/64
+    compressed6: 2a03:2260:122:1174::/64
     dhcp:
       range:
         neander-1:
@@ -548,6 +559,7 @@ own_sites: &id011
         neander-4:
           from: 10.1.214.61
           to: 10.1.215.251
+    extra6: 2a03:2260:300e:0040::/64
     extra_networks6:
     - 2a03:2260:300e:40::/64
     - 2a03:2260:300e:140::/64
@@ -584,10 +596,10 @@ own_sites: &id011
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.208.0
-    network6: '2a03:2260:300e:40::'
+    network6: '2a03:2260:122:1174::'
     next_mac: 20:24:e0:1d:ee:da
     next_node4: 10.1.208.255
-    next_node6: 2a03:2260:300e:40::ffff
+    next_node6: 2a03:2260:122:1174::ffff
     prefixlen4: 21
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -599,10 +611,10 @@ own_sites: &id011
       neander-3: 10.1.208.3
       neander-4: 10.1.208.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:40::1
-      neander-2: 2a03:2260:300e:40::2
-      neander-3: 2a03:2260:300e:40::3
-      neander-4: 2a03:2260:300e:40::4
+      neander-1: 2a03:2260:122:1174::1
+      neander-2: 2a03:2260:122:1174::2
+      neander-3: 2a03:2260:122:1174::3
+      neander-4: 2a03:2260:122:1174::4
     website: http://freifunk-neanderfunk.de/
   ffnef-rat: &id008
     batman:
@@ -617,7 +629,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.11.64.0/20
-    compressed6: 2a03:2260:300e:0080::/64
+    compressed6: 2a03:2260:122:1178::/64
     dhcp:
       range:
         neander-1:
@@ -632,6 +644,7 @@ own_sites: &id011
         neander-4:
           from: 10.11.76.61
           to: 10.11.79.251
+    extra6: 2a03:2260:300e:0080::/64
     extra_networks6:
     - 2a03:2260:300e:80::/64
     - 2a03:2260:300e:180::/64
@@ -668,10 +681,10 @@ own_sites: &id011
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.64.0
-    network6: '2a03:2260:300e:80::'
+    network6: '2a03:2260:122:1178::'
     next_mac: 20:5e:1a:a7:36:4e
     next_node4: 10.11.64.255
-    next_node6: 2a03:2260:300e:80::ffff
+    next_node6: 2a03:2260:122:1178::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -683,10 +696,10 @@ own_sites: &id011
       neander-3: 10.11.64.3
       neander-4: 10.11.64.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:80::1
-      neander-2: 2a03:2260:300e:80::2
-      neander-3: 2a03:2260:300e:80::3
-      neander-4: 2a03:2260:300e:80::4
+      neander-1: 2a03:2260:122:1178::1
+      neander-2: 2a03:2260:122:1178::2
+      neander-3: 2a03:2260:122:1178::3
+      neander-4: 2a03:2260:122:1178::4
     website: http://freifunk-ratingen.de/
   ffnef-vel: &id009
     batman:
@@ -701,7 +714,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.11.80.0/20
-    compressed6: 2a03:2260:300e:0030::/64
+    compressed6: 2a03:2260:122:1173::/64
     dhcp:
       range:
         neander-1:
@@ -716,6 +729,7 @@ own_sites: &id011
         neander-4:
           from: 10.11.92.61
           to: 10.11.95.251
+    extra6: 2a03:2260:300e:0030::/64
     extra_networks6:
     - 2a03:2260:300e:30::/64
     - 2a03:2260:300e:130::/64
@@ -752,10 +766,10 @@ own_sites: &id011
     netmask4: 255.255.240.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.11.80.0
-    network6: '2a03:2260:300e:30::'
+    network6: '2a03:2260:122:1173::'
     next_mac: a0:a9:6f:ce:6d:7e
     next_node4: 10.11.80.255
-    next_node6: 2a03:2260:300e:30::ffff
+    next_node6: 2a03:2260:122:1173::ffff
     prefixlen4: 20
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -767,10 +781,10 @@ own_sites: &id011
       neander-3: 10.11.80.3
       neander-4: 10.11.80.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:30::1
-      neander-2: 2a03:2260:300e:30::2
-      neander-3: 2a03:2260:300e:30::3
-      neander-4: 2a03:2260:300e:30::4
+      neander-1: 2a03:2260:122:1173::1
+      neander-2: 2a03:2260:122:1173::2
+      neander-3: 2a03:2260:122:1173::3
+      neander-4: 2a03:2260:122:1173::4
     website: http://freifunk-neanderfunk.de/
   ffnef-wlf: &id010
     batman:
@@ -785,7 +799,7 @@ own_sites: &id011
     channel24: 13
     channel5: 44
     compressed4: 10.1.248.0/21
-    compressed6: 2a03:2260:300e:00b0::/64
+    compressed6: 2a03:2260:122:117b::/64
     dhcp:
       range:
         neander-1:
@@ -800,6 +814,7 @@ own_sites: &id011
         neander-4:
           from: 10.1.254.61
           to: 10.1.255.251
+    extra6: 2a03:2260:300e:00b0::/64
     extra_networks6:
     - 2a03:2260:300e:b0::/64
     - 2a03:2260:300e:1b0::/64
@@ -836,10 +851,10 @@ own_sites: &id011
     netmask4: 255.255.248.0
     netmask6: 'ffff:ffff:ffff:ffff::'
     network4: 10.1.248.0
-    network6: '2a03:2260:300e:b0::'
+    network6: '2a03:2260:122:117b::'
     next_mac: 90:99:33:39:94:85
     next_node4: 10.1.248.255
-    next_node6: 2a03:2260:300e:b0::ffff
+    next_node6: 2a03:2260:122:117b::ffff
     prefixlen4: 21
     prefixlen6: 64
     reserved_ip_addresses: 255
@@ -851,10 +866,10 @@ own_sites: &id011
       neander-3: 10.1.248.3
       neander-4: 10.1.248.4
     supernodeAddr6:
-      neander-1: 2a03:2260:300e:b0::1
-      neander-2: 2a03:2260:300e:b0::2
-      neander-3: 2a03:2260:300e:b0::3
-      neander-4: 2a03:2260:300e:b0::4
+      neander-1: 2a03:2260:122:117b::1
+      neander-2: 2a03:2260:122:117b::2
+      neander-3: 2a03:2260:122:117b::3
+      neander-4: 2a03:2260:122:117b::4
     website: http://freifunk-neanderfunk.de/
 site_partitions:
   all: &id012
