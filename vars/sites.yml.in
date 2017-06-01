@@ -220,6 +220,23 @@ othernodes:
     website: "http://freifunk-neanderfunk.de/",
     reserved_ip_addresses: 255
   },
+  "ffnef-lvr": {
+    "hostname_prefix" : "LVR-",
+    "site" : "LVR",
+    "compressed4"  : "10.2.0.0/21",
+    "compressed6" : "2a03:2260:122:117c::/64",
+    "extra6" : "2a03:2260:300e:00c0::/64",
+    "channel24" : 13,
+    "channel5" : 44,
+    "fastd": {
+      "fastd1.ffnef-lvr.ffnef.de": { "port": 63983, "key": "efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059", "host": "neander-1.ffnef.de" },
+      "fastd2.ffnef-lvr.ffnef.de": { "port": 63983, "key": "65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4", "host": "neander-2.ffnef.de" },
+      "fastd3.ffnef-lvr.ffnef.de": { "port": 63983, "key": "0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20", "host": "neander-3.ffnef.de" },
+      "fastd4.ffnef-lvr.ffnef.de": { "port": 63983, "key": "dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a", "host": "neander-4.ffnef.de" },
+    },
+    website: "http://freifunk-neanderfunk.de/",
+    reserved_ip_addresses: 255
+  },
   "ffdus": {
     "hostname_prefix" : "-",
     "site" : "Flingern",

@@ -20,7 +20,7 @@ othernodes:
     mesh:
       postfix4: 10
       postfix6: 733
-own_sites: &id011
+own_sites: &id012
   ffnef-erk: &id001
     batman:
       interface: bat-erk
@@ -446,7 +446,92 @@ own_sites: &id011
       neander-3: 2a03:2260:122:117a::3
       neander-4: 2a03:2260:122:117a::4
     website: http://freifunk-neanderfunk.de/
-  ffnef-met: &id006
+  ffnef-lvr: &id006
+    batman:
+      interface: bat-lvr
+      mac:
+        neander-1: f0:50:cd:32:54:d1
+        neander-2: 90:c6:7d:2b:62:53
+        neander-3: a0:b0:5e:3b:62:24
+        neander-4: 90:1b:24:3e:80:58
+    bridge: br-lvr
+    bssid: 20:53:5b:da:54:ac
+    channel24: 13
+    channel5: 44
+    compressed4: 10.2.0.0/21
+    compressed6: 2a03:2260:122:117c::/64
+    dhcp:
+      range:
+        neander-1:
+          from: 10.2.1.0
+          to: 10.2.2.190
+        neander-2:
+          from: 10.2.2.191
+          to: 10.2.4.125
+        neander-3:
+          from: 10.2.4.126
+          to: 10.2.6.60
+        neander-4:
+          from: 10.2.6.61
+          to: 10.2.7.251
+    extra6: 2a03:2260:300e:00c0::/64
+    extra_networks6:
+    - 2a03:2260:300e:c0::/64
+    - 2a03:2260:300e:1c0::/64
+    - 2a03:2260:300e:2c0::/64
+    - 2a03:2260:300e:3c0::/64
+    fastd:
+      interface: tap-lvr
+      limit: 200
+      mac:
+        neander-1: 60:8a:b0:04:11:29
+        neander-2: d0:36:57:70:5b:09
+        neander-3: 50:26:03:5d:16:4b
+        neander-4: e0:a8:de:40:bb:36
+      mtu: 1364
+      peers:
+        fastd1.ffnef-wfr.ffnef.de:
+          host: neander-1.ffnef.de
+          key: efd2155bf25585788ae333bd228ec960c4ce6d100dd3c0ad5f08e88adf516059
+          port: 63983
+        fastd2.ffnef-wfr.ffnef.de:
+          host: neander-2.ffnef.de
+          key: 65071e80af35865830c5e5014c1279bf7b7bd2bcc06b9f721137ee1f624ce4d4
+          port: 63983
+        fastd3.ffnef-wfr.ffnef.de:
+          host: neander-3.ffnef.de
+          key: 0c3131778981c318135e0f552d747c513f0589ac9a214ad75731c8455a442c20
+          port: 63983
+        fastd4.ffnef-wfr.ffnef.de:
+          host: neander-4.ffnef.de
+          key: dd43a7d1c3f893ec67f13aca90bb5be2d449e8a83e943869f240b1f99ca7297a
+          port: 63983
+    foreign: false
+    hostname_prefix: ME-
+    netmask4: 255.255.248.0
+    netmask6: 'ffff:ffff:ffff:ffff::'
+    network4: 10.2.0.0
+    network6: '2a03:2260:122:117c::'
+    next_mac: 60:a9:e7:6c:82:14
+    next_node4: 10.2.0.255
+    next_node6: 2a03:2260:122:117c::ffff
+    prefixlen4: 21
+    prefixlen6: 64
+    reserved_ip_addresses: 255
+    site: LVR
+    site_name: Freifunk LVR
+    supernodeAddr4:
+      neander-1: 10.2.0.1
+      neander-2: 10.2.0.2
+      neander-3: 10.2.0.3
+      neander-4: 10.2.0.4
+    supernodeAddr6:
+      neander-1: 2a03:2260:122:117c::1
+      neander-2: 2a03:2260:122:117c::2
+      neander-3: 2a03:2260:122:117c::3
+      neander-4: 2a03:2260:122:117c::4
+    website: http://freifunk-neanderfunk.de/
+  ffnef-met: &id007
     batman:
       interface: bat-met
       mac:
@@ -531,7 +616,7 @@ own_sites: &id011
       neander-3: 2a03:2260:122:1171::3
       neander-4: 2a03:2260:122:1171::4
     website: http://freifunk-mettmann.de/
-  ffnef-mon: &id007
+  ffnef-mon: &id008
     batman:
       interface: bat-mon
       mac:
@@ -616,7 +701,7 @@ own_sites: &id011
       neander-3: 2a03:2260:122:1174::3
       neander-4: 2a03:2260:122:1174::4
     website: http://freifunk-neanderfunk.de/
-  ffnef-rat: &id008
+  ffnef-rat: &id009
     batman:
       interface: bat-rat
       mac:
@@ -701,7 +786,7 @@ own_sites: &id011
       neander-3: 2a03:2260:122:1178::3
       neander-4: 2a03:2260:122:1178::4
     website: http://freifunk-ratingen.de/
-  ffnef-vel: &id009
+  ffnef-vel: &id010
     batman:
       interface: bat-vel
       mac:
@@ -786,7 +871,7 @@ own_sites: &id011
       neander-3: 2a03:2260:122:1173::3
       neander-4: 2a03:2260:122:1173::4
     website: http://freifunk-neanderfunk.de/
-  ffnef-wlf: &id010
+  ffnef-wlf: &id011
     batman:
       interface: bat-wlf
       mac:
@@ -872,7 +957,7 @@ own_sites: &id011
       neander-4: 2a03:2260:122:117b::4
     website: http://freifunk-neanderfunk.de/
 site_partitions:
-  all: &id012
+  all: &id013
     ffdus:
       batman:
         interface: bat-ffdus
@@ -910,34 +995,35 @@ site_partitions:
     ffnef-hld: *id003
     ffnef-hlg: *id004
     ffnef-lgf: *id005
-    ffnef-met: *id006
-    ffnef-mon: *id007
-    ffnef-rat: *id008
-    ffnef-vel: *id009
-    ffnef-wlf: *id010
-  own: *id011
-sites: *id012
+    ffnef-lvr: *id006
+    ffnef-met: *id007
+    ffnef-mon: *id008
+    ffnef-rat: *id009
+    ffnef-vel: *id010
+    ffnef-wlf: *id011
+  own: *id012
+sites: *id013
 supernodes:
-- &id013
+- &id014
   domain: ffnef.de
   fqdn: neander-1.ffnef.de
   host: neander-1
   installed: '2016-01-08T23:07:00'
-- &id014
+- &id015
   domain: ffnef.de
   fqdn: neander-2.ffnef.de
   host: neander-2
-- &id015
+- &id016
   domain: ffnef.de
   fqdn: neander-3.ffnef.de
   host: neander-3
   installed: '2016-03-01T00:01:00'
-- &id016
+- &id017
   domain: ffnef.de
   fqdn: neander-4.ffnef.de
   host: neander-4
 supernodesByName:
-  neander-1: *id013
-  neander-2: *id014
-  neander-3: *id015
-  neander-4: *id016
+  neander-1: *id014
+  neander-2: *id015
+  neander-3: *id016
+  neander-4: *id017
