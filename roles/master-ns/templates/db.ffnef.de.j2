@@ -5,7 +5,7 @@ $ORIGIN ffnef.de.
 $TTL 1h
 
 @                               IN      SOA     vserver-0 nic (
-                                  2016060600    ; Serial
+                                  2016060801    ; Serial
                                        10800    ; Refresh
                                         3600    ; Retry
                                       604800    ; Expire
@@ -20,14 +20,19 @@ vserver-0               		IN A		5.45.103.213
                                 IN AAAA		2a03:4000:6:1b0::1
 *                               IN CNAME	vserver-0
 
-buildbot                        IN CNAME	vserver-0
-download                        IN CNAME	vserver-0
-firmware                        IN CNAME	vserver-0
+;buildbot                        IN CNAME	vserver-0
+;download                        IN CNAME	vserver-0
+;firmware                        IN CNAME	vserver-0
+
+buildbot                        IN CNAME	fileserver
+download                        IN CNAME	fileserver
+firmware                        IN CNAME	fileserver
 
 neander-1               		IN A		151.80.11.200
 neander-3               		IN A		151.80.11.203
 
 fileserver						IN A		37.59.64.74	
+								IN AAAA		2001:41d0:2:40d8::74
 
 
 ntp                             IN CNAME	0.freifunk.pool.ntp.org.

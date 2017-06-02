@@ -31,6 +31,8 @@
 - hosts: firmware-hosts
   remote_user: root
   tasks:
+  - name: set site_selection (no supernode)
+    set_fact: site_selection=all
   - name: update apt cache
     apt: update_cache=yes cache_valid_time=3600
   - name: install packages to build gluon
